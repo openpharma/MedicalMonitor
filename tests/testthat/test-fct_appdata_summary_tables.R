@@ -15,7 +15,7 @@ describe("get_timeline_data works", {
     expect_equal(
       names(output), 
       c("subject_id", "content", "form_repeat", "item_group", "start", "group", 
-        "end", "title", "style", "id", "order")
+        "end", "title", "className", "id", "order")
     )
   })
   it("does not error with missing data", {
@@ -30,7 +30,7 @@ describe("get_timeline_data works", {
       create_table(appdata[[x]], expected_columns = names(appvars$items[[x]]))
     })
     expected_columns <- c("subject_id", "content", "form_repeat", "item_group", 
-                          "start", "group", "end", "title", "style", "id", "order")
+                          "start", "group", "end", "title", "className", "id", "order")
     
     output <- get_timeline_data(appdata["Adverse events"], apptables["Adverse events"])
     expect_true(is.data.frame(output))

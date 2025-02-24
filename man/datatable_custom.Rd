@@ -9,10 +9,11 @@ datatable_custom(
   rename_vars = NULL,
   title = NULL,
   selection = "single",
-  extensions = "Scroller",
-  plugins = "scrollResize",
+  extensions = c("Scroller", "ColReorder"),
   dom = "fti",
   options = list(),
+  allow_listing_download = NULL,
+  export_label = NULL,
   ...
 )
 }
@@ -28,8 +29,6 @@ rename any column names found in this vector to the provided name.}
 
 \item{extensions}{See \code{\link[DT:datatable]{DT::datatable()}}. Default set to 'Scroller'.}
 
-\item{plugins}{See \code{\link[DT:datatable]{DT::datatable()}}. Default set to 'scrollResize'.}
-
 \item{dom}{See \url{https://datatables.net/reference/option/dom}. A div
 element will be inserted before the table for the table title. Default set
 to 'fti' resulting in 'f<"header h5">ti'.}
@@ -44,6 +43,7 @@ to 'fti' resulting in 'f<"header h5">ti'.}
 \item \code{deferREnder = TRUE}
 \item \code{scrollResize = TRUE}
 \item \code{scrollCollapse = TRUE}
+\item \code{colReorder = TRUE}
 }
 \item Non-modifiable defaults:
 \itemize{
@@ -51,6 +51,14 @@ to 'fti' resulting in 'f<"header h5">ti'.}
 \item \code{initComplete}: Defaults to a function to insert table title into dataTable container.
 }
 }}
+
+\item{allow_listing_download}{Logical, whether to allow the user to download
+the table as an Excel file. Defaults to the \code{allow_listing_download}
+configuration option in \code{golem-config.yml}, but can be overwritten here if
+needed.}
+
+\item{export_label}{Character string with the table export label. Only used
+for downloadable tables (if \code{allow_listing_download} is \code{TRUE}).}
 
 \item{...}{Other optional arguments that will be passed to \code{\link[DT:datatable]{DT::datatable()}}.}
 }

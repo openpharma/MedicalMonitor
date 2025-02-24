@@ -1,0 +1,23 @@
+sitecode,subjectid,eventseq,eventid,eventname,eventdate,formid,subjectformseq,editdatetime,eventlabel,itemname,itemvalue,itemid
+SiteCode,SubjectId,EventSeq,EventId,EventName,EventDate,FormId,SubjectFormSeq,EditDateTime,EventLabel,ItemName,ItemValue,ItemId
+BEL08,BEL_08_885,1,SCR,Screening,2023-06-05,WHO,1,2023-08-10 01:03:00,V0,WHO.classification,Syndrome S,WHO_TERM
+BEL09,BEL_09_464,1,SCR,Screening,2023-06-05,WHO,1,2023-08-28 04:38:00,V0,WHO.classification,Syndrome F,WHO_TERM
+BEL09,BEL_09_361,1,SCR,Screening,2023-06-05,WHO,1,2023-06-08 09:17:00,V0,WHO.classification,Syndrome G,WHO_TERM
+DEU02,DEU_02_968,1,SCR,Screening,2023-06-05,WHO,1,2023-06-15 09:17:00,V0,WHO.classification,Syndrome P,WHO_TERM
+NLD06,NLD_06_755,1,SCR,Screening,2023-06-05,WHO,1,2023-07-07 12:01:00,V0,WHO.classification,Syndrome W,WHO_TERM
+DEU02,DEU_02_866,1,SCR,Screening,2023-06-05,WHO,1,2023-08-10 08:54:00,V0,WHO.classification,Syndrome C,WHO_TERM
+BEL07,BEL_07_193,1,SCR,Screening,2023-06-05,WHO,1,2023-08-30 10:58:00,V0,WHO.classification,Syndrome D,WHO_TERM
+DEU01,DEU_01_541,1,SCR,Screening,2023-06-05,WHO,1,2023-08-02 12:58:00,V0,WHO.classification,Syndrome Y,WHO_TERM
+NLD05,NLD_05_561,1,SCR,Screening,2023-06-05,WHO,1,2023-08-08 15:00:00,V0,WHO.classification,Syndrome M,WHO_TERM
+DEU01,DEU_01_977,1,SCR,Screening,2023-06-05,WHO,1,2023-08-16 12:10:00,V0,WHO.classification,Syndrome I,WHO_TERM
+NLD06,NLD_06_893,1,SCR,Screening,2023-06-05,WHO,1,2023-08-23 13:21:00,V0,WHO.classification,Syndrome R,WHO_TERM
+BEL04,BEL_04_133,1,SCR,Screening,2023-06-05,WHO,1,2023-06-30 13:30:00,V0,WHO.classification,Syndrome K,WHO_TERM
+NLD06,NLD_06_72,1,SCR,Screening,2023-06-05,WHO,1,2023-08-18 16:01:00,V0,WHO.classification,Syndrome Z,WHO_TERM
+NLD06,NLD_06_959,1,SCR,Screening,2023-06-05,WHO,1,2023-07-26 14:37:00,V0,WHO.classification,Syndrome X,WHO_TERM
+DEU02,DEU_02_482,1,SCR,Screening,2023-06-05,WHO,1,2023-06-30 07:44:00,V0,WHO.classification,Syndrome T,WHO_TERM
+DEU02,DEU_02_387,1,SCR,Screening,2023-06-05,WHO,1,2023-07-05 12:51:00,V0,WHO.classification,Syndrome Q,WHO_TERM
+NLD03,NLD_03_207,1,SCR,Screening,2023-06-05,WHO,1,2023-07-07 11:06:00,V0,WHO.classification,Syndrome E,WHO_TERM
+BEL08,BEL_08_45,1,SCR,Screening,2023-06-05,WHO,1,2023-08-24 11:12:00,V0,WHO.classification,Syndrome V,WHO_TERM
+BEL04,BEL_04_772,1,SCR,Screening,2023-06-05,WHO,1,2023-07-04 18:17:00,V0,WHO.classification,Syndrome O,WHO_TERM
+BEL08,BEL_08_736,1,SCR,Screening,2023-06-05,WHO,1,2023-08-30 13:09:00,V0,WHO.classification,Syndrome A,WHO_TERM
+BEL07,BEL_07_645,1,SCR,Screening,2023-06-05,WHO,1,2023-09-13 15:24:00,V0,WHO.classification,Syndrome J,WHO_TERM

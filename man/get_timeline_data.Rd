@@ -8,7 +8,8 @@ get_timeline_data(
   data,
   table_data,
   timeline_cols = c("subject_id", "event_name", "form_repeat", "item_group", "start",
-    "group", "end", "title", "style", "id", "order")
+    "group", "end", "title", "className", "id", "order"),
+  treatment_label = "💊 Tₓ"
 )
 }
 \arguments{
@@ -19,6 +20,9 @@ wide format. Created with \code{\link[=create_table]{create_table()}}.}
 
 \item{timeline_cols}{Character vector with the name of the columns of the
 output data frame.}
+
+\item{treatment_label}{Character vector with the label to use for the
+treatment item in the timeline.}
 }
 \value{
 A data frame with timeline data.

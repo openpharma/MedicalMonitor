@@ -65,5 +65,6 @@ original units will be shown. The \verb{Study forms} module is used in the main
 \code{app_server} to create all applicable study form pages.
 }
 \seealso{
-\code{\link[=mod_study_forms_ui]{mod_study_forms_ui()}}
+\code{\link[=mod_study_forms_ui]{mod_study_forms_ui()}}, \code{\link[=mod_review_form_tbl_ui]{mod_review_form_tbl_ui()}},
+\code{\link[=mod_review_form_tbl_server]{mod_review_form_tbl_server()}}
 }

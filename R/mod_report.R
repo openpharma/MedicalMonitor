@@ -187,12 +187,14 @@ mod_report_server <- function(id, r, rev_data, db_path, table_names){
     })
     
     output[["review_completed_table"]] <- DT::renderDT({
-      datatable_custom(selected_review_data(), table_names, rownames = FALSE)
+      datatable_custom(selected_review_data(), table_names, rownames = FALSE, 
+                       allow_listing_download = FALSE)
     })
     
     output[["queries_raised_table"]] <- DT::renderDT({
       req(query_data())
-      datatable_custom(selected_query_data()[, -1], table_names, rownames = FALSE)
+      datatable_custom(selected_query_data()[, -1], table_names, rownames = FALSE, 
+                       allow_listing_download = FALSE)
     })
     
     output[["report"]] <- downloadHandler(

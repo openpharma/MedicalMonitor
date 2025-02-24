@@ -41,7 +41,7 @@ describe(
         
         user_db <- app$get_value(export = "user_db")
         
-        active_form_data <- db_slice_rows(user_db) |> 
+        active_form_data <- db_get_table(user_db) |> 
           dplyr::filter(
             subject_id == app$get_value(export = "active_participant"),
             item_group == app$get_value(export = "active_form")

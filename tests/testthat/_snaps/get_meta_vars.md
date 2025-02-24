@@ -143,15 +143,15 @@
       # A tibble: 9 x 2
         site_code region
         <chr>     <chr> 
-      1 Site 01   DEU   
-      2 Site 02   DEU   
-      3 Site 03   NLD   
-      4 Site 04   BEL   
-      5 Site 05   NLD   
-      6 Site 06   NLD   
-      7 Site 07   BEL   
-      8 Site 08   BEL   
-      9 Site 09   BEL   
+      1 BEL04     BEL   
+      2 BEL07     BEL   
+      3 BEL08     BEL   
+      4 BEL09     BEL   
+      5 DEU01     DEU   
+      6 DEU02     DEU   
+      7 NLD03     NLD   
+      8 NLD05     NLD   
+      9 NLD06     NLD   
       
       $table_names
                  Edit date                 Date                Event 

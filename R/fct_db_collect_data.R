@@ -82,6 +82,16 @@ db_slice_rows <- function(
   dplyr::slice_tail(df, n = 1, by = dplyr::all_of(c(group_vars, slice_vars)))
 }
 
+db_get_table <- function(db_path, db_table = "all_review_data") {
+  stopifnot(is.character(db_path))
+  stopifnot(is.character(db_table))
+  
+  con <- get_db_connection(db_path)
+  sql <- "SELECT * FROM ?db_table"
+  query <- DBI::sqlInterpolate(con, sql, db_table = db_table[1])
+  DBI::dbGetQuery(con, query)
+}
+
 
 #' Collect query data
 #'

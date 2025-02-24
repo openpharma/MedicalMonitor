@@ -52,3 +52,21 @@ drop_nulls <- function(x) {
     x
   }
 }
+
+#' If x does not exist, return y, otherwise return x
+#' 
+#' @param x,y two elements to test, one potentially not existent
+#' @param verbose logical, indicating whether warning message should be displayed.
+#' 
+#' @noRd
+#' 
+#' @examples
+#' mtcars2 %|_|% mtcars
+"%|_|%" <- function(x, y, verbose = TRUE) {
+  if (exists(deparse1(substitute(x)), envir = parent.frame())) {
+    if (verbose) cat("Using user supplied", deparse(deparse1(substitute(x))), "instead of deriving.\n")
+    x
+  } else {
+    y
+  }
+}

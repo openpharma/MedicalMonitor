@@ -1,0 +1,8 @@
+sitecode,subjectid,eventseq,eventid,eventname,eventdate,formid,subjectformseq,editdatetime,eventlabel,itemname,itemvalue,itemid
+SiteCode,SubjectId,EventSeq,EventId,EventName,EventDate,FormId,SubjectFormSeq,EditDateTime,EventLabel,ItemName,ItemValue,ItemId
+NLD06,NLD_06_755,1,EXIT,Exit,2023-08-23,TT,1,2023-08-23 13:31:00,Exit,DrugDiscontDate,2023-08-23,TT_DAT
+NLD06,NLD_06_755,1,EXIT,Exit,2023-08-23,TT,1,2023-08-23 13:31:00,Exit,DrugDiscontReason,Death,TT_REAS
+DEU02,DEU_02_387,1,EXIT,Exit,2023-08-08,TT,1,2023-08-08 07:26:00,Exit,DrugDiscontDate,2023-08-08,TT_DAT
+DEU02,DEU_02_387,1,EXIT,Exit,2023-08-08,TT,1,2023-08-08 07:26:00,Exit,DrugDiscontReason,Adverse event,TT_REAS
+NLD03,NLD_03_207,1,EXIT,Exit,2023-08-16,TT,1,2023-08-16 07:41:00,Exit,DrugDiscontDate,2023-08-14,TT_DAT
+NLD03,NLD_03_207,1,EXIT,Exit,2023-08-16,TT,1,2023-08-16 07:41:00,Exit,DrugDiscontReason,Death,TT_REAS

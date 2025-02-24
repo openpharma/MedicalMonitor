@@ -7,8 +7,12 @@ describe("datatable_custom() works", {
     expect_true(inherits(datatable_custom(mtcars), "datatables"))
     expect_equal(
       names(outcome$x$data), 
-      c(" ", "mpg_new", "cyl_new", names(mtcars)[-c(1,2)]) 
+      c(" ", names(mtcars)) 
       )
+    expect_equal(
+      stringr::str_extract_all(outcome$x$container, "<th>.*?</th>")[[1]], 
+      paste0("<th>", c(" ", "mpg_new", "cyl_new", names(mtcars)[-c(1,2)]), "</th>")
+    )
   })
   it("creates a datatable and can add a title to the table", {
     outcome <- datatable_custom(iris, title = "Test title")
@@ -30,4 +34,39 @@ describe("datatable_custom() works", {
   it("Errors if title is not a character vector", {
     expect_error(datatable_custom(iris, title = data.frame()))
   })
+  it(
+    "Optionally adds a button for downloading an Excel table, 
+    with the filename and title of downloadable table containing 
+    the 'export_label' argument.", 
+    {
+      outcome <- datatable_custom(
+        mtcars, 
+        export_label = "test_label",
+        allow_listing_download = TRUE
+      )
+      expected_settings <- list(
+        extend = "excel", 
+        text = "<i class=\"fa-solid fa-download\"></i>", 
+        filename = "clinsight.test_label", 
+        title = "test_label | extracted from ClinSight"
+      )
+      expect_equal(outcome$x$options$buttons[[1]], expected_settings)
+      expect_true("Buttons" %in% unlist(outcome$x$extensions))
+    }
+  )
+  it(
+    "The filename and title of a downloadable table contain '_label.missing_' 
+    if the 'export_label' is missing", 
+    {
+      outcome <- datatable_custom(mtcars, allow_listing_download = TRUE)
+      expected_settings <- list(
+        extend = "excel", 
+        text = "<i class=\"fa-solid fa-download\"></i>", 
+        filename = "clinsight._label.missing_", 
+        title = "_label.missing_ | extracted from ClinSight"
+      )
+      expect_equal(outcome$x$options$buttons[[1]], expected_settings)
+      expect_true("Buttons" %in% unlist(outcome$x$extensions))
+    }
+  )
 })

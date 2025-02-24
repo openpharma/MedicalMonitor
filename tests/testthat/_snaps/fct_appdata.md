@@ -1,9 +1,8 @@
 # get_raw_csv_data works: Produces the expected output.
 
     Code
-      get_raw_csv_data(data_path, synch_time = "2024-01-01 00:00:00")
+      df
     Output
-      Adding synch time ' 2024-01-01 00:00:00 ' as the attribute 'synch_time' to the data set.
       # A tibble: 3,267 x 26
          SiteSeq SiteCode SubjectSeq SubjectId EventSeq EventId   EventName  EventDate
          <chr>   <chr>    <chr>      <chr>     <chr>    <chr>     <chr>      <chr>    
@@ -30,45 +29,45 @@
     Code
       df[c(1, 1000, 2000, 3000, 4000, 5000), ]
     Output
-      # A tibble: 6 x 23
-        site_code subject_id event_id event_date event_name event_repeat form_id
-        <chr>     <chr>      <chr>    <date>     <chr>             <int> <chr>  
-      1 9600      9600-001   SCR      2022-11-09 Screening             1 DM     
-      2 <NA>      <NA>       <NA>     NA         <NA>                 NA <NA>   
-      3 <NA>      <NA>       <NA>     NA         <NA>                 NA <NA>   
-      4 <NA>      <NA>       <NA>     NA         <NA>                 NA <NA>   
-      5 <NA>      <NA>       <NA>     NA         <NA>                 NA <NA>   
-      6 <NA>      <NA>       <NA>     NA         <NA>                 NA <NA>   
-      # i 16 more variables: form_repeat <int>, edit_date_time <dttm>, day <drtn>,
-      #   vis_day <dbl>, vis_num <dbl>, event_label <chr>, item_name <chr>,
-      #   item_type <chr>, item_group <chr>, item_value <chr>, item_unit <chr>,
-      #   lower_lim <dbl>, upper_lim <dbl>, significance <chr>, reason_notdone <chr>,
-      #   region <chr>
+      # A tibble: 6 x 24
+        site_code subject_id event_id event_date event_repeat form_id form_repeat
+        <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+      1 9600      9600-001   SCR      2022-11-09            1 DM                1
+      2 <NA>      <NA>       <NA>     NA                   NA <NA>             NA
+      3 <NA>      <NA>       <NA>     NA                   NA <NA>             NA
+      4 <NA>      <NA>       <NA>     NA                   NA <NA>             NA
+      5 <NA>      <NA>       <NA>     NA                   NA <NA>             NA
+      6 <NA>      <NA>       <NA>     NA                   NA <NA>             NA
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
 
 ---
 
     Code
       df
     Output
-      # A tibble: 543 x 23
-         site_code subject_id event_id event_date event_name event_repeat form_id
-         <chr>     <chr>      <chr>    <date>     <chr>             <int> <chr>  
-       1 9600      9600-001   SCR      2022-11-09 Screening             1 DM     
-       2 9600      9600-001   SCR      2022-11-09 Screening             1 DM     
-       3 9600      9600-002   SCR      2022-01-01 Screening             1 DM     
-       4 9600      9600-002   SCR      2022-01-01 Screening             1 DM     
-       5 9600      9600-002   SCR      2022-01-01 Screening             1 DM     
-       6 9600      9600-002   SCR      2022-01-01 Screening             1 STE    
-       7 9600      9600-002   SCR      2022-01-01 Screening             1 STE    
-       8 9600      9600-002   SCR      2022-01-01 Screening             1 VS     
-       9 9600      9600-002   SCR      2022-01-01 Screening             1 VS     
-      10 9600      9600-002   SCR      2022-01-01 Screening             1 VS     
+      # A tibble: 543 x 24
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 9600      9600-001   SCR      2022-11-09            1 DM                1
+       2 9600      9600-001   SCR      2022-11-09            1 DM                1
+       3 9600      9600-002   SCR      2022-01-01            1 DM                1
+       4 9600      9600-002   SCR      2022-01-01            1 DM                1
+       5 9600      9600-002   SCR      2022-01-01            1 DM                1
+       6 9600      9600-002   SCR      2022-01-01            1 STE               1
+       7 9600      9600-002   SCR      2022-01-01            1 STE               1
+       8 9600      9600-002   SCR      2022-01-01            1 VS                1
+       9 9600      9600-002   SCR      2022-01-01            1 VS                1
+      10 9600      9600-002   SCR      2022-01-01            1 VS                1
       # i 533 more rows
-      # i 16 more variables: form_repeat <int>, edit_date_time <dttm>, day <drtn>,
-      #   vis_day <dbl>, vis_num <dbl>, event_label <chr>, item_name <chr>,
-      #   item_type <chr>, item_group <chr>, item_value <chr>, item_unit <chr>,
-      #   lower_lim <dbl>, upper_lim <dbl>, significance <chr>, reason_notdone <chr>,
-      #   region <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
 
 # get_appdata works: produces the expected output
 
@@ -77,233 +76,233 @@
     Output
       $`Adverse events`
       # A tibble: 799 x 24
-         site_code subject_id event_repeat event_id  event_name event_date form_id
-         <chr>     <chr>             <int> <chr>     <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       2 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       3 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       4 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       5 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       6 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       7 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       8 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-       9 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
-      10 Site 08   BEL_08_885            1 COMMON_AE Any visit  2023-08-15 AE     
+         site_code subject_id event_id  event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>     <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       2 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       3 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       4 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       5 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       6 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       7 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       8 BEL04     BEL_04_772 COMMON_AE 2023-08-31            1 AE                1
+       9 BEL04     BEL_04_772 COMMON_AE 2023-08-31            2 AE                2
+      10 BEL04     BEL_04_772 COMMON_AE 2023-08-31            2 AE                2
       # i 789 more rows
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $`CBC regular`
       # A tibble: 381 x 27
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       4 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       5 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       6 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBHM   
-       7 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 LBHM   
-       8 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 LBHM   
-       9 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 LBHM   
-      10 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 LBHM   
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       4 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       5 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       6 BEL04     BEL_04_133 SCR      2023-06-05            1 LBHM              1
+       7 BEL04     BEL_04_133 VIS      2023-07-05            1 LBHM              2
+       8 BEL04     BEL_04_133 VIS      2023-07-05            1 LBHM              2
+       9 BEL04     BEL_04_133 VIS      2023-07-05            1 LBHM              2
+      10 BEL04     BEL_04_133 VIS      2023-07-05            1 LBHM              2
       # i 371 more rows
-      # i 20 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <fct>, item_type <chr>,
-      #   item_group <chr>, item_value <dbl>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <fct>, reason_notdone <chr>,
-      #   value_scaled <dbl>, out_of_lim <fct>, text_label <chr>
+      # i 20 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <fct>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <dbl>, significance <fct>,
+      #   reason_notdone <chr>, region <chr>, value_scaled <dbl>, out_of_lim <fct>,
+      #   text_label <chr>
       
       $`Conc. Procedures`
       # A tibble: 28 x 24
-         site_code subject_id event_repeat event_id  event_name event_date form_id
-         <chr>     <chr>             <int> <chr>     <chr>      <date>     <chr>  
-       1 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       2 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       3 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       4 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       5 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       6 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       7 Site 06   NLD_06_755            1 COMMON_PR Any visit  2023-08-08 CP     
-       8 Site 02   DEU_02_866            1 COMMON_PR Any visit  2023-08-23 CP     
-       9 Site 02   DEU_02_866            1 COMMON_PR Any visit  2023-08-23 CP     
-      10 Site 02   DEU_02_866            1 COMMON_PR Any visit  2023-08-23 CP     
+         site_code subject_id event_id  event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>     <date>            <int> <chr>         <int>
+       1 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       2 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       3 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       4 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       5 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       6 BEL07     BEL_07_645 COMMON_PR 2023-09-14            1 CP                1
+       7 BEL07     BEL_07_645 COMMON_PR 2023-09-14            2 CP                2
+       8 BEL07     BEL_07_645 COMMON_PR 2023-09-14            2 CP                2
+       9 BEL07     BEL_07_645 COMMON_PR 2023-09-14            2 CP                2
+      10 BEL07     BEL_07_645 COMMON_PR 2023-09-14            2 CP                2
       # i 18 more rows
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $Electrolytes
       # A tibble: 275 x 27
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       4 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       5 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       6 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       7 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       8 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       9 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-      10 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       4 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       5 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       6 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       7 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       8 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       9 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+      10 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
       # i 265 more rows
-      # i 20 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <fct>, item_type <chr>,
-      #   item_group <chr>, item_value <dbl>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <fct>, reason_notdone <chr>,
-      #   value_scaled <dbl>, out_of_lim <fct>, text_label <chr>
+      # i 20 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <fct>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <dbl>, significance <fct>,
+      #   reason_notdone <chr>, region <chr>, value_scaled <dbl>, out_of_lim <fct>,
+      #   text_label <chr>
       
       $General
       # A tibble: 261 x 24
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 DM     
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 DM     
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 ECOG   
-       4 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 EX     
-       5 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 EX     
-       6 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 STE    
-       7 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 STE    
-       8 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 WHO    
-       9 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 DM     
-      10 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 DM     
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 DM                1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 DM                1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 DM                1
+       4 BEL04     BEL_04_133 SCR      2023-06-05            1 DM                1
+       5 BEL04     BEL_04_133 SCR      2023-06-05            1 DM                1
+       6 BEL04     BEL_04_133 SCR      2023-06-05            1 ECOG              1
+       7 BEL04     BEL_04_133 VIS      2023-07-05            1 EX                1
+       8 BEL04     BEL_04_133 VIS      2023-07-05            1 EX                1
+       9 BEL04     BEL_04_133 VIS      2023-08-02            3 EX                2
+      10 BEL04     BEL_04_133 VIS      2023-08-02            3 EX                2
       # i 251 more rows
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $`Liver function`
       # A tibble: 180 x 27
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       4 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       5 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       6 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       7 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       8 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       9 Site 09   BEL_09_464            1 VIS      Visit 1    2023-08-30 LBSER  
-      10 Site 09   BEL_09_464            1 VIS      Visit 1    2023-08-30 LBSER  
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       4 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       5 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       6 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       7 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       8 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       9 BEL04     BEL_04_133 VIS      2023-08-02            3 LBSER             3
+      10 BEL04     BEL_04_133 VIS      2023-08-02            3 LBSER             3
       # i 170 more rows
-      # i 20 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <fct>, item_type <chr>,
-      #   item_group <chr>, item_value <dbl>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <fct>, reason_notdone <chr>,
-      #   value_scaled <dbl>, out_of_lim <fct>, text_label <chr>
+      # i 20 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <fct>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <dbl>, significance <fct>,
+      #   reason_notdone <chr>, region <chr>, value_scaled <dbl>, out_of_lim <fct>,
+      #   text_label <chr>
       
       $`Medical History`
       # A tibble: 757 x 24
-         site_code subject_id event_repeat event_id  event_name event_date form_id
-         <chr>     <chr>             <int> <chr>     <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 COMMON_MH Any visit  2023-08-24 MH     
-       2 Site 08   BEL_08_885            1 COMMON_MH Any visit  2023-08-24 MH     
-       3 Site 08   BEL_08_885            1 COMMON_MH Any visit  2023-08-24 MH     
-       4 Site 08   BEL_08_885            1 COMMON_MH Any visit  2023-08-24 MH     
-       5 Site 08   BEL_08_885            1 COMMON_MH Any visit  2023-08-24 MH     
-       6 Site 09   BEL_09_464            1 COMMON_MH Any visit  2023-08-31 MH     
-       7 Site 09   BEL_09_464            1 COMMON_MH Any visit  2023-08-31 MH     
-       8 Site 09   BEL_09_464            1 COMMON_MH Any visit  2023-08-31 MH     
-       9 Site 09   BEL_09_464            1 COMMON_MH Any visit  2023-08-31 MH     
-      10 Site 09   BEL_09_464            1 COMMON_MH Any visit  2023-08-31 MH     
+         site_code subject_id event_id  event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>     <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 COMMON_MH 2023-06-23            1 MH                1
+       2 BEL04     BEL_04_133 COMMON_MH 2023-06-23            1 MH                1
+       3 BEL04     BEL_04_133 COMMON_MH 2023-06-23            1 MH                1
+       4 BEL04     BEL_04_133 COMMON_MH 2023-06-23            1 MH                1
+       5 BEL04     BEL_04_772 COMMON_MH 2023-07-11            1 MH                1
+       6 BEL04     BEL_04_772 COMMON_MH 2023-07-11            1 MH                1
+       7 BEL04     BEL_04_772 COMMON_MH 2023-07-11            1 MH                1
+       8 BEL04     BEL_04_772 COMMON_MH 2023-07-11            1 MH                1
+       9 BEL04     BEL_04_772 COMMON_MH 2023-07-11            2 MH                2
+      10 BEL04     BEL_04_772 COMMON_MH 2023-07-11            2 MH                2
       # i 747 more rows
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $Medication
       # A tibble: 3,183 x 24
-         site_code subject_id event_repeat event_id  event_name event_date form_id
-         <chr>     <chr>             <int> <chr>     <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       2 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       3 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       4 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       5 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       6 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       7 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       8 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-       9 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
-      10 Site 08   BEL_08_885            1 COMMON_CM Any visit  2023-08-24 CM     
+         site_code subject_id event_id  event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>     <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       2 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       3 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       4 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       5 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       6 BEL04     BEL_04_133 COMMON_CM 2023-06-23            1 CM                1
+       7 BEL04     BEL_04_772 COMMON_CM 2023-07-11            1 CM                1
+       8 BEL04     BEL_04_772 COMMON_CM 2023-07-11            1 CM                1
+       9 BEL04     BEL_04_772 COMMON_CM 2023-07-11            1 CM                1
+      10 BEL04     BEL_04_772 COMMON_CM 2023-07-11            1 CM                1
       # i 3,173 more rows
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $`Renal function`
       # A tibble: 135 x 27
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 LBSER  
-       4 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       5 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       6 Site 09   BEL_09_464            1 SCR      Screening  2023-06-05 LBSER  
-       7 Site 09   BEL_09_464            1 VIS      Visit 1    2023-08-30 LBSER  
-       8 Site 09   BEL_09_464            1 VIS      Visit 1    2023-08-30 LBSER  
-       9 Site 09   BEL_09_464            1 VIS      Visit 1    2023-08-30 LBSER  
-      10 Site 09   BEL_09_361            1 SCR      Screening  2023-06-05 LBSER  
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 LBSER             1
+       4 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       5 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       6 BEL04     BEL_04_133 VIS      2023-07-05            1 LBSER             2
+       7 BEL04     BEL_04_133 VIS      2023-08-02            3 LBSER             3
+       8 BEL04     BEL_04_133 VIS      2023-08-02            3 LBSER             3
+       9 BEL04     BEL_04_133 VIS      2023-08-02            3 LBSER             3
+      10 BEL04     BEL_04_133 VIS      2023-08-30            5 LBSER             4
       # i 125 more rows
-      # i 20 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <fct>, item_type <chr>,
-      #   item_group <chr>, item_value <dbl>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <fct>, reason_notdone <chr>,
-      #   value_scaled <dbl>, out_of_lim <fct>, text_label <chr>
+      # i 20 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <fct>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <dbl>, significance <fct>,
+      #   reason_notdone <chr>, region <chr>, value_scaled <dbl>, out_of_lim <fct>,
+      #   text_label <chr>
       
       $Response
       # A tibble: 6 x 24
-        site_code subject_id event_repeat event_id event_name event_date form_id
-        <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-      1 Site 04   BEL_04_133            5 VIS      Visit 5    2023-08-30 RS     
-      2 Site 04   BEL_04_133            5 VIS      Visit 5    2023-08-30 RS     
-      3 Site 06   NLD_06_72             5 VIS      Visit 5    2023-09-06 RS     
-      4 Site 06   NLD_06_72             5 VIS      Visit 5    2023-09-06 RS     
-      5 Site 04   BEL_04_772            5 VIS      Visit 5    2023-08-30 RS     
-      6 Site 04   BEL_04_772            5 VIS      Visit 5    2023-08-30 RS     
-      # i 17 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <chr>, item_type <chr>,
-      #   item_group <chr>, item_value <chr>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <chr>, reason_notdone <chr>
+        site_code subject_id event_id event_date event_repeat form_id form_repeat
+        <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+      1 BEL04     BEL_04_133 VIS      2023-08-30            5 RS                1
+      2 BEL04     BEL_04_133 VIS      2023-08-30            5 RS                1
+      3 BEL04     BEL_04_772 VIS      2023-08-30            5 RS                1
+      4 BEL04     BEL_04_772 VIS      2023-08-30            5 RS                1
+      5 NLD06     NLD_06_72  VIS      2023-09-06            5 RS                1
+      6 NLD06     NLD_06_72  VIS      2023-09-06            5 RS                1
+      # i 17 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <chr>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <chr>, significance <chr>,
+      #   reason_notdone <chr>, region <chr>
       
       $`Vital signs`
       # A tibble: 478 x 27
-         site_code subject_id event_repeat event_id event_name event_date form_id
-         <chr>     <chr>             <int> <chr>    <chr>      <date>     <chr>  
-       1 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       2 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       3 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       4 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       5 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       6 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       7 Site 08   BEL_08_885            1 SCR      Screening  2023-06-05 VS     
-       8 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 VS     
-       9 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 VS     
-      10 Site 08   BEL_08_885            1 VIS      Visit 1    2023-08-09 VS     
+         site_code subject_id event_id event_date event_repeat form_id form_repeat
+         <chr>     <chr>      <chr>    <date>            <int> <chr>         <int>
+       1 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       2 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       3 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       4 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       5 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       6 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       7 BEL04     BEL_04_133 SCR      2023-06-05            1 VS                1
+       8 BEL04     BEL_04_133 VIS      2023-07-05            1 VS                2
+       9 BEL04     BEL_04_133 VIS      2023-07-05            1 VS                2
+      10 BEL04     BEL_04_133 VIS      2023-07-05            1 VS                2
       # i 468 more rows
-      # i 20 more variables: form_repeat <int>, edit_date_time <dttm>,
-      #   db_update_time <dttm>, region <chr>, day <drtn>, vis_day <dbl>,
-      #   vis_num <dbl>, event_label <chr>, item_name <fct>, item_type <chr>,
-      #   item_group <chr>, item_value <dbl>, item_unit <chr>, lower_lim <dbl>,
-      #   upper_lim <dbl>, significance <fct>, reason_notdone <chr>,
-      #   value_scaled <dbl>, out_of_lim <fct>, text_label <chr>
+      # i 20 more variables: edit_date_time <dttm>, day <drtn>, vis_day <dbl>,
+      #   vis_num <dbl>, event_name <chr>, event_label <chr>, form_type <chr>,
+      #   item_name <fct>, item_type <chr>, item_group <chr>, item_unit <chr>,
+      #   lower_lim <dbl>, upper_lim <dbl>, item_value <dbl>, significance <fct>,
+      #   reason_notdone <chr>, region <chr>, value_scaled <dbl>, out_of_lim <fct>,
+      #   text_label <chr>
       
 

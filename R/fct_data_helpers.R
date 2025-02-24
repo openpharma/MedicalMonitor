@@ -29,6 +29,17 @@ get_metadata <- function(
   meta <- lapply(sheets, function(x){
     readxl::read_excel(filepath, sheet = x, col_types = "text")
   })
+  
+  meta$settings <- meta$settings |> 
+    lapply(\(x) as.character(na.omit(x))) |> 
+    Filter(f = length)
+  
+  meta$settings$treatment_label <- meta$settings$treatment_label %||% "\U1F48A T\U2093" |> 
+    # So that raw Unicode will be converted correctly:
+    sprintf(fmt = '"%s"') |>
+    str2expression() |>
+    as.character()
+  
   if(length(expand_tab_items[nchar(expand_tab_items) > 0 ] ) == 0) return(meta)
   if("items_expanded" %in% names(meta)) warning({
     "Table 'items_expanded' already present. The old table will be overwritten."
@@ -45,7 +56,7 @@ get_metadata <- function(
   }
   
   meta$items_expanded <- meta[expand_tab_items] |> 
-    dplyr::bind_rows() |> 
+    dplyr::bind_rows(.id = "form_type") |> 
     expand_columns(
       columns = expand_cols,
       separator = ",",
@@ -146,23 +157,23 @@ add_timevars_to_data <- function(
     dplyr::mutate(
       edit_date_time = as.POSIXct(edit_date_time, tz = "UTC"),
       event_date = as.Date(event_date),
-      day = event_date - min(event_date, na.rm = TRUE), 
-      vis_day = ifelse(event_id %in% c("SCR", "VIS", "VISEXT", "VISVAR", "FU1", "FU2"), day, NA),
+      day = day %|_|% {event_date - min(event_date, na.rm = TRUE)}, 
+      vis_day = ifelse(grepl("^SCR|^VIS|^FU", event_id, ignore.case = TRUE), day, NA),
       vis_num = as.numeric(factor(vis_day))-1,
-      event_name = dplyr::case_when(
-        event_id == "SCR"    ~ "Screening",
-        event_id %in% c("VIS", "VISEXT", "VISVAR")    ~ paste0("Visit ", vis_num),
-        grepl("^FU[[:digit:]]+", event_id)  ~ paste0("Visit ", vis_num, "(FU)"),
-        event_id == "UN"     ~ paste0("Unscheduled visit ", event_repeat),
-        event_id == "EOT"    ~ "EoT",
-        event_id == "EXIT"   ~ "Exit",
-        form_id %in% c("AE", "CM", "CP", "MH", "MH", "MHTR", "PR", "ST", "CMTR", "CMHMA") ~ "Any visit",
-        TRUE                ~ paste0("Other (", event_name, ")")
+      event_name = event_name %|_|% dplyr::case_when(
+        grepl("^SCR", event_id, ignore.case = TRUE) ~ "Screening",
+        grepl("^VIS", event_id, ignore.case = TRUE) ~ paste0("Visit ", vis_num),
+        grepl("^FU[[:digit:]]+", event_id, ignore.case = TRUE) ~ paste0("Visit ", vis_num, "(FU)"),
+        grepl("^UN", event_id, ignore.case = TRUE) ~ paste0("Unscheduled visit ", event_repeat),
+        toupper(event_id) == "EOT"    ~ "EoT",
+        toupper(event_id) == "EXIT"   ~ "Exit",
+        grepl("^AE|^CM|^CP|^MH|^PR|^ST", form_id) ~ "Any visit",
+        .default = paste0("Other (", event_id, ")")
       ),
-      event_label = dplyr::case_when(
+      event_label = event_label %|_|% dplyr::case_when(
         !is.na(vis_num)   ~ paste0("V", vis_num),
-        event_id == "UN"   ~ paste0("UV", event_repeat),
-        TRUE              ~ event_name
+        grepl("^UN", event_id, ignore.case = TRUE)   ~ paste0("UV", event_repeat),
+        .default = event_name
       ),
       .by = subject_id
     ) |> 
@@ -170,7 +181,7 @@ add_timevars_to_data <- function(
       factor(site_code, levels = order_string(site_code)),
       factor(subject_id, levels = order_string(subject_id))
     )
-  if(any(grepl("^Other ", df$event_name))) warning(
+  if(any(is.na(df$event_name) | grepl("^Other ", df$event_name))) warning(
     "Undefined Events detected. Please verify data before proceeding."
   )
   df
@@ -509,9 +520,8 @@ add_missing_columns <- function(
 #' @param rename_vars An optional named character vector. If provided, it will
 #'   rename any column names found in this vector to the provided name.
 #' @param title Optional. Character string with the title of the table.
-#' @param selection See [DT::datatable()]. Default set to 'single'. 
+#' @param selection See [DT::datatable()]. Default set to 'single'.
 #' @param extensions See [DT::datatable()]. Default set to 'Scroller'.
-#' @param plugins See [DT::datatable()]. Default set to 'scrollResize'.
 #' @param dom See \url{https://datatables.net/reference/option/dom}. A div
 #'   element will be inserted before the table for the table title. Default set
 #'   to 'fti' resulting in 'f<"header h5">ti'.
@@ -523,9 +533,16 @@ add_missing_columns <- function(
 #'     * `deferREnder = TRUE`
 #'     * `scrollResize = TRUE`
 #'     * `scrollCollapse = TRUE`
+#'     * `colReorder = TRUE`
 #'   * Non-modifiable defaults:
 #'     * `dom`: Defined by the `dom` parameter.
 #'     * `initComplete`: Defaults to a function to insert table title into dataTable container.
+#' @param allow_listing_download Logical, whether to allow the user to download
+#'   the table as an Excel file. Defaults to the `allow_listing_download`
+#'   configuration option in `golem-config.yml`, but can be overwritten here if
+#'   needed.
+#' @param export_label Character string with the table export label. Only used
+#'   for downloadable tables (if `allow_listing_download` is `TRUE`).
 #' @param ... Other optional arguments that will be passed to [DT::datatable()].
 #'
 #' @return A `DT::datatable` object.
@@ -537,28 +554,39 @@ datatable_custom <- function(
     rename_vars = NULL, 
     title = NULL, 
     selection = "single",
-    extensions = "Scroller",
-    plugins = "scrollResize",
+    extensions = c("Scroller", "ColReorder"),
     dom = "fti",
     options = list(),
+    allow_listing_download = NULL,
+    export_label = NULL,
     ...
     ){
   stopifnot(is.data.frame(data))
+  colnames <- names(data)
   if(!is.null(rename_vars)){
     stopifnot(is.character(rename_vars))
-    data <- dplyr::rename(data, dplyr::any_of(rename_vars))
+    colnames <- dplyr::rename(data[0,], dplyr::any_of(rename_vars)) |> 
+      names()
   }
   stopifnot(is.null(title) | is.character(title))
   stopifnot(grepl("t", dom, fixed = TRUE))
   stopifnot(is.list(options))
+  allow_listing_download <- allow_listing_download %||% 
+    get_golem_config("allow_listing_download")
+  stopifnot(is.null(allow_listing_download) | is.logical(allow_listing_download))
+  stopifnot(is.null(export_label) | is.character(export_label))
   
   default_opts <- list(
     scrollY = 400,
     scrollX = TRUE,
     scroller = TRUE,
     deferRender = TRUE,
-    scrollResize = TRUE,
-    scrollCollapse = TRUE
+    scrollCollapse = TRUE,
+    colReorder = list(
+      enable = TRUE,
+      realtime = FALSE,
+      fixedColumnsLeft = 1
+    )
   )
   fixed_opts <- list(
     initComplete = DT::JS(
@@ -572,6 +600,20 @@ datatable_custom <- function(
       ),
     dom = gsub(pattern = "(t)", replacement = '<"header h5">\\1', dom)
   )
+  
+  # This will conditionally add a download button to the table
+  if(nrow(data) > 0 & isTRUE(allow_listing_download)) {
+    export_label <- export_label %||% "_label.missing_"
+    extensions <- c("Buttons", extensions)
+    fixed_opts[["buttons"]] <- list(list(
+      extend = 'excel',
+      text = '<i class="fa-solid fa-download"></i>',
+      filename = paste("clinsight", export_label, sep = "."),
+      title = paste0(export_label, " | extracted from ClinSight")
+    ))
+    fixed_opts[["dom"]] <- paste0('B', fixed_opts[["dom"]])
+  }
+  
   opts <- default_opts |>
     modifyList(options) |>
     modifyList(fixed_opts)
@@ -581,7 +623,7 @@ datatable_custom <- function(
     selection = selection,
     options = opts,
     extensions = extensions,
-    plugins = plugins,
+    colnames = colnames,
     ...
   ) 
 }

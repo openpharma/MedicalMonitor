@@ -49,31 +49,31 @@
       # A tibble: 25 x 23
          subject_id Age   Sex    ECOG  Eligible Eligible_Date WHO.classification
          <chr>      <chr> <chr>  <chr> <chr>    <chr>         <chr>             
-       1 BEL_08_885 82    Male   1     Yes      2023-07-05    Syndrome S        
-       2 BEL_09_464 44    Male   2     Yes      2023-08-14    Syndrome F        
-       3 BEL_07_431 42    Male   1     <NA>     <NA>          <NA>              
-       4 BEL_09_361 38    Male   0     Yes      2023-07-05    Syndrome G        
-       5 DEU_02_968 25    Female 1     Yes      <NA>          Syndrome P        
-       6 NLD_06_755 65    Male   1     Yes      2023-07-07    Syndrome W        
-       7 NLD_05_282 82    Female <NA>  Yes      <NA>          <NA>              
-       8 BEL_09_556 93    Male   <NA>  <NA>     <NA>          <NA>              
-       9 DEU_02_866 31    Male   1     Yes      2023-08-08    Syndrome C        
-      10 BEL_07_497 50    Female <NA>  Yes      <NA>          <NA>              
-      11 BEL_07_193 26    Female 1     Yes      2023-08-23    Syndrome D        
-      12 DEU_01_541 74    Male   1     Yes      2023-08-30    Syndrome Y        
-      13 NLD_05_561 38    Female 1     Yes      2023-08-28    Syndrome M        
+       1 BEL_04_133 88    Male   1     Yes      2023-07-06    Syndrome K        
+       2 BEL_04_772 78    Male   0     Yes      2023-08-17    Syndrome O        
+       3 BEL_07_193 26    Female 1     Yes      2023-08-23    Syndrome D        
+       4 BEL_07_431 42    Male   1     <NA>     <NA>          <NA>              
+       5 BEL_07_497 50    Female <NA>  Yes      <NA>          <NA>              
+       6 BEL_07_645 46    Male   1     Yes      2023-06-07    Syndrome J        
+       7 BEL_08_45  64    Male   2     Yes      <NA>          Syndrome V        
+       8 BEL_08_736 45    Female 0     Yes      2023-08-17    Syndrome A        
+       9 BEL_08_885 82    Male   1     Yes      2023-07-05    Syndrome S        
+      10 BEL_09_361 38    Male   0     Yes      2023-07-05    Syndrome G        
+      11 BEL_09_464 44    Male   2     Yes      2023-08-14    Syndrome F        
+      12 BEL_09_556 93    Male   <NA>  <NA>     <NA>          <NA>              
+      13 DEU_01_541 74    Male   1     Yes      2023-08-30    Syndrome Y        
       14 DEU_01_977 59    Female 1     Yes      2023-08-09    Syndrome I        
-      15 NLD_06_893 41    Male   0     Yes      2023-09-13    Syndrome R        
-      16 BEL_04_133 88    Male   1     Yes      2023-07-06    Syndrome K        
-      17 NLD_06_72  82    Female 1     Yes      2023-07-18    Syndrome Z        
-      18 NLD_06_959 94    Male   1     Yes      <NA>          Syndrome X        
-      19 DEU_02_482 40    Male   1     Yes      2023-07-04    Syndrome T        
-      20 DEU_02_387 92    Female 0     Yes      2023-08-02    Syndrome Q        
-      21 NLD_03_207 68    Male   1     Yes      2023-07-12    Syndrome E        
-      22 BEL_08_45  64    Male   2     Yes      <NA>          Syndrome V        
-      23 BEL_04_772 78    Male   0     Yes      2023-08-17    Syndrome O        
-      24 BEL_08_736 45    Female 0     Yes      2023-08-17    Syndrome A        
-      25 BEL_07_645 46    Male   1     Yes      2023-06-07    Syndrome J        
+      15 DEU_02_387 92    Female 0     Yes      2023-08-02    Syndrome Q        
+      16 DEU_02_482 40    Male   1     Yes      2023-07-04    Syndrome T        
+      17 DEU_02_866 31    Male   1     Yes      2023-08-08    Syndrome C        
+      18 DEU_02_968 25    Female 1     Yes      <NA>          Syndrome P        
+      19 NLD_03_207 68    Male   1     Yes      2023-07-12    Syndrome E        
+      20 NLD_05_282 82    Female <NA>  Yes      <NA>          <NA>              
+      21 NLD_05_561 38    Female 1     Yes      2023-08-28    Syndrome M        
+      22 NLD_06_72  82    Female 1     Yes      2023-07-18    Syndrome Z        
+      23 NLD_06_755 65    Male   1     Yes      2023-07-07    Syndrome W        
+      24 NLD_06_893 41    Male   0     Yes      2023-09-13    Syndrome R        
+      25 NLD_06_959 94    Male   1     Yes      <NA>          Syndrome X        
       # i 16 more variables: WHO.subclassification <chr>, Race <chr>,
       #   ChildbearingPotential <chr>, MenopauseReason <chr>,
       #   DiscontinuationDate <chr>, DiscontinuationReason <chr>,
@@ -104,8 +104,8 @@
       12 NLD_06_755          22 Stroke  None  2023-08-22   2023-08-24 Grade 4         
       13 NLD_06_755          22 Stroke  None  2023-08-24   2023-08-24 Grade 5         
       14 BEL_09_361           1 Lower ~ None  2023-06-08   2023-06-08 Grade 2         
-      15 DEU_02_387           1 Nausea  None  2023-07-07   2023-07-20 Grade 3         
-      16 BEL_04_772           1 Hypote~ None  2023-07-07   <NA>       Grade 1         
+      15 BEL_04_772           1 Hypote~ None  2023-07-07   <NA>       Grade 1         
+      16 DEU_02_387           1 Nausea  None  2023-07-07   2023-07-20 Grade 3         
       17 NLD_06_755           1 Allerg~ None  2023-07-08   2023-07-18 Grade 3         
       18 NLD_05_561           1 Joint ~ None  2023-08-06   2023-08-17 Grade 3         
       19 DEU_02_866           1 Urinar~ None  2023-08-11   <NA>       Grade 1         
@@ -134,19 +134,19 @@
        2 DEU_01_541           2 Oxyc~ Infection  500 ~ 2023-NK-NK   Yes     <NA>      
        3 BEL_07_645           6 Lisi~ Nausea     5 Mi~ 2023-09-13   Yes     <NA>      
        4 BEL_07_645           7 Lisi~ Insomnia   20 M~ 2023-09-13   Yes     <NA>      
-       5 DEU_02_866          10 Acet~ Adverse e~ 500 ~ 2023-08-30   Yes     <NA>      
-       6 BEL_07_193           9 Hydr~ Adverse e~ 100 ~ 2023-08-30   Yes     <NA>      
-       7 BEL_07_193          10 Hydr~ Adverse e~ 8751~ 2023-08-30   Yes     <NA>      
-       8 DEU_01_541           3 Pant~ Prophylax~ NA N~ 2023-08-30   Yes     <NA>      
+       5 BEL_07_193           9 Hydr~ Adverse e~ 100 ~ 2023-08-30   Yes     <NA>      
+       6 BEL_07_193          10 Hydr~ Adverse e~ 8751~ 2023-08-30   Yes     <NA>      
+       7 DEU_01_541           3 Pant~ Prophylax~ NA N~ 2023-08-30   Yes     <NA>      
+       8 DEU_02_866          10 Acet~ Adverse e~ 500 ~ 2023-08-30   Yes     <NA>      
        9 BEL_04_772          15 Pant~ Pain       NA N~ 2023-08-23   Yes     <NA>      
       10 NLD_06_755          33 Para~ Nausea     10 M~ 2023-08-22   Yes     <NA>      
       11 NLD_06_755          34 Meto~ Hypertens~ 20 M~ 2023-08-22   Yes     <NA>      
       12 BEL_04_772          14 Hydr~ Adverse e~ 500 ~ 2023-08-16   Yes     <NA>      
       13 BEL_09_556           1 Pant~ Infection  70 M~ 2023-08-15   Yes     <NA>      
       14 BEL_09_556           2 Lora~ Insomnia   4500~ 2023-08-15   Yes     <NA>      
-      15 NLD_06_755          28 Melo~ Prophylax~ 1000~ 2023-08-08   Yes     <NA>      
-      16 BEL_08_736           4 Acet~ Infection  5 Mi~ 2023-08-08   Yes     <NA>      
-      17 BEL_08_736           5 Meto~ Prophylax~ 20 M~ 2023-08-08   Yes     <NA>      
+      15 BEL_08_736           4 Acet~ Infection  5 Mi~ 2023-08-08   Yes     <NA>      
+      16 BEL_08_736           5 Meto~ Prophylax~ 20 M~ 2023-08-08   Yes     <NA>      
+      17 NLD_06_755          28 Melo~ Prophylax~ 1000~ 2023-08-08   Yes     <NA>      
       18 NLD_06_755           9 Pant~ Adverse e~ 2 Gr~ 2023-08-01   Yes     <NA>      
       19 DEU_02_482          15 Melo~ Infection  NA M~ 2023-07-31   Yes     <NA>      
       20 BEL_09_464           8 Acet~ Pain       1 Mi~ 2023-07-28   Yes     <NA>      
@@ -166,31 +166,31 @@
       # A tibble: 152 x 8
          subject_id form_repeat Name         `Start Date` Ongoing `End Date` Treatment
          <chr>            <int> <chr>        <chr>        <chr>   <chr>      <chr>    
-       1 BEL_08_885           1 Epilepsy     2008-01-01   Yes     <NA>       Medicati~
-       2 BEL_09_464           1 Atrial Fibr~ 1990-01-01   No      1990-01-01 Surgery  
-       3 BEL_09_464           2 Hypothyroid~ 2017-11-01   No      2018-11-01 Medicati~
-       4 BEL_09_464           3 Arhtritis    2010-01-01   No      2010-01-01 Surgery  
-       5 BEL_09_464           4 Chronic Hep~ 2010-01-01   No      2010-01-01 Surgery  
-       6 BEL_09_464           5 Familial Me~ 1990-01-01   Yes     <NA>       Medicati~
-       7 BEL_09_464           6 Migraine     2007-01-01   Yes     <NA>       Medicati~
-       8 BEL_09_464           7 Atrial Fibr~ 2013-01-01   Yes     <NA>       Medicati~
-       9 BEL_09_361           1 Hypertension 2021-02-NK   Yes     <NA>       Medicati~
-      10 BEL_09_361           2 Diabetes Me~ 2023-06-NK   Yes     <NA>       Medicati~
-      11 BEL_09_361           3 Copd         2003-NK-NK   Yes     <NA>       Medicati~
-      12 BEL_09_361           4 Copd         2020-NK-NK   Yes     <NA>       Medicati~
-      13 DEU_02_968           1 Hypertension <NA>         <NA>    <NA>       <NA>     
-      14 NLD_06_755           1 Familial Me~ 2023-03-15   Yes     <NA>       Non-drug~
-      15 NLD_06_755           2 Chronic Hep~ 2023-03-08   Yes     <NA>       Non-drug~
-      16 NLD_06_755           3 Familial Me~ 2023-06-28   No      2023-07-05 No treat~
-      17 NLD_06_755           4 Hypertension 2023-05-19   Yes     <NA>       No treat~
-      18 NLD_06_755           5 Diabetes Me~ 2023-05-19   Yes     <NA>       Surgery  
-      19 NLD_06_755           6 Migraine     2023-05-19   Yes     <NA>       No treat~
-      20 NLD_06_755           7 Malaria      2015-07-10   No      2015-11-24 Non-drug~
-      21 NLD_06_755           8 Malaria      2022-09-12   Yes     <NA>       Medicati~
-      22 NLD_06_755           9 Osteoporosis 2015-NK-NK   Yes     <NA>       No treat~
-      23 NLD_06_755          10 Malaria      2023-03-08   Yes     <NA>       No treat~
-      24 DEU_02_866           1 Epilepsy     2021-01-NK   Yes     <NA>       Medicati~
-      25 DEU_02_866           2 Copd         2020-09-NK   Yes     <NA>       Medicati~
+       1 BEL_04_133           1 Epilepsy     <NA>         Yes     <NA>       Medicati~
+       2 BEL_04_772           1 Hypertension 2020-NK-NK   Yes     <NA>       Medicati~
+       3 BEL_04_772           2 Copd         1995-NK-NK   Yes     <NA>       Medicati~
+       4 BEL_04_772           3 Osteoporosis 2005-NK-NK   Yes     <NA>       Medicati~
+       5 BEL_04_772           4 Congestive ~ 2020-NK-NK   Yes     <NA>       Medicati~
+       6 BEL_04_772           5 Osteoporosis 2014-NK-NK   No      2014-NK-NK Surgery  
+       7 BEL_04_772           6 Copd         2020-NK-NK   Yes     <NA>       Medicati~
+       8 BEL_04_772           7 Hypertension 2015-NK-NK   Yes     <NA>       Medicati~
+       9 BEL_04_772           8 Epilepsy     2023-01-NK   Yes     <NA>       Medicati~
+      10 BEL_04_772           9 Arhtritis    2023-06-28   Yes     <NA>       No treat~
+      11 BEL_07_193           1 Malaria      2023-05-12   Yes     <NA>       No treat~
+      12 BEL_07_193           2 Familial Me~ 2023-06-02   Yes     <NA>       No treat~
+      13 BEL_07_193           3 Hypothyroid~ 2021-01-04   Yes     <NA>       Non-drug~
+      14 BEL_07_193           4 Osteoporosis 2022-09-23   Yes     <NA>       Non-drug~
+      15 BEL_07_193           5 Diabetes Me~ 2022-09-NK   Yes     <NA>       Medicati~
+      16 BEL_07_193           6 Migraine     2022-09-30   Yes     <NA>       Medicati~
+      17 BEL_07_193           7 Diabetes Me~ 2019-09-NK   Yes     <NA>       Medicati~
+      18 BEL_07_193           8 Hypertension 2015-05-NK   Yes     <NA>       Medicati~
+      19 BEL_07_193           9 Copd         2019-09-NK   Yes     <NA>       Medicati~
+      20 BEL_07_193          10 Congestive ~ 2019-09-NK   Yes     <NA>       No treat~
+      21 BEL_07_193          11 Atrial Fibr~ 2023-08-25   Yes     <NA>       Medicati~
+      22 BEL_07_645           1 Sickle Cell~ 2019-NK-NK   No      2019-NK-NK Medicati~
+      23 BEL_08_45            1 Malaria      <NA>         Yes     <NA>       Medicati~
+      24 BEL_08_45            2 Arhtritis    <NA>         Yes     <NA>       Medicati~
+      25 BEL_08_45            3 Hypothyroid~ 2023-06-NK   <NA>    <NA>       <NA>     
       # i 127 more rows
       # i 1 more variable: Comment <chr>
 
@@ -202,10 +202,10 @@
       # A tibble: 4 x 9
         subject_id form_repeat Name         Indication `Start Date` Ongoing `End Date`
         <chr>            <int> <chr>        <chr>      <chr>        <chr>   <chr>     
-      1 NLD_06_755           1 Amputation   Infection  2023-08-04   Yes     <NA>      
-      2 DEU_02_866           1 Thrombolysis Hypertens~ 2023-08-18   No      2023-08-18
-      3 BEL_07_645           1 Appendectomy Prophylax~ 2019-NK-NK   No      2019-NK-NK
-      4 BEL_07_645           2 Amputation   Pain       2019-NK-NK   No      2019-NK-NK
+      1 BEL_07_645           1 Appendectomy Prophylax~ 2019-NK-NK   No      2019-NK-NK
+      2 BEL_07_645           2 Amputation   Pain       2019-NK-NK   No      2019-NK-NK
+      3 DEU_02_866           1 Thrombolysis Hypertens~ 2023-08-18   No      2023-08-18
+      4 NLD_06_755           1 Amputation   Infection  2023-08-04   Yes     <NA>      
       # i 2 more variables: `Related Medical History` <chr>, `Related AE` <chr>
 
 # create_table.bm_cytology() works: creates expected table
@@ -219,4 +219,41 @@
       1 885        Screening             1 2023-08-07 91                  
       # i 3 more variables: `BM smear assessment` <chr>, `Auer Rods` <chr>,
       #   `Ringed Sideroblasts` <chr>
+
+# create_table.common_forms: creates expected medical history table
+
+    Code
+      print(create_table(df, expected_columns = expected_cols), n = 25)
+    Output
+      # A tibble: 152 x 9
+         subject_id form_repeat `MH Number` `MH Name`     `MH Start Date` `MH Ongoing`
+         <chr>            <int> <chr>       <chr>         <chr>           <chr>       
+       1 BEL_04_133           1 1           Epilepsy      <NA>            Yes         
+       2 BEL_04_772           1 1           Hypertension  2020-NK-NK      Yes         
+       3 BEL_04_772           2 2           COPD          1995-NK-NK      Yes         
+       4 BEL_04_772           3 3           Osteoporosis  2005-NK-NK      Yes         
+       5 BEL_04_772           4 4           Congestive h~ 2020-NK-NK      Yes         
+       6 BEL_04_772           5 5           Osteoporosis  2014-NK-NK      No          
+       7 BEL_04_772           6 6           COPD          2020-NK-NK      Yes         
+       8 BEL_04_772           7 7           Hypertension  2015-NK-NK      Yes         
+       9 BEL_04_772           8 8           Epilepsy      2023-01-NK      Yes         
+      10 BEL_04_772           9 9           Arhtritis     2023-06-28      Yes         
+      11 BEL_07_193           1 1           Malaria       2023-05-12      Yes         
+      12 BEL_07_193           2 2           Familial Med~ 2023-06-02      Yes         
+      13 BEL_07_193           3 3           Hypothyroidi~ 2021-01-04      Yes         
+      14 BEL_07_193           4 4           Osteoporosis  2022-09-23      Yes         
+      15 BEL_07_193           5 5           Diabetes mel~ 2022-09-NK      Yes         
+      16 BEL_07_193           6 6           Migraine      2022-09-30      Yes         
+      17 BEL_07_193           7 7           Diabetes mel~ 2019-09-NK      Yes         
+      18 BEL_07_193           8 8           Hypertension  2015-05-NK      Yes         
+      19 BEL_07_193           9 9           COPD          2019-09-NK      Yes         
+      20 BEL_07_193          10 10          Congestive h~ 2019-09-NK      Yes         
+      21 BEL_07_193          11 11          Atrial fibri~ 2023-08-25      Yes         
+      22 BEL_07_645           1 1           Sickle cell ~ 2019-NK-NK      No          
+      23 BEL_08_45            1 1           Malaria       <NA>            Yes         
+      24 BEL_08_45            2 2           Arhtritis     <NA>            Yes         
+      25 BEL_08_45            3 3           Hypothyroidi~ 2023-06-NK      <NA>        
+      # i 127 more rows
+      # i 3 more variables: `MH End Date` <chr>, `MH Treatment` <chr>,
+      #   `MH Comment` <chr>
 

@@ -109,7 +109,18 @@ utils::globalVariables(
     "unit", 
     "vars", 
     "vis_day",
-    "event_id"
+    "event_id",
+    "region",
+    "suffix_names",
+    "form_type",
+    "id",
+    "o_reviewed",
+    "row_id",
+    "start",
+    "end",
+    "className",
+    "DrugAdminDate",
+    "DrugAdminDose"
   )
 )
 

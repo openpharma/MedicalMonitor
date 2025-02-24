@@ -44,3 +44,36 @@ test_that("%|NA|% works", {
   )
 })
 
+test_that("%|_|% works", {
+  expect_equal(
+    mtcarrs %|_|% iris,
+    iris
+  )
+  test_wrn <- capture_output_lines(
+    test_out <- mtcars %|_|% iris
+  )
+  expect_equal(
+    test_wrn,
+    'Using user supplied "mtcars" instead of deriving.'
+  )
+  expect_equal(
+    test_out,
+    mtcars
+  )
+  test_wrn <- capture_output_lines(
+    test_out <- dplyr::mutate(mtcars, test = mpg %|_|% "RHS")
+  )
+  expect_equal(
+    test_wrn,
+    'Using user supplied "mpg" instead of deriving.'
+  )
+  expect_equal(
+    test_out,
+    cbind(mtcars, list(test = mtcars$mpg))
+  )
+  expect_equal(
+    dplyr::mutate(mtcars, test = mpg2 %|_|% "RHS"),
+    cbind(mtcars, list(test = "RHS"))
+  )
+})
+

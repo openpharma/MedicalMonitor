@@ -67,6 +67,8 @@ run_app <- function(
     warning("No user database found. New database will be created")
     db_create(get_review_data(data), db_path = user_db)
   } else{
+    stopifnot("user_db version is not up to date" =
+                identical(db_version, db_get_version(user_db)))
     # Skip if not needed for faster testing:
     if(isTRUE(get_golem_config("app_prod"))){
       db_update(get_review_data(data), db_path = user_db) 

@@ -42,7 +42,9 @@ mod_queries_ui <- function(id){
           ), 
           full_screen = TRUE
         ),
-        mod_query_follow_up_ui(ns("query_follow_up_1"))
+        if (isTRUE(get_golem_config("allow_query_inputs"))) {
+          mod_query_follow_up_ui(ns("query_follow_up_1"))
+        }
       )
     )
   )
@@ -98,8 +100,11 @@ mod_queries_server <- function(id, r, navinfo, all_forms, db_path, table_names){
         dplyr::mutate(reviewer = paste0(reviewer, " ", timestamp))
     })
     
-    mod_query_follow_up_server("query_follow_up_1",  r = r, 
-                               selected_query = selected_query, db_path = db_path)
+    if (isTRUE(get_golem_config("allow_query_inputs"))) {
+      mod_query_follow_up_server("query_follow_up_1",  r = r, 
+                                 selected_query = selected_query, 
+                                 db_path = db_path)
+    }
     
     initial_queries <- reactive({
       df <- with(r$query_data, r$query_data[n == 1, ] )
@@ -144,10 +149,17 @@ mod_queries_server <- function(id, r, navinfo, all_forms, db_path, table_names){
         query_cols <- c("resolved", query_cols)
         table_title <- "All queries"
       }
+      
+      # determine DT dom / exts / opts
+      
+              
       datatable_custom(
         initial_queries()[query_cols], 
         table_names, 
-        title = table_title
+        title = table_title,
+        callback = dblclick_to_form(ns("go_to_form")),
+        export_label = paste(ifelse(input$show_resolved, "all", "open"),
+                           "queries", sep = ".")
       )
     })
     
@@ -172,10 +184,14 @@ mod_queries_server <- function(id, r, navinfo, all_forms, db_path, table_names){
         selected_query_data()[c("query", "reviewer")], 
         rename_vars = table_names,
         dom = 't',
-        options = list(scroller = FALSE),
+        options = list(
+          scroller = FALSE,
+          pageLength = -1
+        ),
         class = "row-border hover",
         rownames = FALSE,
-        selection = "none"
+        selection = "none",
+        allow_listing_download = FALSE
       )
     })
   })

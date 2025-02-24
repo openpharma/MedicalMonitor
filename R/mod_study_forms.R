@@ -22,7 +22,7 @@ mod_study_forms_ui <- function(id, form, form_items){
         conditionalPanel(
           condition = "input.switch_view === 'table'",
           ns = NS(id),
-          DT::dataTableOutput(ns("table"), width = "auto")
+          mod_review_form_tbl_ui(ns("review_form_tbl"))
         ),
         sidebar = bslib::sidebar(
           position = "right", 
@@ -113,7 +113,8 @@ mod_study_forms_ui <- function(id, form, form_items){
 #'   column `item_group`), and the columns `item_scale` `use_unscaled_limits`,
 #'   which are used to customize the way the figures are shown in the page.
 #'
-#' @seealso [mod_study_forms_ui()]
+#' @seealso [mod_study_forms_ui()], [mod_review_form_tbl_ui()],
+#'   [mod_review_form_tbl_server()]
 #' 
 mod_study_forms_server <- function(
     id, 
@@ -162,12 +163,13 @@ mod_study_forms_server <- function(
         dplyr::mutate(item_name = factor(item_name, levels = names(form_items)))
     })
     
-    table_data_active <- reactive({
+    study_form_data <- reactive({
+      cat(form, "data computed \n")
       validate(need(
         r$filtered_data[[form]],
         paste0("Warning: no data found in database for the form '", form, "'")
       ))
-      df <- dplyr::left_join(
+      dplyr::left_join(
         r$filtered_data[[form]],
         with(r$review_data, r$review_data[item_group == form, ]) |> 
           dplyr::select(-dplyr::all_of(c("edit_date_time", "event_date"))), 
@@ -180,12 +182,18 @@ mod_study_forms_server <- function(
             htmltools::htmlEscape(item_value)
           )
         ) |> 
-        create_table(expected_columns = names(form_items))
-      req(nrow(df) != 0)
-      if(input$show_all) return(df) 
-      with(df, df[subject_id == r$subject_id, ]) |> 
-        dplyr::select(-dplyr::all_of("subject_id"))
+        create_table(expected_columns = names(form_items)) |> 
+        dplyr::mutate(o_reviewed = Map(\(x, y, z) append(x, list(
+          row_id = y, 
+          disabled = z,
+          updated = isolate(session$userData$update_checkboxes[[form]]))
+        ), 
+        o_reviewed, 
+        dplyr::row_number(),
+        subject_id != r$subject_id))
     })
+    
+    mod_review_form_tbl_server("review_form_tbl", r, study_form_data, form, reactive(input$show_all), table_names)
     
     scaling_data <- reactive({
       cols <- c("item_scale", "use_unscaled_limits")
@@ -221,14 +229,9 @@ mod_study_forms_server <- function(
       dynamic_figure()
     })
     
-    output[["table"]] <- DT::renderDT({
-      req(table_data_active())
-      datatable_custom(table_data_active(), table_names, escape = FALSE)
-    })
-    
     if(form %in% c("Vital signs", "Vitals adjusted")){
       shiny::exportTestValues(
-        table_data = table_data_active(),
+        table_data = subset(study_form_data(), input$show_all | subject_id == r$subject_id),
         fig_data = fig_data()
       )
     } 

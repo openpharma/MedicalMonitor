@@ -47,7 +47,7 @@ available_data <- get_available_data(appdata, apptables, all_forms = vars$all_fo
 create_legend <- function(
     legend_labels = c("within limits", 
                       "out of limits, clinically insignificant", 
-                      "out of limits, significance unknown", 
+                      "out of limits, significance pending", 
                       "out of limits, clinically significant", 
                       "limits unknown"),
     sizes = c("old", "new/updated"),
@@ -91,16 +91,16 @@ fig <- ggplot(df) +
     size=guide_legend(
       title = "Status", 
       override.aes = list(fill = "grey", size = c(2L,6L)), 
-      keyheight = 1.75
+      keyheight = 1.75, order = 1
       ),
     fill=guide_legend(
       title = "Limits", 
       override.aes = list(size = 6L), 
-      keyheight = 2.75
+      keyheight = 2.75, order = 0
       )
     )
 suppressWarnings(cowplot::ggdraw(cowplot::get_legend(fig)))
-ggsave("figure_legend.png")
+ggsave("figure_legend.png", width = 675, height = 1350, units = "px")
 ```
 
 ## Nastive Plotly graph

@@ -54,7 +54,8 @@ describe(
              "and [form_reviewed] set to FALSE, ",
              "I expect that I can save a new review properly, ",
              "with the result saved in the application being the same as ", 
-             "the one saved in the database."),
+             "the one saved in the database, ",
+             "and no review error occurring"),
       {
         temp_path <- withr::local_tempfile(fileext = ".sqlite")
         file.copy(test_path("fixtures", "review_testdb.sqlite"), temp_path) 
@@ -64,7 +65,7 @@ describe(
             user_name = "test_name",
             user_role = "Medical Monitor",
             subject_id = "885",
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           active_tab = reactiveVal("Common forms"),
@@ -77,6 +78,9 @@ describe(
         testServer(
           mod_review_forms_server, args = testargs, {
             ns <- session$ns
+            
+            session$userData$review_records <- reactiveValues()
+            session$userData$update_checkboxes <- reactiveValues()
             
             ## patient has two rows: AF and Cystitis. AF is already reviewed by someone else: 
             expect_equal(
@@ -93,23 +97,27 @@ describe(
               })
             )
             
+            session$setInputs(form_reviewed = FALSE) # Needs to be initialized to work
             session$setInputs(form_reviewed = TRUE, save_review = 1)
-            db_reviewdata <- db_temp_connect(db_path, {
-              dplyr::tbl(con, "all_review_data") |> 
-                dplyr::collect()
-            })
+            db_reviewdata <- db_get_table(db_path)
+            db_reviewlogdata <- db_get_table(db_path, "all_review_data_log")
             
-            expect_equal(r$review_data, db_slice_rows(db_path))
-            # it should have two rows for the item_name 'Cystitis' in the DB, 
-            # one with review= 'No' and the other with reviewed = "Yes"
+            expect_false(review_save_error())
+            # app data should be equal to DB data
+            expect_equal(r$review_data, db_reviewdata)
+            # review table should only have one row in the DB containing the new reviewed = "Yes"
+            # for the item 'Cystitis'
             expect_equal(
               with(db_reviewdata, reviewed[subject_id == "885" & item_name == "Cystitis"]), 
-              c("No", "Yes") 
+              "Yes"
               )
+            # log table should only have one row in the DB containing the old reviewed = "No"
+            r_id <- with(db_reviewdata, id[subject_id == "885" & item_name == "Cystitis"])
+            expect_equal(with(db_reviewlogdata, reviewed[review_id == r_id]), c("No") )
             expect_snapshot({
-              print(dplyr::select(r$review_data, -timestamp), width = Inf)
+              dplyr::select(r$review_data, -timestamp)
             })
-            Sys.sleep(1) # because the timestamp only records seconds, 
+            Sys.sleep(2) # because the timestamp only records seconds, 
             # we should add delay here to prevent that the exact same timestamp is 
             # created in the next step. The timestamp is needed for uniquely selecting the latest entry.
             # It would still work since it defaults to select the last row of the database, 
@@ -128,13 +136,30 @@ describe(
               )
             
             updated_rows_db <- db_get_review(
-              db_path, subject = "885", form = "Adverse events"
-              )
+              db_path, subject_id = "885", item_group = "Adverse events"
+            )
             
             expect_equal(updated_rows_db$comment, c("test review", "test review"))
             expect_equal(updated_rows_db$reviewed, c("No", "No"))
-            expect_equal(r$review_data, db_slice_rows(db_path))
-            expect_snapshot(print(dplyr::select(r$review_data, -timestamp), width = Inf))
+            
+            db_reviewdata <- db_temp_connect(db_path, {
+              dplyr::tbl(con, "all_review_data") |> 
+                dplyr::collect()
+            })
+            db_reviewlogdata <- db_temp_connect(db_path, {
+              dplyr::tbl(con, "all_review_data_log") |> 
+                dplyr::collect()
+            })
+            
+            expect_false(review_save_error())
+            expect_equal(with(db_reviewdata, comment[subject_id == "885"]), c("test review", "test review"))
+            expect_equal(with(db_reviewdata, reviewed[subject_id == "885"]), c("No", "No"))
+            r_id <- with(db_reviewdata, id[subject_id == "885"])
+            expect_equal(with(db_reviewlogdata, comment[review_id %in% r_id]), c("", "test comment", ""))
+            expect_equal(with(db_reviewlogdata, reviewed[review_id %in% r_id]), c("No", "Yes", "Yes"))
+            expect_equal(r$review_data, db_get_table(db_path))
+            expect_equal(r$review_data, db_reviewdata, ignore_attr = TRUE)
+            expect_snapshot(dplyr::select(r$review_data, -timestamp))
           })
       }
     )
@@ -162,13 +187,16 @@ describe(
           )
         }
         test_server <- function(input, output, session){
+          session$userData$review_records <- reactiveValues()
+          session$userData$update_checkboxes <- reactiveValues()
+          
           mod_review_forms_server(
             id = "test",
             r = reactiveValues(
               user_name = "test_name",
               user_role = "Medical Monitor",
               subject_id = "885",
-              review_data = db_slice_rows(temp_path)
+              review_data = db_get_table(temp_path)
             ),
             active_form = reactiveVal("Adverse events"),
             active_tab = reactiveVal("Common events"),
@@ -212,7 +240,7 @@ describe(
         expect_true(app$get_js("document.getElementById('test-review_comment').disabled;"))
         
         # review status and reviewer is saved as expected
-        saved_review_row <- db_get_review(temp_path, subject = "885", form = "Adverse events")
+        saved_review_row <- db_get_review(temp_path, subject_id = "885", item_group = "Adverse events")
         expect_equal(saved_review_row$status, c("old", "old"))
         expect_equal(saved_review_row$reviewer, c("Reviewer 1", "test_name (Medical Monitor)"))
       }
@@ -234,7 +262,7 @@ describe(
         and [active_form] set to 'Adverse events',
         and [active_tab] set to 'Common forms',
         and [form_reviewed] set to FALSE,
-        I expect that the data frame [active_review_data] contains one row with 
+        I expect that the data frame [active_review_data] contains two rows with 
         data of participant '885',
         and with the [item_group] set to 'Adverse events',
         and that a message will be displayed containing the text 'Requires review'", 
@@ -246,7 +274,7 @@ describe(
             user_name = "test_name",
             user_role = "Medical Monitor",
             subject_id = "885",
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           active_tab = reactiveVal("Common forms"),
@@ -261,16 +289,11 @@ describe(
           ns <- session$ns
           session$setInputs(form_reviewed = FALSE)
           expect_equal(
-            review_data_active(), 
-            dplyr::filter(
-              r$review_data, subject_id == "885", 
-              item_group == "Adverse events", 
-              edit_date_time == max(edit_date_time)
-              ) |>
-              dplyr::select(subject_id, item_group, edit_date_time, reviewed, comment, status)
+            review_data_active(),
+            dplyr::filter(r$review_data, subject_id == "885", item_group == "Adverse events")
           )
-          expect_equal(review_data_active()$item_group, "Adverse events")
-          expect_equal(nrow(review_data_active()), 1)
+          expect_equal(review_data_active()$item_group, c("Adverse events", "Adverse events"))
+          expect_equal(nrow(review_data_active()), 2)
           expect_error(output[["save_review_error"]], "Requires review")
         })
       }
@@ -292,7 +315,7 @@ describe(
             user_name = "test_name",
             user_role = "Medical Monitor",
             subject_id = "885",
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           active_tab = reactiveVal("Common forms"),
@@ -331,7 +354,7 @@ describe(
             user_name = "test_name",
             user_role = "Medical Monitor",
             subject_id = "885",
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           active_tab = reactiveVal("Common forms"),
@@ -346,16 +369,13 @@ describe(
             ns <- session$ns
             active_form("no_data_form")
             data_before_saving <- r$review_data
-            db_before_saving <- db_temp_connect(db_path, {
-              DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-            })
+            db_before_saving <- db_get_table(db_path)
+            
             session$setInputs(save_review = 1)
             expect_error(output[["save_review_error"]], "Nothing to review")
             expect_equal(r$review_data, data_before_saving)
-            db_after_saving <- db_temp_connect(db_path, {
-              DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-            })
-            expect_equal(db_after_saving, db_before_saving)
+            db_after_saving <- db_get_table(db_path)
+            expect_equal(db_after_saving, data_before_saving)
           })
       }
     )
@@ -394,7 +414,7 @@ describe(
               user_name = NULL,
               user_role = "Medical Monitor",
               subject_id = "885", 
-              review_data = db_slice_rows(temp_path)
+              review_data = db_get_table(temp_path)
             ),
             active_form = reactiveVal("Adverse events"),
             active_tab = reactiveVal("Common events"),
@@ -414,9 +434,7 @@ describe(
           height = 955
         )
         withr::defer(app$stop())
-        db_before_saving <- db_temp_connect(temp_path, {
-          DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-        })
+        db_before_saving <- db_get_table(temp_path)
         
         app$wait_for_idle(2500)
         app$click("test-form_reviewed")
@@ -425,10 +443,8 @@ describe(
         app$wait_for_idle()
         app$expect_values()
         
-        # review status and reviewer is unchanged as expected
-        db_after_saving <- db_temp_connect(temp_path, {
-          DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-        })
+        # review status and reviewer is saved as expected
+        db_after_saving <- db_get_table(temp_path)
         expect_equal(db_after_saving, db_before_saving)
       }
     )   
@@ -458,7 +474,7 @@ describe(
       {
         temp_path <- withr::local_tempfile(fileext = ".sqlite")
         file.copy(test_path("fixtures", "review_testdb.sqlite"), temp_path) 
-        rev_data <- db_slice_rows(temp_path)
+        rev_data <- db_get_table(temp_path)
         local_mocked_bindings(
           db_save_review = function(...) "no data saved in database"
         )
@@ -480,14 +496,15 @@ describe(
         testServer(
           mod_review_forms_server, args = testargs, {
             ns <- session$ns
-            db_before_saving <- db_temp_connect(db_path, {
-              DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-              })
-            session$setInputs(form_reviewed = TRUE, save_review = 1)
-            db_after_saving <- db_temp_connect(db_path, {
-              DBI::dbGetQuery(con, "SELECT * FROM all_review_data")
-            })
             
+            session$userData$review_records <- reactiveValues()
+            session$userData$update_checkboxes <- reactiveValues()
+            
+            session$setInputs(form_reviewed = NULL)
+            db_before_saving <- db_get_table(db_path)
+            session$setInputs(form_reviewed = TRUE, save_review = 1)
+            db_after_saving <- db_get_table(db_path)
+
             expect_true(review_save_error())
             expect_equal(r$review_data, rev_data)
             expect_equal(db_after_saving, db_before_saving)
@@ -527,7 +544,7 @@ describe(
               user_name = "test_name",
               user_role = "restricted_role",
               subject_id = "885",
-              review_data = db_slice_rows(temp_path)
+              review_data = db_get_table(temp_path)
             ),
             active_form = reactiveVal("Adverse events"),
             active_tab = reactiveVal("Common events"),

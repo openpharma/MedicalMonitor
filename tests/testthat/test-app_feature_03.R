@@ -46,8 +46,11 @@ describe(
         ####### snap feature-3-001
         app$expect_values(
           input = vector_select(input_names, exclude = "plotly_relayout"), 
-          output = vector_select(output_names, exclude = "visit_figure")
+          output = vector_select(
+            output_names, 
+            exclude = c("visit_figure", "sf_vital_signs-figure")
           )
+        )
         app$set_inputs(
           "main_sidebar_1-write_query-query_select_item" = "Weight",
           "main_sidebar_1-write_query-query_text" = "test query"
@@ -111,7 +114,7 @@ describe(
         # can be fragile to snapshot.
         input_names <- names(app$get_values(input = TRUE)$input)
         output_names <- names(app$get_values(output = TRUE)$output)
-        
+
         ####### snap feature-3-002
         app$expect_values(
           input = vector_select(
@@ -119,7 +122,13 @@ describe(
             exclude = c("plotly_relayout", "shinyjs-navigate_participants_1", 
                         "timeline_window", "timeline_data")
           ), 
-          output = vector_select(output_names, exclude = "visit_figure")
+          output = vector_select(
+            output_names, 
+            # this test is not about these figures. 
+            # Also, these are already captured in app-feature_01
+            exclude = c("visit_figure", "sf_vital_signs-figure",
+                        "timeline_fig-timeline")
+            )
         )
         app$click("main_sidebar_1-write_query-query_add_input")
         app$wait_for_idle()

@@ -1,7 +1,7 @@
 describe("rename_raw_data() renames raw study data and throws informative errors if needed.", {
   
   it("renames a data frame as expected", {
-    col_names <- metadata$column_names
+    col_names <- rbind(metadata$column_names, list("Placeholder", "pl"))
     testdata <- lapply(mtcars, as.character) |> as.data.frame()
     col_names$name_raw <- names(testdata)
     
@@ -11,7 +11,7 @@ describe("rename_raw_data() renames raw study data and throws informative errors
   })
   
   it("errors with incorrect input", {
-    col_names <- metadata$column_names
+    col_names <- rbind(metadata$column_names, list("Placeholder", "pl"))
     col_names$name_raw <- names(mtcars)
     expect_error(
       rename_raw_data(mtcars, column_names = "incorrect input"),

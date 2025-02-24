@@ -1,3 +1,13 @@
+:root {
+ --cs-completed: #91C483;
+ --cs-unmarking: #FF6464;
+ --cs-marking: #97b0f8;
+}
+
+.dataTables_wrapper .dt-buttons {
+  padding-left: 0.75em;
+  float: right;  
+}
 
 .bslib-value-box .value-box-area {
   padding: 0.1rem 0rem 0.1rem 1rem;
@@ -56,8 +66,88 @@
   left: 0;
   }
 
+.vis-item:is(.vis-box, .vis-range).vis-selected {
+  font-size: large;
+  height: auto;
+  color: black;
+  border-width: medium;
+}
+
+.vis-item:is(.vis-box, .vis-range) {
+  line-height: 0.8; 
+  border-radius: 6px !important;
+}
+
+:is(.vis-box, .vis-range).bg-secondary {
+  font-size: xx-small;
+  height: 0.75rem;
+  color: transparent;
+}
+
+.vis-item:is(.vis-box, .vis-range).vis-readonly:hover {
+  font-size: large;
+  color: black;
+  cursor: pointer;
+  height: auto;
+}
+
+
 div.datatables div.header {
   text-align: center;
   font-weight: bold;
 }
 
+tr:has(td input[type="checkbox"].checked:not(:checked))>td,
+  tr:has(td input[type="checkbox"].indeterminate:not(:indeterminate):not(:checked))>td {
+    background-color: var(--cs-unmarking, #FF6464);
+    border-color: var(--cs-unmarking, #FF6464);
+    color: #000000;
+}
+
+tr:has(td input[type="checkbox"].unchecked:checked)>td,
+  tr:has(td input[type="checkbox"].indeterminate:not(:indeterminate):checked)>td {
+    background-color: var(--cs-marking, #97b0f8);
+    border-color: var(--cs-marking, #97b0f8);
+    color: #000000;
+}
+
+div.cs-progress-container {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+  gap: 5px;
+}
+
+div.cs-progress-container>.cs-progress-bar {
+  width: 100%;
+  background-color: #eeeeee;
+  border-color: #b3b3b3;
+  border-style: solid;
+  border-width: thin;
+  color: #ffffff;
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  display: flex;
+}
+
+div.cs-progress-container>.cs-completed {
+  cursor: default;
+}
+
+div.cs-progress-container>.cs-progress-bar>.cs-progress {
+  height: 100%;
+  transition: width 1s;
+}
+
+div.cs-progress-container>.cs-progress-bar>.cs-progress.completed {
+  background-color: var(--cs-completed, #91C483);
+}
+
+div.cs-progress-container>.cs-progress-bar>.cs-progress.unmarking {
+  background-color: var(--cs-unmarking, #FF6464);
+}
+
+div.cs-progress-container>.cs-progress-bar>.cs-progress.marking {
+  background-color: var(--cs-marking, #97b0f8);
+}

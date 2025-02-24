@@ -262,7 +262,7 @@ describe(
           user_name = "test user",
           user_role = "Medical Monitor",
           subject_id = 885,
-          review_data = db_slice_rows(temp_path)
+          review_data = db_get_table(temp_path)
         ),
         active_form = reactiveVal("Adverse events"),
         db_path = temp_path,
@@ -317,7 +317,7 @@ describe(
             user_name = "",
             user_role = "Medical Monitor",
             subject_id = 885,
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           db_path = temp_path,
@@ -369,7 +369,7 @@ describe(
             user_name = "test user",
             user_role = "",
             subject_id = 885,
-            review_data = db_slice_rows(temp_path)
+            review_data = db_get_table(temp_path)
           ),
           active_form = reactiveVal("Adverse events"),
           db_path = temp_path,

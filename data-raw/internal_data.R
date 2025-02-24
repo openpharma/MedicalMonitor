@@ -5,7 +5,7 @@
 col_palette <- c("#1a9641", "#a6d96a", "#fdae61", "#d7191c", "grey50")
 names(col_palette) <- c("within limits", 
                         "out of limits, clinically insignificant", 
-                        "out of limits, significance unknown", 
+                        "out of limits, significance pending", 
                         "out of limits, clinically significant", 
                         "limits unknown")
 
@@ -34,7 +34,6 @@ clinsight_col_specs <- c(
   "subject_id" = "c", 
   "event_id" = "c", 
   "event_date" = "D", 
-  "event_name" = "c", 
   "event_repeat" = "i", 
   "form_id" = "c", 
   "form_repeat" = "i", 
@@ -59,6 +58,19 @@ required_meta_cols <- c(
   "item_type"
   )
 
+# Since the columns required to define unique records are not user defined, they
+# should be captured by an internal object to keep from having to simplify some
+# functions.
+idx_cols <- c(
+  "subject_id",
+  "event_name",
+  "item_group",
+  "form_repeat",
+  "item_name"
+)
+
+db_version <- "1.1"
+
 # Used in get_form_level_data(). Set a default if ClinSight needs the columns 
 # to function properly. 
 # Choosing NA for vars like item_scale, because setting these variables by 
@@ -76,5 +88,6 @@ form_level_default_specs <- c(form_level_defaults, ".default" = "c") |>
 
 usethis::use_data(col_palette, query_data_skeleton, required_col_names, 
                   required_meta_cols, clinsight_col_specs, 
+                  idx_cols, db_version,
                   form_level_defaults, form_level_default_specs, 
                   overwrite = TRUE, internal = TRUE)

@@ -33,9 +33,10 @@ describe(
 )
 
 describe(
-"mod_timeline. Feature 1 | As a user, I want to be able to view an interactive timeline 
-that displays study events, such as visits and study drug administration, 
-together with data related to patient monitoring stuch as adverse events. ", 
+"mod_timeline. Feature 2 | View interactive timeline. 
+  As a user, I want to be able to view an interactive timeline 
+  that displays study events, such as visits and study drug administration, 
+  together with data related to patient monitoring stuch as adverse events. ", 
   {
     set.seed(2023)
     appdata <- get_appdata(clinsightful_data)
@@ -83,6 +84,60 @@ together with data related to patient monitoring stuch as adverse events. ",
            expect_error(timeline_data_active())
            expect_error(timeline_data())
            expect_error(output$timeline)
+         })
+       })
+  }
+)
+
+describe(
+  "mod_timeline. Feature 3 | Customize treatment labels.
+  As a user, I want to be able to customize the timeline label.", 
+  {
+    set.seed(2025)
+    appdata <- get_appdata(clinsightful_data)
+    rev_data <- get_review_data(appdata[["Adverse events"]]) |> 
+      dplyr::mutate(
+        reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
+        status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
+      )
+    AE_table <- create_table(appdata[["Adverse events"]])
+    testargs <- list(
+      r = reactiveValues(
+        filtered_data = appdata,
+        review_data = rev_data, 
+        filtered_tables = list("Adverse events" =  AE_table),
+        subject_id = "BEL_04_133"
+      ),
+      form = "Adverse events", 
+      treatment_label = NULL
+    ) 
+    it("Scenario 1 - Standard label. Given a Form 'Adverse events', 
+          and the treatment_label is missing, 
+          I expect the standard treatment label '💊 Tₓ' in the timeline JSON output.", {
+         testServer(mod_timeline_server, args = testargs, {
+           ns <- session$ns
+           expect_true(inherits(output$timeline, "json"))
+           expect_true(grepl("💊 Tₓ", output$timeline))
+         })
+       })
+    it("Scenario 2 - Customized label. Given a Form other than 'Adverse events', 
+          and the treatment_label set to 'custom_treatment_label',
+          I expect the  [custom_treatment_label] in the timeline JSON output.", {
+            testargs <- list(
+              r = reactiveValues(
+                filtered_data = appdata,
+                review_data = rev_data, 
+                filtered_tables = list("Adverse events" =  AE_table),
+                subject_id = "BEL_04_133"
+              ),
+              form = "Adverse events", 
+              treatment_label = "custom_treatment_label"
+            ) 
+         testServer(mod_timeline_server, args = testargs, {
+           ns <- session$ns
+           expect_true(is.data.frame(timeline_data_active()))
+           expect_true(inherits(output$timeline, "json"))
+           expect_true(grepl("custom_treatment_label", output$timeline))
          })
        })
   }

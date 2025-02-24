@@ -91,17 +91,131 @@ db_create <- function(
       status = status
     )
   
-  new_data <- list(
+  new_pk_data <- list(
     "all_review_data" = df,
-    "query_data"      = query_data_skeleton,
-    "db_synch_time"   = data.frame(synch_time = data_synch_time)
+    "query_data"      = query_data_skeleton
+  )
+  idx_pk_cols <- list(
+    all_review_data = idx_cols
+  )
+  other_data <- list(
+    "db_synch_time"   = data.frame(synch_time = data_synch_time),
+    "db_version" = data.frame(version = db_version)
   )
   con <- get_db_connection(db_path)
-  for(i in names(new_data)){
-    cat("\nCreating new table: ", i,  "\n")
-    DBI::dbWriteTable(con, i, new_data[[i]])
-  }
+  db_add_tables(con, new_pk_data, idx_pk_cols, other_data)
   cat("Finished writing to database\n\n")
+}
+
+#' Add new tables to DB
+#'
+#' @param con A DBI Connection to the SQLite DB
+#' @param pk_data A named list of data frames to add a primary key field to DB
+#'   table. Names will correspond to the DB table names.
+#' @param unique_cols A named list of the fields defining unique records for a
+#'   table. Names will correspond to the table to apply the index constraint.
+#' @param other_data A named list of other data frames to add to the DB. Names
+#'   will correspond to the DB table names.
+#'
+#' @keywords internal
+db_add_tables <- function(con, pk_data, unique_cols, other_data) {
+  for(i in names(pk_data)){
+    cat("\nCreating new table: ", i,  "\n")
+    db_add_primary_key(con, i, pk_data[[i]], unique_cols[[i]])
+  }
+  for(i in names(other_data)){
+    cat("\nCreating new table: ", i,  "\n")
+    DBI::dbWriteTable(con, i, other_data[[i]])
+  }
+  cat("\nCreating log table: all_review_data_log\n")
+  db_add_log(con)
+}
+
+#' Add primary key field
+#' 
+#' @param con A DBI Connection to the SQLite DB
+#' @param name The table name
+#' @param value A data.frame to add to the table
+#' @param keys A character vector specifying which columns define a unique row
+#'   for the table. If `NULL`, no unique index will be created.
+#'   
+#' @keywords internal
+db_add_primary_key <- function(con, name, value, keys = NULL) {
+  fields <- c(id = "INTEGER PRIMARY KEY AUTOINCREMENT", DBI::dbDataType(con, value))
+  DBI::dbCreateTable(con, name, fields)
+  if (!is.null(keys)) {
+    all_keys <- paste(keys, collapse = ", ")
+    rs <- DBI::dbSendStatement(
+      con, 
+      sprintf("CREATE UNIQUE INDEX idx_%1$s ON %1$s (%2$s)", name, all_keys)
+      )
+    DBI::dbClearResult(rs)
+  }
+  DBI::dbAppendTable(con, name, value)
+}
+
+#' Add Logging Table
+#'
+#' Both creates the logging table and the trigger to update it for
+#' all_review_data.
+#'
+#' @param con A DBI Connection to the SQLite DB
+#' @param keys A character vector specifying which columns should not be updated
+#'   in a table. Defaults to 'id' and the package-defined index columns
+#'   (`idx_cols`).
+#'
+#' @keywords internal
+db_add_log <- function(con, keys = c("id", idx_cols)) {
+  stopifnot(is.character(keys))
+  all_keys <- paste(keys, collapse = ", ")
+  stopifnot("'keys' parameter cannot be empty" = nchar(all_keys) > 0)
+  
+  DBI::dbCreateTable(
+    con, 
+    "all_review_data_log",
+    c(
+      id = "INTEGER PRIMARY KEY AUTOINCREMENT", 
+      review_id = "INTEGER NOT NULL",
+      edit_date_time = "CHAR", 
+      reviewed = "CHAR", 
+      comment = "CHAR", 
+      reviewer = "CHAR", 
+      timestamp = "CHAR", 
+      status = "CHAR",
+      dml_type = "CHAR NOT NULL", 
+      dml_timestamp = "DATETIME DEFAULT CURRENT_TIMESTAMP"
+      )
+  )
+  # This will trigger before any UPDATEs happen on all_review_data. Instead of
+  # allowing 'id' to be updated, it will throw an error.
+  rs <- DBI::dbSendStatement(con, paste(
+    "CREATE TRIGGER all_review_data_id_update_trigger",
+    sprintf("BEFORE UPDATE OF %s ON all_review_data", all_keys),
+    "BEGIN",
+    sprintf("SELECT RAISE(FAIL, 'Fields %s are read only');", all_keys),
+    "END"
+  ))
+  DBI::dbClearResult(rs)
+  rs <- DBI::dbSendStatement(con, paste(
+    "CREATE TRIGGER all_review_data_update_log_trigger",
+    "AFTER UPDATE ON all_review_data FOR EACH ROW",
+    "BEGIN",
+      "INSERT INTO all_review_data_log (",
+        "review_id, edit_date_time, reviewed, comment, reviewer, timestamp, status, dml_type",
+      ")",
+      "VALUES(",
+        "NEW.id,",
+        "OLD.edit_date_time,",
+        "OLD.reviewed,",
+        "OLD.comment,",
+        "OLD.reviewer,",
+        "OLD.timestamp,",
+        "OLD.status,",
+        "'UPDATE'",
+      ");",
+    "END"
+  ))
+  DBI::dbClearResult(rs)
 }
 
 #' Update app database
@@ -153,7 +267,7 @@ db_update <- function(
     update_time = data_synch_time
   )
   cat("writing updated review data to database...\n")
-  DBI::dbWriteTable(con, "all_review_data", updated_review_data, append = TRUE)
+  db_upsert(con, updated_review_data, common_vars)
   DBI::dbWriteTable(
     con, 
     "db_synch_time", 
@@ -163,6 +277,41 @@ db_update <- function(
   cat("Finished updating review data\n")
 }
 
+#' UPSERT to all_review_data
+#' 
+#' Performs an UPSERT on all_review_data. New records will be appended to the
+#' table. Changed/updated records will be applied to the table based on the
+#' index column constraint.
+#' 
+#' @param con A DBI Connection to the SQLite DB
+#' @param data A data frame containing the data to UPSERT into all_review_data
+#' @param idx_cols A character vector specifying which columns define a
+#'   unique index for a row
+#'   
+#' @return invisibly returns TRUE. Is run for it's side effects on the DB.
+#' 
+#' @keywords internal
+db_upsert <- function(con, data, idx_cols) {
+  if ("id" %in% names(data))
+    data$id <- NULL
+  cols_to_update <- names(data)[!names(data) %in% idx_cols]
+  cols_to_insert <- names(data) |> 
+    paste(collapse = ", ")
+  constraint_cols <- paste(idx_cols, collapse = ", ")
+  dplyr::copy_to(con, data, "row_updates")
+  rs <- DBI::dbSendStatement(con, paste(
+    "INSERT INTO",
+    "all_review_data",
+    sprintf("(%s)", cols_to_insert),
+    sprintf("SELECT %s FROM row_updates WHERE true", cols_to_insert),
+    "ON CONFLICT",
+    sprintf("(%s)", constraint_cols),
+    "DO UPDATE SET",
+    sprintf("%1$s = excluded.%1$s", cols_to_update) |> paste(collapse = ", ")
+  ))
+  DBI::dbClearResult(rs)
+}
+
 
 #' Save review in database
 #'
@@ -170,59 +319,50 @@ db_update <- function(
 #' New rows with the new/updated review data will be added to the applicable
 #' database tables.
 #'
-#' @param rv_row A data frame containing the row of the data that needs to be
+#' @param rv_records A data frame containing the rows of data that needs to be
 #'   checked.
 #' @param db_path Character vector. Path to the database.
-#' @param tables Character vector. Names of the tables within the database to
+#' @param table Character vector. Names of the table within the database to
 #'   save the review in.
-#' @param common_vars A character vector containing the common key variables.
-#' @param review_by A character vector, containing the key variables to perform
-#'   the review on. For example, the review can be performed on form level
-#'   (writing the same review to all items in a form), or on item level, with a
-#'   different review per item.
 #'
 #' @return Review information will be written in the database. No local objects
 #'   will be returned.
 #' @export
 #' 
 db_save_review <- function(
-    rv_row,
+    rv_records,
     db_path,
-    tables = c("all_review_data"),
-    common_vars = c("subject_id", "event_name", "item_group", 
-                    "form_repeat", "item_name"),
-    review_by = c("subject_id", "item_group")
+    table = "all_review_data"
 ){
-  stopifnot(is.data.frame(rv_row))
-  if(nrow(rv_row) != 1){
-    warning("multiple rows detected to save in database. Only the first row will be selected.")
-    rv_row <- rv_row[1, ]
+  stopifnot(is.data.frame(rv_records))
+  stopifnot(is.character(table) && length(table) == 1)
+  if (any(duplicated(rv_records[["id"]]))) {
+    warning("duplicate records detected to save in database. Only the first will be selected.")
+    rv_records <- rv_records[!duplicated(rv_records[["id"]]),]
   }
-  
+
   cols_to_change <- c("reviewed", "comment", "reviewer", "timestamp", "status")
   db_con <- get_db_connection(db_path)
-  new_review_state <- rv_row$reviewed
-  cat("copy row ids into database\n ")
-  dplyr::copy_to(db_con, rv_row[review_by], "row_ids")
-  new_review_rows <-  dplyr::tbl(db_con, "all_review_data") |> 
-    dplyr::inner_join(dplyr::tbl(db_con, "row_ids"), by = review_by) |> 
-    # Filter below prevents unnecessarily overwriting the review status in forms   
-    # with mixed reviewed status (due to an edit by the investigators). 
-    dplyr::filter(reviewed != new_review_state) |> 
-    dplyr::collect()
-  if(nrow(new_review_rows) == 0){return(
+  if(nrow(rv_records) == 0){return(
     warning("Review state unaltered. No review will be saved.")
   )}
-  new_review_rows <- new_review_rows |> 
-    db_slice_rows(slice_vars = c("timestamp", "edit_date_time"), group_vars = common_vars) |> 
-    dplyr::select(-dplyr::all_of(cols_to_change)) |> 
-    # If there are multiple edits, make sure to only select the latest editdatetime for all items:
-    # dplyr::slice_max(edit_date_time, by = dplyr::all_of(common_vars)) |> 
-    dplyr::bind_cols(rv_row[cols_to_change]) # bind_cols does not work in a db connection.
+  
   cat("write updated review data to database\n")
-  lapply(tables, \(x){DBI::dbWriteTable(db_con, x, new_review_rows, append = TRUE)}) |> 
-    invisible()
-  cat("finished writing to the tables:", tables, "\n")
+  dplyr::copy_to(db_con, rv_records, "row_updates")
+  rs <- DBI::dbSendStatement(db_con, paste(
+    "UPDATE",
+    table,
+    "SET",
+    sprintf("%1$s = row_updates.%1$s", cols_to_change) |> paste(collapse = ", "),
+    "FROM",
+    "row_updates",
+    "WHERE",
+    sprintf("%s.id = row_updates.id", table),
+    "AND",
+    sprintf("%s.reviewed <> row_updates.reviewed", table)
+  ))
+  DBI::dbClearResult(rs)
+  cat("finished writing to the table:", table, "\n")
 }
 
 #' Append database table
@@ -320,52 +460,125 @@ db_get_query <- function(
 #' with the given subject id (`subject`) and `form`.
 #'
 #' @param db_path Character vector. Needs to be a valid path to a database.
-#' @param subject Character vector with the subject identifier to select from
-#'   the database.
-#' @param form Character vector with the form identifier to select from the
-#'   database.
+#' @param ... Named arguments specifying which records to retrieve, see
+#'   examples. Note that `...` will be processed with `data.frame()` and thus
+#'   the arguments within `...` should be convertible to a data frame. This is
+#'   chosen so that filters of length one can be used with other filters since
+#'   they will be recycled (for example, when selecting multiple events of one
+#'   subject). 
+#' @param db_table Character string. Name of the table to collect. Will only be
+#'   used if `data` is a character string to a database.
 #'
-#' @inheritParams db_slice_rows
 #' @return A data frame.
-#' @export
-#'
-#' @examples
-#'
-#' local({
-#'   temp_path <- withr::local_tempfile(fileext = ".sqlite")
-#'   con <- get_db_connection(temp_path)
-#'   review_data <- data.frame(
-#'   subject_id = "Test_name",
-#'    event_name = "Visit 1",
-#'    item_group = "Test_group",
-#'    form_repeat = 1,
-#'    item_name = "Test_item",
-#'    edit_date_time = "2023-11-05 01:26:00",
-#'    timestamp = "2024-02-05 01:01:01"
-#'   ) |>
-#'    dplyr::as_tibble()
-#'   DBI::dbWriteTable(con, "all_review_data", review_data)
-#'   db_get_review(temp_path, subject = "Test_name", form = "Test_group")
-#' })
+#' @keywords internal
 #' 
 db_get_review <- function(
     db_path, 
-    subject = review_row$subject_id, 
-    form = review_row$item_group,
-    db_table = "all_review_data",
-    slice_vars = c("timestamp", "edit_date_time"),
-    group_vars = c("subject_id", "event_name", "item_group",
-                   "form_repeat", "item_name")
+    ...,
+    db_table = "all_review_data"
 ){
   stopifnot(file.exists(db_path))
-  stopifnot(is.character(subject))
-  stopifnot(is.character(form))
+  fields <- ...names()
+  if (is.null(fields)) {
+    if (...length() > 0) {
+      warning("Unnamed arguments passed in `...`. Returning full data table.")
+    } else {
+      warning("No arguments passed in `...`. Returning full data table.")
+    }
+    conditionals <- "true"
+  } else {
+    conditionals <- paste0(fields, " = $", fields, collapse = " AND ")
+    parameters <- data.frame(...)
+  }
+  
   db_temp_connect(db_path, {
-    sql <- "SELECT * FROM ?db_table WHERE subject_id = ?id AND item_group = ?group;"
-    query <- DBI::sqlInterpolate(con, sql, db_table = db_table[1], 
-                                 id = subject[1], group = form[1])
-    DBI::dbGetQuery(con, query) |> 
-      db_slice_rows(slice_vars = slice_vars, group_vars = group_vars) |> 
+    sql <- paste("SELECT * FROM ?db_table WHERE", conditionals)
+    query <- DBI::sqlInterpolate(con, sql, db_table = db_table[1])
+    rs <- DBI::dbSendQuery(con, query)
+    if (!is.null(fields)) DBI::dbBind(rs, params = parameters)
+    df <- DBI::dbFetch(rs) |> 
       dplyr::as_tibble()
+    DBI::dbClearResult(rs)
+    df
   })
+}
+
+db_get_version <- function(db_path) {
+  stopifnot(file.exists(db_path))
+  con <- get_db_connection(db_path)
+  tryCatch({
+    DBI::dbGetQuery(con, "SELECT version FROM db_version") |> 
+      unlist(use.names = FALSE)
+  },
+  error = \(e) {""}
+  )
+}
+
+update_db_version <- function(db_path, version = "1.1") {
+  stopifnot(file.exists(db_path))
+  version <- match.arg(version)
+  temp_path <- withr::local_tempfile(fileext = ".sqlite")
+  file.copy(db_path, temp_path)
+  con <- get_db_connection(temp_path)
+  
+  current_version <- tryCatch({
+    DBI::dbGetQuery(con, "SELECT version FROM db_version") |> 
+      unlist(use.names = FALSE)}, error = \(e){""})
+  if(identical(current_version, db_version)) return("Database up to date. No update needed")
+  
+  review_skeleton <- DBI::dbGetQuery(con, "SELECT * FROM all_review_data LIMIT 0")
+  rs <- DBI::dbSendQuery(con, "ALTER TABLE all_review_data RENAME TO all_review_data_old")
+  DBI::dbClearResult(rs)
+  rs <- DBI::dbSendQuery(con, "ALTER TABLE query_data RENAME TO query_data_old")
+  DBI::dbClearResult(rs)
+  
+  new_pk_data <- list(
+    "all_review_data" = review_skeleton,
+    "query_data"      = query_data_skeleton
+  )
+  idx_pk_cols <- list(
+    all_review_data = idx_cols
+  )
+  other_data <- list(
+    "db_version" = data.frame(version = db_version)
+  )
+  db_add_tables(con, new_pk_data, idx_pk_cols, other_data)
+  
+  query_cols <- paste(names(query_data_skeleton), collapse = ", ")
+  cat("\nInserting old query records into new table.\n")
+  rs <- DBI::dbSendStatement(con, sprintf("INSERT INTO query_data (%1$s) SELECT %1$s FROM query_data_old", query_cols))
+  DBI::dbClearResult(rs)
+  
+  stopifnot(DBI::dbGetQuery(con, "SELECT COUNT(*) FROM query_data") == 
+              DBI::dbGetQuery(con, "SELECT COUNT(*) FROM query_data_old"))
+  
+  rs <- DBI::dbSendStatement(con, "DROP TABLE query_data_old")
+  DBI::dbClearResult(rs)
+  
+  cat("\nInserting old review records into new tables.\n")
+  cols_to_update <- names(review_skeleton)[!names(review_skeleton) %in% idx_pk_cols$all_review_data]
+  cols_to_insert <- names(review_skeleton) |> 
+    paste(collapse = ", ")
+  upsert_statement <- paste(
+    "INSERT INTO",
+    "all_review_data",
+    sprintf("(%s)", cols_to_insert),
+    sprintf("SELECT %s FROM all_review_data_old WHERE true", cols_to_insert),
+    "ON CONFLICT",
+    sprintf("(%s)", paste(idx_pk_cols$all_review_data, collapse = ", ")),
+    "DO UPDATE SET",
+    sprintf("%1$s = excluded.%1$s", cols_to_update) |> paste(collapse = ", ")
+  )
+  rs <- DBI::dbSendStatement(con, upsert_statement)
+  DBI::dbClearResult(rs)
+  
+  stopifnot(DBI::dbGetQuery(con, "SELECT COUNT(*) FROM all_review_data") +
+              DBI::dbGetQuery(con, "SELECT COUNT(*) FROM all_review_data_log") == 
+              DBI::dbGetQuery(con, "SELECT COUNT(*) FROM all_review_data_old"))
+  
+  rs <- DBI::dbSendStatement(con, "DROP TABLE all_review_data_old")
+  DBI::dbClearResult(rs)
+  
+  file.copy(temp_path, db_path, overwrite = TRUE)
+  cat("Finished updating to new database standard\n\n")
 }

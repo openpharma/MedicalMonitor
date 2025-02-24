@@ -6,7 +6,9 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Buttons",
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Subject<\/th>\n      <th>Type<\/th>\n      <th>Event<\/th>\n      <th>Form<\/th>\n      <th>Query<\/th>\n      <th>Time<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -14,10 +16,22 @@
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Open queries\")\n}",
-          "dom": "f<\"header h5\">ti",
+          "dom": "Bf<\"header h5\">ti",
+          "buttons": [
+            {
+              "extend": "excel",
+              "text": "<i class=\"fa-solid fa-download\"><\/i>",
+              "filename": "clinsight.open.queries",
+              "title": "open.queries | extracted from ClinSight"
+            }
+          ],
           "columnDefs": [
             {
               "orderable": false,
@@ -28,27 +42,27 @@
               "targets": 0
             },
             {
-              "name": "Subject",
+              "name": "subject_id",
               "targets": 1
             },
             {
-              "name": "Type",
+              "name": "type",
               "targets": 2
             },
             {
-              "name": "Event",
+              "name": "event_label",
               "targets": 3
             },
             {
-              "name": "Form",
+              "name": "item_group",
               "targets": 4
             },
             {
-              "name": "Query",
+              "name": "query",
               "targets": 5
             },
             {
-              "name": "Time",
+              "name": "timestamp",
               "targets": 6
             }
           ],
@@ -64,6 +78,7 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ntable.on('dblclick', 'tbody tr', function(t) {\nvar current_index = table.row(this).index();\nvar current_rows = table.ajax.json().DT_rows_current;\ntable.shinyMethods.selectRows(current_rows[current_index]);\ndocument.getElementById(\n\"queries_1-go_to_form-go_to_form\"\n).click();\n})\n}",
         "selection": {
           "mode": "single",
           "selected": null,
@@ -73,7 +88,8 @@
       },
       "evals": [
         "options.initComplete",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -143,6 +159,40 @@
           "all_files": true
         },
         {
+          "name": "jszip",
+          "version": "1.13.6",
+          "src": {
+            "href": "jszip-1.13.6"
+          },
+          "meta": null,
+          "script": "jszip.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
+          "name": "dt-ext-buttons-bootstrap5",
+          "version": "1.13.6",
+          "src": {
+            "href": "dt-ext-buttons-bootstrap5-1.13.6"
+          },
+          "meta": null,
+          "script": [
+            "js/dataTables.buttons.min.js",
+            "js/buttons.html5.min.js",
+            "js/buttons.colVis.min.js",
+            "js/buttons.print.min.js",
+            "js/buttons.bootstrap5.min.js"
+          ],
+          "stylesheet": "css/buttons.bootstrap5.min.css",
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
           "name": "dt-ext-scroller-bootstrap5",
           "version": "1.13.6",
           "src": {
@@ -160,20 +210,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",
@@ -204,7 +255,8 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-hover row-border\">\n  <thead>\n    <tr>\n      <th>Query<\/th>\n      <th>Author<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -212,17 +264,22 @@
           "scrollX": true,
           "scroller": false,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
+          "pageLength": -1,
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
           "dom": "<\"header h5\">t",
           "columnDefs": [
             {
-              "name": "Query",
+              "name": "query",
               "targets": 0
             },
             {
-              "name": "Author",
+              "name": "reviewer",
               "targets": 1
             }
           ],
@@ -231,6 +288,13 @@
           ],
           "autoWidth": false,
           "orderClasses": false,
+          "lengthMenu": [
+            -1,
+            10,
+            25,
+            50,
+            100
+          ],
           "ajax": {
             "type": "POST",
             "data": "function(d) {\nd.search.caseInsensitive = true;\nd.search.smart = true;\nd.escape = true;\nvar encodeAmp = function(x) { x.value = x.value.replace(/&/g, \"%26\"); }\nencodeAmp(d.search);\n$.each(d.columns, function(i, v) {encodeAmp(v.search);});\n}"
@@ -334,20 +398,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",

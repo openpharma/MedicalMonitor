@@ -55,7 +55,8 @@ describe(
           dplyr::mutate(
             reviewed = "No",
             status = "new",
-            comment = ""
+            comment = "",
+            id = dplyr::row_number()
           )
         vars <- get_meta_vars(appdata, metadata)
         apptables <- lapply(
@@ -123,8 +124,12 @@ describe(
             r = reactiveValues(
               create_query = 0, 
               review_data = data.frame(
+                "id" = 1L,
                 "subject_id" = "NLD_06_755", 
+                "event_name" = "Any visit",
                 "item_group" = "Adverse events",
+                "form_repeat" = 1L,
+                "item_name" = "AE item",
                 "edit_date_time" = "2023-01-01",
                 "reviewed" = "",
                 "comment" = "",
