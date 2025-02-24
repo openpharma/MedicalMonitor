@@ -51,9 +51,9 @@ mod_timeline_server <- function(id, r, form, treatment_label = "\U1F48A T\U2093"
       req(timeline_data())
       # join below is on both form_repeat and item_group. Join by item_group 
       # is to prepare for future timelines when other forms will also be included. 
-      review_active <- with(
-        r$review_data, 
-        r$review_data[item_group == form & subject_id == r$subject_id, ]
+      review_active <- subset(
+        r$review_data[[form]], 
+        subject_id == r$subject_id
         ) |> 
         dplyr::mutate(
           needs_review = any(reviewed == "No"),

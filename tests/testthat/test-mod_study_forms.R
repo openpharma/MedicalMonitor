@@ -48,7 +48,8 @@ describe(
         id = dplyr::row_number(),
         reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
         status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
-      )
+      ) |> 
+      {\(x) split(x, x$item_group)}()
     form_items <- with(metadata$study_forms, item_name[item_group == "Vital signs"])
     form_items <- setNames(simplify_string(form_items), form_items)
     testargs <- list(
@@ -125,7 +126,7 @@ describe(
 
               table_ids <- unique(study_form_data()$subject_id)
               table_ids <- table_ids[order(table_ids)]
-              expected_ids <- unique(r$review_data$subject_id)
+              expected_ids <- unique(do.call(rbind, r$review_data)$subject_id)
               expected_ids <- expected_ids[order(expected_ids)]
               expect_equal(table_ids, expected_ids)
               
@@ -147,7 +148,8 @@ describe(
         id = dplyr::row_number(),
         reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
         status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
-      )
+      ) |> 
+      {\(x) split(x, x$item_group)}()
     
     testargs <- list(
       r = reactiveValues(

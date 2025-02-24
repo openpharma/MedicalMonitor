@@ -16,7 +16,7 @@ describe(
       testargs <- list(
         r = reactiveValues(
           filtered_data = list(),
-          review_data = data.frame(), 
+          review_data = list(), 
           filtered_tables = list("Adverse events" =  data.frame()),
           subject_id = "BEL_04_133"
         ),
@@ -44,7 +44,8 @@ describe(
       dplyr::mutate(
         reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
         status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
-      )
+      ) |> 
+      {\(x) split(x, x$item_group)}()
     AE_table <- create_table(appdata[["Adverse events"]])
     testargs <- list(
       r = reactiveValues(
@@ -99,7 +100,8 @@ describe(
       dplyr::mutate(
         reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
         status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
-      )
+      ) |> 
+      {\(x) split(x, x$item_group)}()
     AE_table <- create_table(appdata[["Adverse events"]])
     testargs <- list(
       r = reactiveValues(

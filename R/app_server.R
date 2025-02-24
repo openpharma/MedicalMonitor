@@ -61,7 +61,7 @@ app_server <- function(
   )
   # think of using the pool package, but functions such as row_update are not yet supported.
   r <- reactiveValues(
-    review_data       = db_get_table(user_db, db_table = "all_review_data"),
+    review_data       = do.call(reactiveValues, split_review_data(user_db)),
     query_data        = collect_query_data(user_db),
     filtered_subjects = app_vars$subject_id,
     filtered_data     = app_data,
@@ -127,6 +127,8 @@ app_server <- function(
     summary = reactive({
       req(forms_to_review_data)
       r$review_data |>
+        reactiveValuesToList() |> 
+        do.call(what = rbind) |> 
         dplyr::left_join(forms_to_review_data, by = "item_group") |> 
         dplyr::filter(
           reviewed != "Yes",

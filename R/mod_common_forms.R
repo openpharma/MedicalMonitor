@@ -106,7 +106,7 @@ mod_common_forms_server <- function(
       df <-
       dplyr::left_join(
         r$filtered_data[[form]],
-        with(r$review_data, r$review_data[item_group == form, ]) |>
+        r$review_data[[form]] |>
           dplyr::select(-dplyr::all_of(c("edit_date_time", "event_date"))),
         by = id_item
       ) |>
@@ -145,7 +145,7 @@ mod_common_forms_server <- function(
         golem::cat_dev("SAE data computed \n")
         dplyr::left_join(
           r$filtered_data[[form]],
-          with(r$review_data, r$review_data[item_group == form, ]) |>
+          r$review_data[[form]] |>
             dplyr::select(-dplyr::all_of(c("edit_date_time", "event_date"))),
           by = id_item
         ) |>

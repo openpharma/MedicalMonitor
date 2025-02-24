@@ -4,7 +4,7 @@ describe(
     testargs <- list(
       r = reactiveValues(
         filtered_data = "",
-        review_data = data.frame(), 
+        review_data = list(), 
         filtered_tables = list(),
         subject_id = "DEU_02_482"
       ),
@@ -55,7 +55,8 @@ describe(
         id = dplyr::row_number(),
         reviewed = sample(c("Yes", "No"), dplyr::n(), replace = TRUE),
         status = sample(c("new", "old", "updated"), dplyr::n(), replace = TRUE)
-      )
+      ) |> 
+      {\(x) split(x, x$item_group)}()
     form_items <- with(metadata$common_forms, item_name[item_group == "Adverse events"])
     names(form_items) <- form_items
     testargs <- list(

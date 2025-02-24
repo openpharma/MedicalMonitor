@@ -71,7 +71,7 @@ mod_review_form_tbl_server <- function(
       session$userData$update_checkboxes[[form]] <- NULL
       session$userData$review_records[[form]] <- data.frame(id = integer(), reviewed = character())
     }) |> 
-      bindEvent(r$subject_id, r$review_data, r$filtered_data[[form]])
+      bindEvent(r$subject_id, r$review_data[[form]], r$filtered_data[[form]])
     
     observeEvent(datatable_rendered(), {
       table_data(reactive_table_data())
@@ -98,8 +98,7 @@ mod_review_form_tbl_server <- function(
         update_review_records(
           session$userData$review_records[[form]],
           input$table_review_selection[, c("id", "reviewed")],
-          subset(r$review_data, subject_id == r$subject_id & item_group == form,
-                 c("id", "reviewed"))
+          subset(r$review_data[[form]], subject_id == r$subject_id, c("id", "reviewed"))
         )
       
       # Update the table's data reactive

@@ -755,3 +755,8 @@ decode_base64 <- function(
   }
   rawToChar(decoded)
 }
+
+split_review_data <- function(db_path) {
+  db_get_table(db_path = db_path, db_table = "all_review_data") |> 
+    {\(df) split(df, df$item_group)}()
+}
