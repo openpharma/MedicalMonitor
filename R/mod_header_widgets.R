@@ -47,16 +47,12 @@ mod_header_widgets_ui <- function(id){
 #' @param navinfo Reactive values created with [shiny::reactiveValues()]. Used
 #'   to send back information about the page change to the server, when clicking
 #'   on the adverse event box.
-#' @param events Data frame containing all events. Used to extract the right
-#'   labels for the visits in the compact timeline in the header_widgets. See
-#'   [fig_timeline()].
 #'
 #' @seealso [mod_header_widgets_ui()]
-mod_header_widgets_server <- function(id, r, rev_data, navinfo, events){
+mod_header_widgets_server <- function(id, r, rev_data, navinfo){
   stopifnot(is.reactivevalues(r))
   stopifnot(is.reactivevalues(navinfo))
   stopifnot(is.reactivevalues(rev_data))
-  stopifnot(is.data.frame(events))
   
   moduleServer( id, function(input, output, session){
     ns <- session$ns
@@ -128,10 +124,7 @@ mod_header_widgets_server <- function(id, r, rev_data, navinfo, events){
     output[["visit_figure"]] <- renderPlot(
       {
         golem::cat_dev("plot datapoints figure\n")
-        fig_timeline(
-          data = selected_individual_data(), 
-          events = events
-        )
+        fig_timeline(data = selected_individual_data())
       }, 
       height = 60
     )

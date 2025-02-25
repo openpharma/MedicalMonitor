@@ -17,7 +17,7 @@ describe(
       "I expect that I see the timeline of subject [9600-002] with study visits in it",
       "and when I browser to the 'Study data' tab",
       "I expect that I see the Vital signs page of subject [9600-002]', ", 
-      "and that the compact header timeline shows visits V0-V10 ",
+      "and that the compact header timeline shows visits all visits available in the data",
       "and that I see a figure with the data displayed, ",
       "and that I see a table with the data displayed after clicking on the table view, ", 
       "and that the data for the figure and table in the app is the same as ", 
@@ -44,11 +44,11 @@ describe(
         app$set_inputs(main_tabs = "Study data")
         app$wait_for_idle()
 
-        # Expect labels V0-V10 in compact header visit timeline (as defined in custom metadata file):
+        # Expect labels SCR< V1, V2, and EoT in compact header visit timeline (as defined in custom metadata file):
         fig_vals <- app$get_value(output = "header_widgets_1-visit_figure")
         expect_equal(
           fig_vals$coordmap$panels[[1]]$domain$discrete_limits$x,
-          paste0("V", 0:10)
+          c("SCR", "V1", "V2", "EoT")
         )
         
         # Snapshot JSON table output and verify that vital signs are shown:

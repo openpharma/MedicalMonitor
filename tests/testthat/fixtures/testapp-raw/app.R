@@ -3,9 +3,11 @@ library(pkg_name, character.only = TRUE)
 
 raw_data_folder <- "data1pt"
 meta_path <- "altered_metadata.xlsx"
-# For interactive use: 
-# raw_data_folder <- app_sys("tests/testthat/fixtures/testapp-raw/data1pt")
-# meta_path <- testthat::test_path("fixtures/testapp-raw/altered_metadata.xlsx")
+
+if(rlang::is_interactive()){
+  raw_data_folder <- app_sys("tests/testthat/fixtures/testapp-raw/data1pt")
+  meta_path <- testthat::test_path("fixtures/testapp-raw/altered_metadata.xlsx") 
+}
 
 load_and_run_app <- function(){
   temp_folder <- tempfile(tmpdir = tempdir())

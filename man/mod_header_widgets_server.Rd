@@ -4,7 +4,7 @@
 \alias{mod_header_widgets_server}
 \title{Header widgets - Shiny module Server}
 \usage{
-mod_header_widgets_server(id, r, rev_data, navinfo, events)
+mod_header_widgets_server(id, r, rev_data, navinfo)
 }
 \arguments{
 \item{id}{Character string, used to connect the module UI with the module
@@ -17,10 +17,6 @@ Server.}
 \item{navinfo}{Reactive values created with \code{\link[shiny:reactiveValues]{shiny::reactiveValues()}}. Used
 to send back information about the page change to the server, when clicking
 on the adverse event box.}
-
-\item{events}{Data frame containing all events. Used to extract the right
-labels for the visits in the compact timeline in the header_widgets. See
-\code{\link[=fig_timeline]{fig_timeline()}}.}
 }
 \description{
 A shiny module. Used to show user information of the active user in value

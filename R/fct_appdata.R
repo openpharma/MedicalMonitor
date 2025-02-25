@@ -76,14 +76,19 @@ merge_meta_with_data <- function(
     rename_raw_data(column_names = meta$column_names) |> 
     readr::type_convert(clinsight_col_specs) |>
     apply_custom_functions(meta$settings$pre_merge_fns) |>
-    add_timevars_to_data() |> 
+    add_timevars_to_data(meta$events) |> 
+    add_events_to_data(meta$events) |> 
     # fix MC values before merging:
     fix_multiple_choice_vars(expected_vars = meta$items_expanded$var) |> 
     dplyr::right_join(meta$items_expanded, by = "var") |> 
     dplyr::filter(!is.na(item_value)) |>
     apply_custom_functions(meta$settings$pre_pivot_fns) |>
     dplyr::mutate(
-      suffix_names = suffix_names %|_|% ifelse(is.na(suffix) | grepl("ORRES$", suffix) | item_group == "General", "VAL", suffix)
+      suffix_names = suffix_names %|_|% ifelse(
+        is.na(suffix) | grepl("ORRES$", suffix) | item_group == "General", 
+        "VAL", 
+        suffix
+      )
     ) |> 
     dplyr::select(-var, -suffix) |> 
     dplyr::mutate(
@@ -229,10 +234,23 @@ apply_study_specific_fixes <- function(
 #' @param .default A character vector containing the names of the functions to
 #'   apply if none are provided. Default is "identity".
 #' @keywords internal
-apply_custom_functions <- function(data, functions = NULL, .default = "identity") {
-  Reduce(\(x1, x2) do.call(x2, list(x1)), # Apply next function to output of previous
-         functions %||% .default, # Apply default functions if no additional functions provided
-         init = data) # Initialize with the data object
+apply_custom_functions <- function(
+    data, 
+    functions = NULL, 
+    .default = "identity"
+    ) {
+  stopifnot(is.data.frame(data))
+  stopifnot(is.null(functions) || is.character(functions))
+  stopifnot(is.character(.default))
+  
+  Reduce(
+    \(x1, x2) {
+      cat("applying function '", x2, "' to the data\n", sep = "")
+      do.call(x2, list(x1))
+    }, # Apply next function to output of previous
+    functions %||% .default, # Apply default functions if no additional functions provided
+    init = data # Initialize with the data object
+  )
 }
 
 #' Get appdata

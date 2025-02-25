@@ -3,14 +3,6 @@
     Code
       get_meta_vars(appdata, metadata)
     Output
-      $events
-      Screening   Visit 1   Visit 2   Visit 3   Visit 4   Visit 5   Visit 6   Visit 7 
-           "V0"      "V1"      "V2"      "V3"      "V4"      "V5"      "V6"      "V7" 
-        Visit 8   Visit 9  Visit 10  Visit 11  Visit 12  Visit 13  Visit 14  Visit 15 
-           "V8"      "V9"     "V10"     "V11"     "V12"     "V13"     "V14"     "V15" 
-       Visit 16  Visit 17  Visit 18 
-          "V16"     "V17"     "V18" 
-      
       $items
       $items$`Adverse events`
                           AE Number                       AE Name 
