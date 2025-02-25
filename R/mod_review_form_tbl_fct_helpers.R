@@ -1,3 +1,108 @@
+
+#' Get form table
+#'
+#' @param form_data A data frame with the study data of the respective form.
+#' @param form_review_data A data frame with he review data of the form.
+#' @param form A character string with the name of the form.
+#' @param form_items Named character vector with all form_items to display.
+#' @param active_subject A character string with the active subject id.
+#' @param is_reviewed A logical, indicating whether all items of the entire form
+#'   for the active subject id are reviewed.
+#' @param is_SAE A logical, indicating whether the form is a SAE form. If TRUE,
+#'   will make some adjustments to the columns to display.
+#' @param id_cols Columns that identify a unique row in the data.
+#'
+#' @keywords internal
+#'
+get_form_table <- function(
+    form_data,
+    form_review_data,
+    form,
+    form_items,
+    active_subject,
+    is_reviewed = NULL,
+    is_SAE = NULL,
+    id_cols = idx_cols
+){
+  stopifnot(is.data.frame(form_data), is.data.frame(form_review_data))
+  stopifnot(is.character(form), is.character(form_items))
+  stopifnot(is.logical(is_reviewed %||% FALSE), is.logical(is_SAE %||% FALSE))
+  is_SAE <- isTRUE(is_SAE)
+  stopifnot(is.character(active_subject %||% ""))
+  if(is.null(active_subject)){
+    warning("No active subject selected")
+  }
+  required_cols <- c(id_cols, "edit_date_time", "event_date", "item_value")
+  missing_cols <- required_cols[!required_cols %in% names(form_data)]
+  if(length(missing_cols) != 0){
+    stop("the following columns are missing: ", paste0(missing_cols, collapse = ", "))
+  }
+  df <- dplyr::left_join(
+    form_data,
+    form_review_data |> 
+      dplyr::select(-dplyr::all_of(c("edit_date_time", "event_date"))), 
+    by = id_cols
+  ) |> 
+    dplyr::mutate(
+      not_reviewed_but_missing = (reviewed == "No" & is.na(item_value)), 
+      item_value = dplyr::case_when(
+        is.na(reviewed) ~ htmltools::htmlEscape(item_value),
+        (reviewed == "No" & !is.na(item_value)) ~
+        paste0("<b>", htmltools::htmlEscape(item_value), "*</b>"), 
+        .default = htmltools::htmlEscape(item_value)
+      )
+    ) |> 
+    create_table(expected_columns = names(form_items)) |> 
+    dplyr::mutate(
+      o_reviewed = Map(
+        \(x, y, z) append(x, list(
+          row_id = y, 
+          disabled = z,
+          updated = is_reviewed)
+        ), 
+        o_reviewed, 
+        dplyr::row_number(),
+        if (is.null(active_subject)) FALSE else subject_id != active_subject
+      )
+    )
+  if(form == "Adverse events") {
+    df <- adjust_ae_form_table(df, is_SAE = is_SAE)
+  }
+  df
+}
+
+#' Adjust (Serious) Adverse Event form tables
+#'
+#' Needed because AE and SAE items are closely related and are currently
+#' adjusted after pivoting (see [create_table.adverse_events()]). This function
+#' should be phased out in the future.
+#'
+#' @param data 
+#' @inheritParams source
+#' 
+#' @noRd
+#' 
+adjust_ae_form_table <- function(
+    data,
+    is_SAE
+){
+  stopifnot(is.data.frame(data), is.logical(is_SAE))
+  if (is_SAE){
+    with(data, data[grepl("Yes", `Serious Adverse Event`),]) |>
+      dplyr::select(dplyr::any_of(
+        c("o_reviewed", "subject_id","form_repeat", "Name", "AESI",  "SAE Start date",
+          "SAE End date", "CTCAE severity", "Treatment related",
+          "Treatment action", "Other action", "SAE Category",
+          "SAE Awareness date", "SAE Date of death", "SAE Death reason")
+      )) |>
+      adjust_colnames("^SAE ")
+  } else {
+    with(data, data[!grepl("Yes", `Serious Adverse Event`),]) |> 
+      dplyr::select(-dplyr::starts_with("SAE"))
+  }
+}
+
+
 #' Update Review Records
 #'
 #' Updates the review records data frame when a datatable checkbox is clicked.

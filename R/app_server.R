@@ -123,6 +123,20 @@ app_server <- function(
     trigger_page_change = 1
   )
   
+  review_data <- reactiveValues()
+  observeEvent(r$review_data, {
+    req(review_data)
+    rev_list_data <- lapply(setNames(nm = app_vars$all_forms$form), \(x){
+      r$review_data[r$review_data$item_group == x, ]
+    })
+    for(i in names(rev_list_data)){
+      if(!identical(review_data[[i]], rev_list_data[[i]]) ){
+        golem::cat_dev("app_server | refreshing review_data of form ", i, "\n")
+        review_data[[i]] <- rev_list_data[[i]]
+      }
+    }
+  })
+  
   rev_data <- reactiveValues(
     summary = reactive({
       req(forms_to_review_data)
@@ -198,6 +212,14 @@ app_server <- function(
     bslib::nav_select(id = id_to_change, selected = navinfo$active_form)
   })
   
+  timeline_data <- reactive({
+    get_timeline_data(
+      r$filtered_data, 
+      r$filtered_tables, 
+      treatment_label = meta$settings$treatment_label %||% "\U1F48A T\U2093"
+    )
+  })
+  
   ###### Load common form tabs in UI and server:
   common_forms <- with(app_vars$all_forms, form[main_tab == "Common events"])
   lapply(common_forms, \(i){
@@ -209,10 +231,14 @@ app_server <- function(
   })
   lapply(common_forms, \(x){
     mod_common_forms_server(
-      id = paste0("cf_", simplify_string(x)), r = r, form = x,
+      id = paste0("cf_", simplify_string(x)), 
+      form = x,
+      form_data = reactive(r$filtered_data[[x]]), 
+      form_review_data = reactive(review_data[[x]]), 
       form_items = app_vars$items[[x]], 
+      active_subject = reactive(r$subject_id),
       table_names = app_vars$table_names, 
-      timeline_treatment_label = meta$settings$treatment_label
+      timeline_data = timeline_data
     ) 
   }) |>
     unlist(recursive = FALSE)
@@ -229,8 +255,13 @@ app_server <- function(
   })
   lapply(study_forms, \(x){
     mod_study_forms_server(
-      id = paste0("sf_", simplify_string(x)), r = r, form = x,
-      form_items = app_vars$items[[x]], table_names = app_vars$table_names,
+      id = paste0("sf_", simplify_string(x)), 
+      form = x,
+      form_data = reactive(r$filtered_data[[x]]), 
+      form_review_data = reactive(review_data[[x]]), 
+      form_items = app_vars$items[[x]], 
+      active_subject = reactive(r$subject_id),
+      table_names = app_vars$table_names,
       item_info = app_vars$form_level_data[app_vars$form_level_data$item_group == x, ]
     ) 
   }) |>

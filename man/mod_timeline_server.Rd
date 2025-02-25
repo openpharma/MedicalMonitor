@@ -4,22 +4,20 @@
 \alias{mod_timeline_server}
 \title{Interactive timeline - Shiny module Server}
 \usage{
-mod_timeline_server(id, r, form, treatment_label = "💊 Tₓ")
+mod_timeline_server(id, form_review_data, timeline_data, active_subject)
 }
 \arguments{
 \item{id}{Character string, used to connect the module UI with the module
 Server.}
 
-\item{r}{Common reactive values. Used to access the data frames
-\code{review_data}, \code{filtered_tables}, and the active \code{subject_id}.
-\code{review_data} will be used to minimize data points on the timeline that are
-already reviewed.}
+\item{form_review_data}{A reactive value containing the review data of the
+respective form.}
 
-\item{form}{A character vector, the form in which the timeline needs to be
-embedded. Currently, only the form 'Adverse events' is supported.}
+\item{timeline_data}{A reactive with a data frame containing the timeline
+data. Used to create the timeline figure. Created with
+\code{\link[=get_timeline_data]{get_timeline_data()}}.}
 
-\item{treatment_label}{Character with the treatment label to use. Defaults to
-"💊 Tₓ" if missing.}
+\item{active_subject}{A reactive value containing the active subject ID.}
 }
 \description{
 A shiny module. Creates an interactive timeline. Used to provide a quick
