@@ -14,7 +14,7 @@ check_appdata <- function(
     meta = metadata,
     required_cols = c("site_code", "subject_id", "event_date", "event_name", 
                       "item_group", "form_repeat", "item_name",    
-                      "vis_num", "edit_date_time", "day")
+                       "edit_date_time", "day")
 ){
   
   cat("Required column names:", required_cols, 

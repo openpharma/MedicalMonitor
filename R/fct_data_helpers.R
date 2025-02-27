@@ -55,6 +55,7 @@ get_metadata <- function(
     stop(stop_message)
   }
   
+  ### Verify and clean items_expanded
   meta$items_expanded <- meta[expand_tab_items] |> 
     dplyr::bind_rows(.id = "form_type") |> 
     expand_columns(
@@ -63,14 +64,15 @@ get_metadata <- function(
       unite_with = "var",
       remove_cols = FALSE
     ) 
-  
-  # Verify and clean form-level data:
+  ### Verify and clean form-level data:
   meta[["form_level_data"]] <- get_form_level_data(
     meta[["form_level_data"]], 
     all_forms = unique(meta$items_expanded$item_group)
   )
   
-  # verify if all required columns are available and if not create them:
+  ## Verify and clean event data:
+  meta[["events"]] <- clean_event_metadata(meta[["events"]])
+  
   missing_cols <- required_meta_cols[!required_meta_cols %in% names(meta$items_expanded)]
   if(length(missing_cols) != 0){
     warning(
@@ -133,61 +135,6 @@ rename_raw_data <- function(
   # Remove rows without subject_id and return results:
   df[!is.na(df$subject_id), ]
 }
-
-#' Add time vars to raw data
-#'
-#' @param data A data frame 
-#'
-#' @return A data frame, with derivative time and event variables, needed for
-#'   ClinSight to function properly.
-#'
-#' @keywords internal
-add_timevars_to_data <- function(
-    data
-){
-  stopifnot("[data] should be a data frame" = is.data.frame(data))
-  missing_new_cols <- required_col_names[!required_col_names %in% names(data)] |> 
-    paste0(collapse = ", ")
-  if(nchar(missing_new_cols) > 0) stop(
-    paste0("The following columns are missing while they are required:\n", 
-           missing_new_cols, ".")
-  )
-  
-  df <- data |>
-    dplyr::mutate(
-      edit_date_time = as.POSIXct(edit_date_time, tz = "UTC"),
-      event_date = as.Date(event_date),
-      day = day %|_|% {event_date - min(event_date, na.rm = TRUE)}, 
-      vis_day = ifelse(grepl("^SCR|^VIS|^FU", event_id, ignore.case = TRUE), day, NA),
-      vis_num = as.numeric(factor(vis_day))-1,
-      event_name = event_name %|_|% dplyr::case_when(
-        grepl("^SCR", event_id, ignore.case = TRUE) ~ "Screening",
-        grepl("^VIS", event_id, ignore.case = TRUE) ~ paste0("Visit ", vis_num),
-        grepl("^FU[[:digit:]]+", event_id, ignore.case = TRUE) ~ paste0("Visit ", vis_num, "(FU)"),
-        grepl("^UN", event_id, ignore.case = TRUE) ~ paste0("Unscheduled visit ", event_repeat),
-        toupper(event_id) == "EOT"    ~ "EoT",
-        toupper(event_id) == "EXIT"   ~ "Exit",
-        grepl("^AE|^CM|^CP|^MH|^PR|^ST", form_id) ~ "Any visit",
-        .default = paste0("Other (", event_id, ")")
-      ),
-      event_label = event_label %|_|% dplyr::case_when(
-        !is.na(vis_num)   ~ paste0("V", vis_num),
-        grepl("^UN", event_id, ignore.case = TRUE)   ~ paste0("UV", event_repeat),
-        .default = event_name
-      ),
-      .by = subject_id
-    ) |> 
-    dplyr::arrange(
-      factor(site_code, levels = order_string(site_code)),
-      factor(subject_id, levels = order_string(subject_id))
-    )
-  if(any(is.na(df$event_name) | grepl("^Other ", df$event_name))) warning(
-    "Undefined Events detected. Please verify data before proceeding."
-  )
-  df
-}
-
-
 
 #' Correct multiple choice variables
 #'
@@ -296,8 +243,6 @@ get_meta_vars <- function(data = appdata, meta = metadata){
   if(length(data) == 0) stop("Empty list with data provided")
   vars <- list()
   # add metadata variables:
-  vars$events <- setNames(meta$events$event_label, meta$events$event_name)
-  
   vars$items <- meta$items_expanded |> 
     dplyr::distinct(item_name, item_group) |> 
     split(~item_group) |> 
