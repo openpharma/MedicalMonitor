@@ -99,15 +99,15 @@ merge_meta_with_data <- function(
       "item_unit" = unit,
       "item_value" = VAL
     ) |> 
-    apply_custom_functions(meta$settings$post_merge_fns) |> 
     dplyr::mutate(
       region = region %|_|% ifelse(
         is.na(site_code), 
         "Missing", 
         gsub("_*[[:digit:]]+$", "", site_code)
       )
-    ) 
-    
+    ) |> 
+    merge_item_pairs_by_suffix(suffix = "_ITEM_TO_MERGE_WITH_PAIR") |> 
+    apply_custom_functions(meta$settings$post_merge_fns)
   attr(merged_data, "synch_time") <- synch_time
   merged_data
 }
