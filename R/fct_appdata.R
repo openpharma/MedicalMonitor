@@ -76,14 +76,19 @@ merge_meta_with_data <- function(
     rename_raw_data(column_names = meta$column_names) |> 
     readr::type_convert(clinsight_col_specs) |>
     apply_custom_functions(meta$settings$pre_merge_fns) |>
-    add_timevars_to_data() |> 
+    add_timevars_to_data(meta$events) |> 
+    add_events_to_data(meta$events) |> 
     # fix MC values before merging:
     fix_multiple_choice_vars(expected_vars = meta$items_expanded$var) |> 
     dplyr::right_join(meta$items_expanded, by = "var") |> 
     dplyr::filter(!is.na(item_value)) |>
     apply_custom_functions(meta$settings$pre_pivot_fns) |>
     dplyr::mutate(
-      suffix_names = suffix_names %|_|% ifelse(is.na(suffix) | grepl("ORRES$", suffix) | item_group == "General", "VAL", suffix)
+      suffix_names = suffix_names %|_|% ifelse(
+        is.na(suffix) | grepl("ORRES$", suffix) | item_group == "General", 
+        "VAL", 
+        suffix
+      )
     ) |> 
     dplyr::select(-var, -suffix) |> 
     dplyr::mutate(
@@ -99,15 +104,15 @@ merge_meta_with_data <- function(
       "item_unit" = unit,
       "item_value" = VAL
     ) |> 
-    apply_custom_functions(meta$settings$post_merge_fns) |> 
     dplyr::mutate(
       region = region %|_|% ifelse(
         is.na(site_code), 
         "Missing", 
         gsub("_*[[:digit:]]+$", "", site_code)
       )
-    ) 
-    
+    ) |> 
+    merge_item_pairs_by_suffix(suffix = "_ITEM_TO_MERGE_WITH_PAIR") |> 
+    apply_custom_functions(meta$settings$post_merge_fns)
   attr(merged_data, "synch_time") <- synch_time
   merged_data
 }
@@ -162,6 +167,8 @@ apply_edc_specific_changes <- function(
     ) |> 
     dplyr::select(-dplyr::all_of(expected_columns))
 }
+
+
 
 
 #' Apply study-specific fixes
@@ -229,10 +236,23 @@ apply_study_specific_fixes <- function(
 #' @param .default A character vector containing the names of the functions to
 #'   apply if none are provided. Default is "identity".
 #' @keywords internal
-apply_custom_functions <- function(data, functions = NULL, .default = "identity") {
-  Reduce(\(x1, x2) do.call(x2, list(x1)), # Apply next function to output of previous
-         functions %||% .default, # Apply default functions if no additional functions provided
-         init = data) # Initialize with the data object
+apply_custom_functions <- function(
+    data, 
+    functions = NULL, 
+    .default = "identity"
+    ) {
+  stopifnot(is.data.frame(data))
+  stopifnot(is.null(functions) || is.character(functions))
+  stopifnot(is.character(.default))
+  
+  Reduce(
+    \(x1, x2) {
+      cat("applying function '", x2, "' to the data\n", sep = "")
+      do.call(x2, list(x1))
+    }, # Apply next function to output of previous
+    functions %||% .default, # Apply default functions if no additional functions provided
+    init = data # Initialize with the data object
+  )
 }
 
 #' Get appdata
@@ -253,7 +273,6 @@ get_appdata <-  function(
 ){
   tableclasses <- gsub("create_table.", "", as.character(utils::methods("create_table")))
   var_levels <- dplyr::distinct(meta$items_expanded, form_type, item_name, item_group)
-  
   data <- split(data, ~item_group)
   ## Apply changes specific for continuous data:
   appdata <- lapply(data, \(x){

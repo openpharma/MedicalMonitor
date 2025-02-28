@@ -11,16 +11,16 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,5,9700-005,1,SCR,Screening,2022-08-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,37,NA,2022-11-15 11:53,DM2,Initial Data Entry
 2,9700,5,9700-005,1,SCR,Screening,2022-08-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,100,NA,2022-11-15 11:53,DM3,Initial Data Entry
 2,9700,5,9700-005,1,SCR,Screening,2022-08-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,100,NA,2022-11-15 11:53,NA,Initial Data Entry
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,2.0,Yes,1,2022-11-16 14:43,DM1,Initial Data Entry
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,2.0,2022-11-16,NA,2022-11-16 14:43,NA,Initial Data Entry
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,2.0,NA,NA,NA,DM2,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,2.0,0.00,NA,2022-11-16 14:43,DM2,Function execution
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,2.0,NA,NA,NA,NA,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,5,9700-005,9,VIS,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,2.0,Yes,1,2022-11-16 14:43,DM1,Initial Data Entry
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,2.0,2022-11-16,NA,2022-11-16 14:43,NA,Initial Data Entry
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,2.0,NA,NA,NA,DM2,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,2.0,0.00,NA,2022-11-16 14:43,DM2,Function execution
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,2.0,NA,NA,NA,NA,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,5,9700-005,9,VIS9,Study Visit (Primary Treatment Phase),2022-11-16,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,NA,NA,NA,NA,NA
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,2.0,Yes,1,2022-11-16 09:19,DM2,Initial Data Entry
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,2.0,2022-08-30,NA,2022-11-16 09:19,DM1,Initial Data Entry
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,2.0,02:00,NA,2022-11-16 09:19,DM3,Initial Data Entry
@@ -30,14 +30,14 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,5555,NA,2022-11-16 09:19,DM3,Initial Data Entry
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,5555,NA,2022-11-16 09:19,DM1,Initial Data Entry
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,5555,NA,2022-11-16 09:19,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,2.0,Yes,1,2022-11-16 09:56,NA,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,2.0,2022-09-01,NA,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,2.0,Yes,1,2022-11-16 09:56,NA,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,2.0,2022-09-01,NA,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,2.0,NA,NA,NA,DM2,NA
 2,9700,10,9700-010,1,SCR,Screening,2022-11-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,11.0,Yes,1,2022-11-24 13:06,NA,Initial Data Entry
 2,9700,10,9700-010,1,SCR,Screening,2022-11-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,11.0,2022-11-01,NA,2022-11-24 13:06,NA,Initial Data Entry
 2,9700,10,9700-010,1,SCR,Screening,2022-11-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,11.0,14:05,NA,2022-11-24 13:06,DM3,Initial Data Entry
@@ -69,14 +69,14 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,14,9700-014,1,SCR,Screening,2022-11-13,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,11.0,37.0,NA,2022-11-25 13:15,NA,Initial Data Entry
 2,9700,14,9700-014,1,SCR,Screening,2022-11-13,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,11.0,80,NA,2022-11-25 13:15,DM3,Initial Data Entry
 2,9700,14,9700-014,1,SCR,Screening,2022-11-13,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,11.0,120,NA,2022-11-25 13:15,DM3,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,11.0,Yes,1,2022-11-25 15:07,DM2,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,11.0,2022-11-01,NA,2022-11-25 15:07,DM2,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,11.0,13:40,NA,2022-11-25 15:07,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,11.0,Yes,1,2022-11-25 15:07,DM2,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,11.0,2022-11-01,NA,2022-11-25 15:07,DM2,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,11.0,13:40,NA,2022-11-25 15:07,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,11.0,NA,NA,NA,DM3,NA
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,11.0,Yes,1,2022-11-29 12:02,DM3,Initial Data Entry
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,11.0,2022-11-23,NA,2022-11-29 12:02,DM2,Initial Data Entry
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,11.0,13:01,NA,2022-11-29 12:02,DM1,Initial Data Entry
@@ -112,17 +112,17 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,32,9700-032,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,50.0,32,NA,2023-01-06 09:26,NA,Initial Data Entry
 2,9700,32,9700-032,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,50.0,220,NA,2023-01-06 09:26,NA,Initial Data Entry
 2,9700,32,9700-032,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,50.0,100,NA,2023-01-06 09:26,DM3,Initial Data Entry
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,63.0,Yes,1,2023-05-10 08:48,DM1,Initial Data Entry
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,63.0,2023-05-10,NA,2023-05-10 08:48,DM3,Initial Data Entry
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,63.0,NA,NA,NA,DM2,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_HEIGHT_VSORRES,Height (cm) result in original units,63.0,NA,NA,NA,DM2,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,63.0,NA,NA,NA,DM3,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,63.0,NA,NA,2023-05-10 08:48,NA,Initial Data Entry
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,63.0,NA,NA,NA,NA,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,63.0,NA,NA,NA,DM2,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,63.0,NA,NA,NA,DM3,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,63.0,NA,NA,NA,DM1,NA
-2,9700,34,9700-034,3,VIS,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,63.0,NA,NA,NA,DM2,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,63.0,Yes,1,2023-05-10 08:48,DM1,Initial Data Entry
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,63.0,2023-05-10,NA,2023-05-10 08:48,DM3,Initial Data Entry
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,63.0,NA,NA,NA,DM2,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_HEIGHT_VSORRES,Height (cm) result in original units,63.0,NA,NA,NA,DM2,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,63.0,NA,NA,NA,DM3,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,63.0,NA,NA,2023-05-10 08:48,NA,Initial Data Entry
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,63.0,NA,NA,NA,NA,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,63.0,NA,NA,NA,DM2,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,63.0,NA,NA,NA,DM3,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,63.0,NA,NA,NA,DM1,NA
+2,9700,34,9700-034,3,VIS3,Study Visit (Primary Treatment Phase),2023-05-10,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,63.0,NA,NA,NA,DM2,NA
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,50.0,Yes,1,2023-01-09 08:16,NA,Initial Data Entry
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,50.0,2022-01-01,NA,2023-01-09 08:16,DM3,Initial Data Entry
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,50.0,04:00,NA,2023-01-09 08:16,DM1,Initial Data Entry
@@ -134,14 +134,14 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,50.0,37.5,NA,2023-01-09 08:16,DM2,Initial Data Entry
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,50.0,99,NA,2023-01-09 08:16,DM3,Initial Data Entry
 3,9600,2,9600-002,1,SCR,Screening,2022-01-01,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,50.0,77,NA,2023-01-09 08:16,NA,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,50.0,Yes,1,2023-01-09 08:30,DM1,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,50.0,2022-09-11,NA,2023-01-09 08:30,NA,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,50.0,03:00,NA,2023-01-09 08:30,DM2,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,50.0,77,NA,2023-01-09 08:30,DM3,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,50.0,9,NA,2023-01-09 08:30,DM2,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,50.0,37.5,NA,2023-01-09 08:30,DM1,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,50.0,99,NA,2023-01-09 08:30,DM3,Initial Data Entry
-3,9600,2,9600-002,8,VISEXT,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,50.0,77,NA,2023-01-09 08:30,NA,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,50.0,Yes,1,2023-01-09 08:30,DM1,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSDAT,Date of measurements,50.0,2022-09-11,NA,2023-01-09 08:30,NA,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG1,1,VS_VSTIM,Time of measurements,50.0,03:00,NA,2023-01-09 08:30,DM2,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,50.0,77,NA,2023-01-09 08:30,DM3,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,50.0,9,NA,2023-01-09 08:30,DM2,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,50.0,37.5,NA,2023-01-09 08:30,DM1,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,50.0,99,NA,2023-01-09 08:30,DM3,Initial Data Entry
+3,9600,2,9600-002,8,VISEXT8,Study Visit (Extension Treatment Phase),2022-09-11,VIS2_VS,NA,VS,Vital Signs,1,2,2,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,50.0,77,NA,2023-01-09 08:30,NA,Initial Data Entry
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,56.0,Yes,1,2023-05-03 06:00,DM3,Initial Data Entry
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,56.0,2023-04-26,NA,2023-05-03 06:00,NA,Initial Data Entry
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,56.0,12:00,NA,2023-05-03 06:00,DM1,Initial Data Entry
@@ -153,17 +153,17 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,56.0,36.5,NA,2023-05-03 06:00,DM3,Initial Data Entry
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,56.0,120,NA,2023-05-03 06:00,DM2,Initial Data Entry
 3,9600,6,9600-006,1,SCR,Screening,2023-04-26,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,56.0,80,NA,2023-05-03 06:00,DM3,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,56.0,Yes,1,2023-05-05 13:18,NA,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,56.0,2023-05-24,NA,2023-05-24 14:02,NA,Query resolution
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,56.0,07:25,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_HEIGHT_VSORRES,Height (cm) result in original units,56.0,182,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,56.0,75,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,56.0,22.64,NA,2023-05-24 13:56,DM2,Function execution
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,56.0,65,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,56.0,15,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,56.0,36,NA,2023-05-24 13:56,DM1,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,56.0,120,NA,2023-05-24 13:56,DM2,Initial Data Entry
-3,9600,7,9600-007,1,VIS,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,56.0,80,NA,2023-05-24 13:56,NA,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,56.0,Yes,1,2023-05-05 13:18,NA,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,56.0,2023-05-24,NA,2023-05-24 14:02,NA,Query resolution
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,56.0,07:25,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_HEIGHT_VSORRES,Height (cm) result in original units,56.0,182,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_WEIGHT_VSORRES,Weight (kg) result in original units,56.0,75,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_BMI_VSORRES,BMI (kg/m2) result in original units,56.0,22.64,NA,2023-05-24 13:56,DM2,Function execution
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_PULSE_VSORRES,PR (beats/min) result in original units,56.0,65,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_RESP_VSORRES,RR (breaths/min) result in orig units,56.0,15,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_TEMP_VSORRES,Temp (C) result in original units,56.0,36,NA,2023-05-24 13:56,DM1,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_SYSBP_VSORRES,BP sys (mmHg) result in original units,56.0,120,NA,2023-05-24 13:56,DM2,Initial Data Entry
+3,9600,7,9600-007,1,VIS1,Study Visit (Primary Treatment Phase),2023-05-24,VIS_VS,NA,VS,Vital Signs,1,1,1,NA,VSG10,1,VS_DIABP_VSORRES,BP dia (mmHg) result in original units,56.0,80,NA,2023-05-24 13:56,NA,Initial Data Entry
 3,9600,9,9600-009,1,SCR,Screening,2023-05-08,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSPERF,Were vital signs collected?,56.0,Yes,1,2023-05-08 08:38,NA,Initial Data Entry
 3,9600,9,9600-009,1,SCR,Screening,2023-05-08,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSDAT,Date of measurements,56.0,2023-05-08,NA,2023-05-08 08:38,DM3,Initial Data Entry
 3,9600,9,9600-009,1,SCR,Screening,2023-05-08,SCR_VIT,NA,VS,Vital Signs,1,1,1,NA,VSG1,1,VS_VSTIM,Time of measurements,56.0,11:00,NA,2023-05-08 08:38,DM2,Initial Data Entry

@@ -314,161 +314,161 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_LBLOC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG23,1,LBSER_URATE_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_LBLOC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG23,1,LBSER_URATE_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
 2,9700,8,9700-008,1,SCR,Screening,2022-08-30,SCR_LBLOC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG23,1,LBSER_URATE_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBPERF,Haematology test completion status,2.0,Yes,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBDAT,Date of sample collection,2.0,2022-09-01,NA,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBTIM,Time of sample collection,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBTEST,Erythrocytes,2.0,Sodium,NA,2022-11-16 09:56,DM2,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBTEST,Erythrocytes,2.0,Potassium,NA,2022-11-16 09:56,DM1,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBTEST,Erythrocytes,2.0,Chloride,NA,2022-11-16 09:56,DM3,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBTEST,Erythrocytes,2.0,Bicarbonate,NA,2022-11-16 09:56,DM3,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBTEST,Erythrocytes,2.0,Calcium,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBTEST,Erythrocytes,2.0,Magnesium,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBTEST,Erythrocytes,2.0,Phosphate,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBTEST,Erythrocytes,2.0,Urea Nitrogen,NA,2022-11-16 09:56,DM2,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBTEST,Erythrocytes,2.0,Creatinine,NA,2022-11-16 09:56,DM1,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBTEST,Erythrocytes,2.0,"Glomerular Filtration Rate, Estimated",NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBTEST,Erythrocytes,2.0,Glucose,NA,2022-11-16 09:56,DM1,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBTEST,Erythrocytes,2.0,Albumin,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBTEST,Erythrocytes,2.0,Protein,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBTEST,Erythrocytes,2.0,Alkaline Phosphatase,NA,2022-11-16 09:56,DM2,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBTEST,Erythrocytes,2.0,Bilirubin,NA,2022-11-16 09:56,DM2,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBTEST,Erythrocytes,2.0,Aspartate Aminotransferase,NA,2022-11-16 09:56,DM3,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBTEST,Erythrocytes,2.0,Alanine Aminotransferase,NA,2022-11-16 09:56,DM3,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBTEST,Erythrocytes,2.0,Lactate Dehydrogenase,NA,2022-11-16 09:56,NA,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBTEST,Erythrocytes,2.0,Urate,NA,2022-11-16 09:56,DM1,Function execution
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
-2,9700,8,9700-008,1,VIS,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBPERF,Haematology test completion status,2.0,Yes,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBDAT,Date of sample collection,2.0,2022-09-01,NA,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG1,1,LBSER_LBTIM,Time of sample collection,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBTEST,Erythrocytes,2.0,Sodium,NA,2022-11-16 09:56,DM2,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG2,1,LBSER_SODIUM_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBTEST,Erythrocytes,2.0,Potassium,NA,2022-11-16 09:56,DM1,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG3,1,LBSER_K_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBTEST,Erythrocytes,2.0,Chloride,NA,2022-11-16 09:56,DM3,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG4,1,LBSER_CL_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBTEST,Erythrocytes,2.0,Bicarbonate,NA,2022-11-16 09:56,DM3,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG5,1,LBSER_BICARB_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBTEST,Erythrocytes,2.0,Calcium,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG6,1,LBSER_CA_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBTEST,Erythrocytes,2.0,Magnesium,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG7,1,LBSER_MG_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBTEST,Erythrocytes,2.0,Phosphate,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG8,1,LBSER_PHOS_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBTEST,Erythrocytes,2.0,Urea Nitrogen,NA,2022-11-16 09:56,DM2,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG9,1,LBSER_UREAN_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBTEST,Erythrocytes,2.0,Creatinine,NA,2022-11-16 09:56,DM1,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG10,1,LBSER_CREAT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBTEST,Erythrocytes,2.0,"Glomerular Filtration Rate, Estimated",NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM3,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG12,1,LBSER_GFRE_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBTEST,Erythrocytes,2.0,Glucose,NA,2022-11-16 09:56,DM1,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG13,1,LBSER_GLUC_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBTEST,Erythrocytes,2.0,Albumin,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG14,1,LBSER_ALB_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBTEST,Erythrocytes,2.0,Protein,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG15,1,LBSER_PROT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBTEST,Erythrocytes,2.0,Alkaline Phosphatase,NA,2022-11-16 09:56,DM2,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG16,1,LBSER_ALP_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBTEST,Erythrocytes,2.0,Bilirubin,NA,2022-11-16 09:56,DM2,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR,RBC normal range,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG17,1,LBSER_BILI_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBTEST,Erythrocytes,2.0,Aspartate Aminotransferase,NA,2022-11-16 09:56,DM3,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,NA,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORRESU,RBC original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG20,1,LBSER_AST_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBTEST,Erythrocytes,2.0,Alanine Aminotransferase,NA,2022-11-16 09:56,DM3,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM2,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORRESU,RBC original units,2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG21,1,LBSER_ALT_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBTEST,Erythrocytes,2.0,Lactate Dehydrogenase,NA,2022-11-16 09:56,NA,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORRES,RBC result in original units,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORRESU,RBC original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR,RBC normal range,2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM1,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG22,1,LBSER_LDH_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBTEST,Erythrocytes,2.0,Urate,NA,2022-11-16 09:56,DM1,Function execution
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBRANGE,RBC =/>/<,2.0,=,1,2022-11-16 09:56,DM1,Initial Data Entry
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORRES,RBC result in original units,2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORRESU,RBC original units,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR,RBC normal range,2.0,NA,NA,NA,DM3,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Lower,RBC normal range (Lower),2.0,NA,NA,NA,NA,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Comparator,RBC normal range (Comparator),2.0,NA,NA,NA,DM2,NA
+2,9700,8,9700-008,1,VIS1,Study Visit (Primary Treatment Phase),2022-09-01,VIS_SC,NA,LBSER,Serum Chemistry,1,2,2,NA,LBSERG23,1,LBSER_URATE_LBORNR_Upper,RBC normal range (Upper),2.0,NA,NA,NA,NA,NA
 2,9700,36,9700-036,1,SCR,Screening,2023-05-09,SCR_SC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG1,1,LBSER_LBPERF,Serum Chemistry test completion status,63.0,Yes,1,2023-05-09 14:35,DM2,Initial Data Entry
 2,9700,36,9700-036,1,SCR,Screening,2023-05-09,SCR_SC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG1,1,LBSER_LBDAT,Date of sample collection,63.0,2023-05-09,NA,2023-05-09 14:35,NA,Initial Data Entry
 2,9700,36,9700-036,1,SCR,Screening,2023-05-09,SCR_SC,NA,LBSER,Serum Chemistry,1,1,1,NA,LBSERG1,1,LBSER_LBTIM,Time of sample collection,63.0,NA,NA,NA,DM2,NA

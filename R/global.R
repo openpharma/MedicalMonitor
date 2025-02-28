@@ -113,6 +113,15 @@ utils::globalVariables(
     "region",
     "suffix_names",
     "form_type",
+    "is_regular_visit",
+    "add_sequence_to_name",
+    "event_id_pattern",
+    "generate_labels",
+    "event_name_custom",
+    "event_label_custom",
+    "meta_event_order",
+    "event_name_edc",
+    "vis_num",
     "id",
     "o_reviewed",
     "row_id",
@@ -120,7 +129,14 @@ utils::globalVariables(
     "end",
     "className",
     "DrugAdminDate",
-    "DrugAdminDose"
+    "DrugAdminDose",
+    "not_reviewed_but_missing",
+    "baseline_date",
+    "derived_order",
+    "event_order",
+    "is_baseline_event",
+    "order_occurrence",
+    "vis_number"
   )
 )
 

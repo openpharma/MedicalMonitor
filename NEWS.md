@@ -10,17 +10,23 @@
 - Add a logging table to the DB for reviews.
 - Simplify pulling data from DB for reviews.
 - Review data by records IDs instead of subject & form
+- Improved generalization of event names for use in multiple studies.
 - Make query handling a configurable option
 - Changed the legend to display 'significance pending' instead of 'significance unknown'.
 - Added `Excel` download button to Queries table & patient listings that need review.
 - (For developers) From now on,the new Chrome headless browser mode will be used for `shinytest2` tests so that unit tests can be run with Chrome v132. 
 - The interactive timeline now has more consistent labels, will center an item on click, and has customizable treatment labels (by setting `settings$treatment_label` in the metadata).
 - (For developers) added raw data that can be used to completely recreate the internal dataset (`clinsightful_data`) with the merge functions in the package.
+- (For developers) refactored `mod_study_forms`, `mod_common_forms`, and `mod_review_forms_tbl`, so that they now only need data of one form instead of all study data. Moved some business logic for the form tables to helper functions for `mod_review_forms_tbl`. This reduces unnecessary refreshing of data after saving a review.
+- filters in mod_study_forms are now only triggered after a delay. This way, the filter will only trigger after finishing selecting/deselecting multiple items.
+- Removed some custom logic in `create_table` so that it does not interfere
 
 ## Bug fixes
 
 - The test-coverage GHA workflow is updated so that codecov uploads work again.
 - Display all rows for tables where `Scroller` is disabled.
+- Tables with continuous data now show reason for missing data again when this information is new, instead of showing `NA`. 
+- Fixed ordering for adverse events when bold HTML tags are added. Adverse events now show the newest event first again by default.
 
 # clinsight 0.1.1
 
