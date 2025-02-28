@@ -1312,7 +1312,7 @@
             }
           ],
           "rowCallback": "rowCallback",
-          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
+          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Vital signs\")\n}",
           "dom": "Bf<\"header h5\">ti",
           "buttons": [
             {
@@ -3533,7 +3533,7 @@
         "Yes"
       ]
     },
-    "test-table_data": {
+    "test-review_form_tbl-table_data": {
       "o_reviewed": [
         {
           "reviewed": null,

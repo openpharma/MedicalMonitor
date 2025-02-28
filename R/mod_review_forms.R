@@ -101,6 +101,7 @@ mod_review_forms_server <- function(
     db_path
 ){
   stopifnot(is.reactivevalues(r))
+  stopifnot(is.reactivevalues(isolate(r$review_data)))
   stopifnot(is.reactive(active_form))
   stopifnot(is.reactive(active_tab))
   stopifnot(is.data.frame(review_required_data))
@@ -112,9 +113,11 @@ mod_review_forms_server <- function(
     ns <- session$ns
     
     review_data_active <- reactive({
-      with(r$review_data, r$review_data[
-        subject_id == r$subject_id & item_group == active_form(),
-        ])
+      tryCatch(
+        subset(r$review_data[[active_form()]], subject_id == r$subject_id),
+        # Returns expected empty data frame for empty form
+        error = \(e) r$review_data[[names(r$review_data)[1]]][0,]
+      )
     })
     
     review_indeterminate <- reactiveVal()
@@ -150,15 +153,15 @@ mod_review_forms_server <- function(
         dplyr::mutate(reviewed = ifelse(input$form_reviewed, "Yes", "No")) |> 
         dplyr::select(id, reviewed) |> 
         dplyr::anti_join(
-          subset(r$review_data, item_group == active_form()),
-          by = c("id", "reviewed")
-        ) |> 
+          r$review_data[[active_form()]] |> 
+            dplyr::select("id", "reviewed")
+          )  |> 
         dplyr::arrange(id)
     }, ignoreInit = TRUE)    
     
     observeEvent(c(active_form(), r$subject_id), {
       cat("Update confirm review button\n\n\n")
-      req(r$review_data)
+      req(r$review_data[[active_form()]])
       review_indeterminate(FALSE)
       if(nrow(review_data_active()) == 0){ 
         cat("No review data found for Subject id: ", r$subject_id, 
@@ -287,14 +290,15 @@ mod_review_forms_server <- function(
       
       if (isTRUE(all.equal(review_records_db, review_records, check.attributes = FALSE))){
         cat("Update review data and status in app\n")
-        r$review_data <- r$review_data |> 
+        r$review_data[[active_form()]] <- r$review_data[[active_form()]] |> 
           dplyr::rows_update(review_records, by = "id")
       }
       
-      updated_records_memory <- r$review_data[
-        r$review_data$id %in% review_records$id,
+      updated_records_memory <- subset(
+        r$review_data[[active_form()]],
+        id %in% review_records$id,
         names(review_records_db)
-      ]
+      )
       
       session$userData$update_checkboxes[[active_form()]] <- NULL
       session$userData$review_records[[active_form()]] <- data.frame(id = integer(), reviewed = character())
@@ -315,7 +319,8 @@ mod_review_forms_server <- function(
             id = ns("review_save_error"),
             type = "error"
           )
-          r$review_data <- db_get_table(db_path, db_table = "all_review_data")
+          r$review_data[[active_form()]] <- 
+            split_review_data(db_path)[[active_form()]]
         })
       }
       showNotification("Input saved successfully", duration = 1, type = "message") 
