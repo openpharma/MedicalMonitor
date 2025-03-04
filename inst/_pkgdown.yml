@@ -88,6 +88,8 @@ reference:
   - adjust_colnames
   - bind_rows_custom
   - check_appdata
+  - create_clinsight_config
+  - create_clinsight_metadata
   - filter_data
   - clean_dates
   - collapse_column_vals
