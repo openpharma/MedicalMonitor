@@ -632,7 +632,7 @@
             ],
             "text": [
               "<b>9600-002<\/b><br />2022-01-01<br />Screening (day 0)<br />Value: 99 mmHg",
-              "<b>9600-002<\/b><br />2022-09-11<br />Visit 2 (day 253)<br />Value: 99 mmHg"
+              "<b>9600-002<\/b><br />2022-09-11<br />Ext. visit 1 (day 253)<br />Value: 99 mmHg"
             ],
             "type": "scatter",
             "mode": "markers",
@@ -667,7 +667,7 @@
             ],
             "text": [
               "<b>9600-002<\/b><br />2022-01-01<br />Screening (day 0)<br />Value: 77 mmHg",
-              "<b>9600-002<\/b><br />2022-09-11<br />Visit 2 (day 253)<br />Value: 77 mmHg"
+              "<b>9600-002<\/b><br />2022-09-11<br />Ext. visit 1 (day 253)<br />Value: 77 mmHg"
             ],
             "type": "scatter",
             "mode": "markers",
@@ -702,7 +702,7 @@
             ],
             "text": [
               "<b>9600-002<\/b><br />2022-01-01<br />Screening (day 0)<br />Value: 77 beats/min",
-              "<b>9600-002<\/b><br />2022-09-11<br />Visit 2 (day 253)<br />Value: 77 beats/min"
+              "<b>9600-002<\/b><br />2022-09-11<br />Ext. visit 1 (day 253)<br />Value: 77 beats/min"
             ],
             "type": "scatter",
             "mode": "markers",
@@ -737,7 +737,7 @@
             ],
             "text": [
               "<b>9600-002<\/b><br />2022-01-01<br />Screening (day 0)<br />Value: 37.5 °C",
-              "<b>9600-002<\/b><br />2022-09-11<br />Visit 2 (day 253)<br />Value: 37.5 °C"
+              "<b>9600-002<\/b><br />2022-09-11<br />Ext. visit 1 (day 253)<br />Value: 37.5 °C"
             ],
             "type": "scatter",
             "mode": "markers",
@@ -824,7 +824,7 @@
             ],
             "text": [
               "<b>9600-002<\/b><br />2022-01-01<br />Screening (day 0)<br />Value: 9 breaths/min",
-              "<b>9600-002<\/b><br />2022-09-11<br />Visit 2 (day 253)<br />Value: 9 breaths/min"
+              "<b>9600-002<\/b><br />2022-09-11<br />Ext. visit 1 (day 253)<br />Value: 9 breaths/min"
             ],
             "type": "scatter",
             "mode": "markers",

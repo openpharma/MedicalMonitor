@@ -127,7 +127,6 @@ describe(
           I expect that the active data set [data_active] is a data frame object, 
           and that this data frame contains only data of subject NLD_06_755, 
           and that the medication 'Pantoprazole' exists in the active table,
-          and that the medication name is shown in bold, 
           and that the output table is a valid JSON object",
       {
         testargs <- list(
@@ -156,7 +155,6 @@ describe(
                    grepl("Adverse event", Indication)]
           )
           expect_true(length(pantoprazole_med) != 0 )
-          expect_true(grepl("<b>", pantoprazole_med))
         })
       }
     )

@@ -182,97 +182,97 @@ SiteSeq,SiteCode,SubjectSeq,SubjectId,EventSeq,EventId,EventName,EventDate,Activ
 2,9700,15,9700-015,1,SCR,Screening,2022-08-01,SCR_LBLOC,NA,LBHM,Haematology,1,2,2,NA,HMG6,1,LBHM_RDW_LBORNR_Lower,RDW normal range (Lower),11.0,NA,NA,NA,NA,NA
 2,9700,15,9700-015,1,SCR,Screening,2022-08-01,SCR_LBLOC,NA,LBHM,Haematology,1,2,2,NA,HMG6,1,LBHM_RDW_LBORNR_Comparator,RDW normal range (Comparator),11.0,NA,NA,NA,NA,NA
 2,9700,15,9700-015,1,SCR,Screening,2022-08-01,SCR_LBLOC,NA,LBHM,Haematology,1,2,2,NA,HMG6,1,LBHM_RDW_LBORNR_Upper,RDW normal range (Upper),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBPERF,Haematology test completion status,11.0,Yes,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBDAT,Date of sample collection,11.0,2022-11-01,NA,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBTIM,Time of sample collection,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBTEST,Erythrocytes,11.0,Erythrocytes,NA,2022-11-25 15:09,DM1,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBRANGE,RBC =/>/<,11.0,=,1,2022-11-25 15:09,DM1,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORRES,RBC result in original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORRESU,RBC original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR,RBC normal range,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Lower,RBC normal range (Lower),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Comparator,RBC normal range (Comparator),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Upper,RBC normal range (Upper),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBTEST,Leukocytes,11.0,Leukocytes,NA,2022-11-25 15:09,DM3,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBRANGE,WBC =/>/<,11.0,=,1,2022-11-25 15:09,DM2,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORRES,WBC result in original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORRESU,WBC original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR,WBC normal range,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Lower,WBC normal range (Lower),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Comparator,WBC normal range (Comparator),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Upper,WBC normal range (Upper),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBTEST,Haemoglobin,11.0,Haemoglobin,NA,2022-11-25 15:09,NA,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBRANGE,HGB =/>/<,11.0,=,1,2022-11-25 15:09,DM2,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORRES,HGB result in original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORRESU,HGB original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR,HGB normal range,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Lower,HGB normal range (Lower),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Comparator,HGB normal range (Comparator),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Upper,HGB normal range (Upper),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBTEST,Haematocrit,11.0,Haematocrit,NA,2022-11-25 15:09,DM1,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBRANGE,HCT =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORRES,HCT finding in original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORRESU,HCT original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR,HCT normal range,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Lower,HCT normal range (Lower),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Comparator,HCT normal range (Comparator),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Upper,HCT normal range (Upper),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBTEST,Nucleated Erythrocytes,11.0,Nucleated Erythrocytes,NA,2022-11-25 15:09,NA,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBRANGE,RBCNUC =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORRES,RBCNUC result in original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORRESU,RBCNUC original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR,RBCNUC normal range,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Lower,RBCNUC normal range (Lower),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Comparator,RBCNUC normal range (Comparator),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Upper,RBCNUC normal range (Upper),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBTEST,Reticulocytes,11.0,Reticulocytes,NA,2022-11-25 15:09,NA,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBRANGE,RETI =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORRES,RETI result in original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORRESU,RETI original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR,RETI normal range,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Lower,RETI normal range (Lower),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Comparator,RETI normal range (Comparator),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Upper,RETI normal range (Upper),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBTEST,Platelets,11.0,Platelets,NA,2022-11-25 15:09,NA,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBRANGE,PLAT =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORRES,PLAT result in original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORRESU,PLAT original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR,PLAT normal range,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Lower,PLAT normal range (Lower),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Comparator,PLAT normal range (Comparator),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Upper,PLAT normal range (Upper),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBTEST,Ery. Mean Corpuscular Volume,11.0,Ery. Mean Corpuscular Volume,NA,2022-11-25 15:09,NA,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBRANGE,MCV =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORRES,MCV finding in original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORRESU,MCV original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR,MCV normal range,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Lower,MCV normal range (Lower),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Comparator,MCV normal range (Comparator),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Upper,MCV normal range (Upper),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBTEST,Ery. Mean Corpuscular Hemoglobin,11.0,Ery. Mean Corpuscular Hemoglobin,NA,2022-11-25 15:09,DM2,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBRANGE,MCH =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORRES,MCH finding in original units,11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORRESU,MCH original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR,MCH normal range,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Lower,MCH normal range (Lower),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Comparator,MCH normal range (Comparator),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Upper,MCH normal range (Upper),11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBTEST,Ery. Mean Corpuscular HGB Concentration,11.0,Ery. Mean Corpuscular HGB Concentration,NA,2022-11-25 15:09,DM1,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBRANGE,MCHC =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORRES,MCHC finding in original units,11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORRESU,MCHC original units,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR,MCHC normal range,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Lower,MCHC normal range (Lower),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Comparator,MCHC normal range (Comparator),11.0,NA,NA,NA,DM3,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Upper,MCHC normal range (Upper),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBTEST,Erythrocytes Distribution Width,11.0,Erythrocytes Distribution Width,NA,2022-11-25 15:09,DM2,Function execution
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBRANGE,RDW =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORRES,RDW result in original units,11.0,NA,NA,NA,NA,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORRESU,RDW original units,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR,RDW normal range,11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Lower,RDW normal range (Lower),11.0,NA,NA,NA,DM1,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Comparator,RDW normal range (Comparator),11.0,NA,NA,NA,DM2,NA
-2,9700,15,9700-015,1,VIS,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Upper,RDW normal range (Upper),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBPERF,Haematology test completion status,11.0,Yes,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBDAT,Date of sample collection,11.0,2022-11-01,NA,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBTIM,Time of sample collection,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBTEST,Erythrocytes,11.0,Erythrocytes,NA,2022-11-25 15:09,DM1,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBRANGE,RBC =/>/<,11.0,=,1,2022-11-25 15:09,DM1,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORRES,RBC result in original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORRESU,RBC original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR,RBC normal range,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Lower,RBC normal range (Lower),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Comparator,RBC normal range (Comparator),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG13,1,LBHM_RBC_LBORNR_Upper,RBC normal range (Upper),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBTEST,Leukocytes,11.0,Leukocytes,NA,2022-11-25 15:09,DM3,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBRANGE,WBC =/>/<,11.0,=,1,2022-11-25 15:09,DM2,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORRES,WBC result in original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORRESU,WBC original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR,WBC normal range,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Lower,WBC normal range (Lower),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Comparator,WBC normal range (Comparator),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG5,1,LBHM_WBC_LBORNR_Upper,WBC normal range (Upper),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBTEST,Haemoglobin,11.0,Haemoglobin,NA,2022-11-25 15:09,NA,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBRANGE,HGB =/>/<,11.0,=,1,2022-11-25 15:09,DM2,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORRES,HGB result in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORRESU,HGB original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR,HGB normal range,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Lower,HGB normal range (Lower),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Comparator,HGB normal range (Comparator),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG3,1,LBHM_HGB_LBORNR_Upper,HGB normal range (Upper),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBTEST,Haematocrit,11.0,Haematocrit,NA,2022-11-25 15:09,DM1,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBRANGE,HCT =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORRES,HCT finding in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORRESU,HCT original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR,HCT normal range,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Lower,HCT normal range (Lower),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Comparator,HCT normal range (Comparator),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG17,1,LBHM_HCT_LBORNR_Upper,HCT normal range (Upper),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBTEST,Nucleated Erythrocytes,11.0,Nucleated Erythrocytes,NA,2022-11-25 15:09,NA,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBRANGE,RBCNUC =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORRES,RBCNUC result in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORRESU,RBCNUC original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR,RBCNUC normal range,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Lower,RBCNUC normal range (Lower),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Comparator,RBCNUC normal range (Comparator),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG8,1,LBHM_RBCNUC_LBORNR_Upper,RBCNUC normal range (Upper),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBTEST,Reticulocytes,11.0,Reticulocytes,NA,2022-11-25 15:09,NA,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBRANGE,RETI =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORRES,RETI result in original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORRESU,RETI original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR,RETI normal range,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Lower,RETI normal range (Lower),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Comparator,RETI normal range (Comparator),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG7,1,LBHM_RETI_LBORNR_Upper,RETI normal range (Upper),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBTEST,Platelets,11.0,Platelets,NA,2022-11-25 15:09,NA,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBRANGE,PLAT =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORRES,PLAT result in original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORRESU,PLAT original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR,PLAT normal range,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Lower,PLAT normal range (Lower),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Comparator,PLAT normal range (Comparator),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG16,1,LBHM_PLAT_LBORNR_Upper,PLAT normal range (Upper),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBTEST,Ery. Mean Corpuscular Volume,11.0,Ery. Mean Corpuscular Volume,NA,2022-11-25 15:09,NA,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBRANGE,MCV =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORRES,MCV finding in original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORRESU,MCV original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR,MCV normal range,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Lower,MCV normal range (Lower),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Comparator,MCV normal range (Comparator),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG14,1,LBHM_MCV_LBORNR_Upper,MCV normal range (Upper),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBTEST,Ery. Mean Corpuscular Hemoglobin,11.0,Ery. Mean Corpuscular Hemoglobin,NA,2022-11-25 15:09,DM2,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBRANGE,MCH =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORRES,MCH finding in original units,11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORRESU,MCH original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR,MCH normal range,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Lower,MCH normal range (Lower),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Comparator,MCH normal range (Comparator),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG15,1,LBHM_MCH_LBORNR_Upper,MCH normal range (Upper),11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBTEST,Ery. Mean Corpuscular HGB Concentration,11.0,Ery. Mean Corpuscular HGB Concentration,NA,2022-11-25 15:09,DM1,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBRANGE,MCHC =/>/<,11.0,=,1,2022-11-25 15:09,DM3,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORRES,MCHC finding in original units,11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORRESU,MCHC original units,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR,MCHC normal range,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Lower,MCHC normal range (Lower),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Comparator,MCHC normal range (Comparator),11.0,NA,NA,NA,DM3,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,LBHMG16,1,LBHM_MCHC_LBORNR_Upper,MCHC normal range (Upper),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBTEST,Erythrocytes Distribution Width,11.0,Erythrocytes Distribution Width,NA,2022-11-25 15:09,DM2,Function execution
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBRANGE,RDW =/>/<,11.0,=,1,2022-11-25 15:09,NA,Initial Data Entry
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORRES,RDW result in original units,11.0,NA,NA,NA,NA,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORRESU,RDW original units,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR,RDW normal range,11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Lower,RDW normal range (Lower),11.0,NA,NA,NA,DM1,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Comparator,RDW normal range (Comparator),11.0,NA,NA,NA,DM2,NA
+2,9700,15,9700-015,1,VIS1,Study Visit (Primary Treatment Phase),2022-11-01,VIS_LBHM,NA,LBHM,Haematology,1,1,1,NA,HMG6,1,LBHM_RDW_LBORNR_Upper,RDW normal range (Upper),11.0,NA,NA,NA,DM2,NA
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_LBLOC,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBPERF,Haematology test completion status,11.0,Yes,1,2022-11-30 09:30,DM2,Initial Data Entry
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_LBLOC,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBDAT,Date of sample collection,11.0,2022-11-23,NA,2022-11-30 09:30,DM2,Initial Data Entry
 2,9700,16,9700-016,1,SCR,Screening,2022-11-23,SCR_LBLOC,NA,LBHM,Haematology,1,1,1,NA,FormG1,1,LBHM_LBTIM,Time of sample collection,11.0,NA,NA,NA,NA,NA
