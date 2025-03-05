@@ -81,7 +81,8 @@ get_metadata <- function(
     )
     meta$items_expanded <- add_missing_columns(meta$items_expanded, missing_cols)
   }
-  
+  meta[["items_expanded"]] <- clean_merge_pair_metadata(meta[["items_expanded"]])
+    
   lapply(setNames(nm = names(meta)), \(x){
     if(!x %in% expand_tab_items) return(meta[[x]])
     meta[[x]] |> 
@@ -299,6 +300,7 @@ get_meta_vars <- function(data = appdata, meta = metadata){
   vars$events <- setNames(meta$events$event_label, meta$events$event_name)
   
   vars$items <- meta$items_expanded |> 
+    subset(!grepl("_ITEM_TO_MERGE_WITH_PAIR$", item_name)) |> 
     dplyr::distinct(item_name, item_group) |> 
     split(~item_group) |> 
     lapply(\(x){setNames(simplify_string(x$item_name), x$item_name)})
