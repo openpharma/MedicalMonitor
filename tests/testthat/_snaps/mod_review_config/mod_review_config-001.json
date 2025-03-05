@@ -3,21 +3,21 @@
     "test-active_role": "Medical Monitor",
     "test-config_review": 1,
     "test-region_selection": [
+      "BEL",
       "DEU",
-      "NLD",
-      "BEL"
+      "NLD"
     ],
     "test-save_review_config": 0,
     "test-site_selection": [
-      "Site 01",
-      "Site 02",
-      "Site 03",
-      "Site 04",
-      "Site 05",
-      "Site 06",
-      "Site 07",
-      "Site 08",
-      "Site 09"
+      "BEL04",
+      "BEL07",
+      "BEL08",
+      "BEL09",
+      "DEU01",
+      "DEU02",
+      "NLD03",
+      "NLD05",
+      "NLD06"
     ]
   },
   "output": {

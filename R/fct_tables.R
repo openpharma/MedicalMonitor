@@ -51,17 +51,49 @@ create_table.default <- function(
   stopifnot(is.character(keep_vars))
   stopifnot(is.character(name_column))
   stopifnot(is.character(value_column))
+  if ("reviewed" %in% names(data)) {
+    data <- add_o_reviewed(data, keep_vars)
+    keep_vars <- c("o_reviewed", keep_vars)
+  }
   df <- data[c(keep_vars, name_column, value_column)] |> 
     tidyr::pivot_wider(
       names_from = {{name_column}}, 
       values_from = {{value_column}}, 
       values_fn = ~paste0(., collapse = "; ")
-      ) 
+      )
   expected_columns <- na.omit(expected_columns) %||% character(0)
   if(length(expected_columns) == 0) return(df)
   add_missing_columns(df, expected_columns)[
     unique(c(keep_vars, expected_columns))
     ]
+}
+
+#' Add Overall Reviewed Field
+#'
+#' Adds a field to the data set summarizing the overall review status over the
+#' rows uniquely defined by the ID columns.
+#'
+#' @param data A data frame to mutate
+#' @param id_cols A set of columns that uniquely identify each observation
+#'
+#' @details This function servers as a helper to `create_table.default()`. If
+#' the field `reviewed` is contained in the data frame, an overall review status
+#' field will be added to the data frame. The field is a list consistent of two
+#' named elements: `reviewed` and `ids`. The `reviewed` field is `TRUE` if all
+#' records are reviewed, `FALSE` if all records are not reviewed, and `NA` if
+#' some records are reviewed and some are not. The `ids` field contains a vector
+#' of the IDs associated with the unique observation defined by `id_cols`.
+#' 
+#' @noRd
+add_o_reviewed <- function(data, id_cols) {
+  dplyr::mutate(
+    data,
+    o_reviewed = dplyr::case_when(
+      any(reviewed == "No") & any(reviewed == "Yes") ~ list(list(reviewed = NA, ids = id)),
+      any(reviewed == "Yes") ~ list(list(reviewed = TRUE, ids = id)),
+      .default = list(list(reviewed = FALSE, ids = id))
+    ),
+    .by = dplyr::all_of(id_cols))
 }
 
 
@@ -176,6 +208,23 @@ create_table.general <- function(
 }
 
 
+#' Create Default 'Common Events' Table
+#'
+#' @export
+#' @inherit create_table.default 
+create_table.common_forms <- function(
+    data, 
+    name_column = "item_name",
+    value_column = "item_value",
+    keep_vars = c("subject_id", "form_repeat"),
+    expected_columns = NULL,
+    ...
+){
+  create_table.default(data, name_column, value_column, 
+                       keep_vars, expected_columns)
+}
+
+
 #' Create Adverse Events table
 #'
 #' Function to create an adverse event dataset.
@@ -210,7 +259,7 @@ create_table.adverse_events <- function(
                              keep_vars, expected_columns) |> 
     adjust_colnames("^AE ") 
   df[["Number"]] <- NULL
-
+  
   # create new row when an AE gets worse:
   df_worsening <- df[!is.na(df[[worsening_start_column]]), ] |> 
     dplyr::mutate(
@@ -281,6 +330,7 @@ create_table.medication <- function(
     ) |> 
     dplyr::arrange(dplyr::desc(in_use), dplyr::desc(`Start Date`)) |> 
     dplyr::select(
+      dplyr::any_of("o_reviewed"),
       dplyr::all_of(c(keep_vars, "Name")), 
       dplyr::everything(),
       -dplyr::all_of(c("in_use", "Active Ingredient", "Trade Name", 

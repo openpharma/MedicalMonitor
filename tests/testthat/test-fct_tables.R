@@ -284,3 +284,33 @@ describe(
     })
   }
 )
+
+describe(
+  "create_table.common_forms",
+    {
+      appdata <- get_appdata(clinsightful_data)
+      vars <- get_meta_vars(appdata, metadata)
+      expected_cols <- names(vars$items$`Medical History`)
+      df <- appdata$`Medical History`
+      # Remove medical_history class
+      class(df) <- class(df)[-1]
+      expect_equal(
+        class(df),
+        c("common_forms", "tbl_df", "tbl", "data.frame")
+      )
+      it("creates a table with S3 method for common forms", {
+        expect_true(is.data.frame(create_table(df)))
+        expect_equal(create_table(df), create_table.common_forms(df))
+      })
+      
+      it("creates expected medical history table", {
+        expect_snapshot(print(create_table(df, expected_columns = expected_cols), 
+                              n = 25))
+      })
+      it("does not error with a zero-row data frame input", {
+        expect_no_error(create_table(df[0,], expected_columns = expected_cols))
+        output <- create_table(df[0,], expected_columns = expected_cols)
+        expect_equal(nrow(output), 0)
+      })
+    }
+)

@@ -5,8 +5,8 @@
     "test-region_selection": "DEU",
     "test-save_review_config": 2,
     "test-site_selection": [
-      "Site 01",
-      "Site 02"
+      "DEU01",
+      "DEU02"
     ]
   },
   "output": {

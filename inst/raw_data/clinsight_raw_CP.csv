@@ -1,0 +1,30 @@
+sitecode,subjectid,eventseq,eventid,eventname,eventdate,formid,subjectformseq,editdatetime,eventlabel,itemname,itemvalue,itemid
+SiteCode,SubjectId,EventSeq,EventId,EventName,EventDate,FormId,SubjectFormSeq,EditDateTime,EventLabel,ItemName,ItemValue,ItemId
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Number,1,CP_PRSPID
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Name,Amputation,CP_PRTRT
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Indication,Infection,CP_PRINDC
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Start Date,2023-08-04,CP_PRSTDAT
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Ongoing,Yes,CP_PRONGO
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-25 06:02:00,Any visit,CP Related AE,Joint pain,CP_AEREL
+NLD06,NLD_06_755,1,COMMON_PR,Any visit,2023-08-08,CP,1,2023-08-08 10:03:00,Any visit,CP Related Medical History,Familial Mediterranean fever,CP_MHREL
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Number,1,CP_PRSPID
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Name,Thrombolysis,CP_PRTRT
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Indication,Hypertension,CP_PRINDC
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Start Date,2023-08-18,CP_PRSTDAT
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Ongoing,No,CP_PRONGO
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP End Date,2023-08-18,CP_PRENDAT
+DEU02,DEU_02_866,1,COMMON_PR,Any visit,2023-08-23,CP,1,2023-08-23 13:29:00,Any visit,CP Related Medical History,Epilepsy,CP_MHREL
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:37:00,Any visit,CP Number,1,CP_PRSPID
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:37:00,Any visit,CP Name,Appendectomy,CP_PRTRT
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:47:00,Any visit,CP Indication,Prophylaxis,CP_PRINDC
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:37:00,Any visit,CP Start Date,2019-NK-NK,CP_PRSTDAT
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:37:00,Any visit,CP Ongoing,No,CP_PRONGO
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:37:00,Any visit,CP End Date,2019-NK-NK,CP_PRENDAT
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:41:00,Any visit,CP Number,2,CP_PRSPID
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:41:00,Any visit,CP Name,Amputation,CP_PRTRT
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:48:00,Any visit,CP Indication,Pain,CP_PRINDC
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:41:00,Any visit,CP Start Date,2019-NK-NK,CP_PRSTDAT
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:41:00,Any visit,CP Ongoing,No,CP_PRONGO
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:41:00,Any visit,CP End Date,2019-NK-NK,CP_PRENDAT
+BEL07,BEL_07_645,1,COMMON_PR,Any visit,2023-09-14,CP,1,2023-09-14 09:47:00,Any visit,CP Related Medical History,Sickle cell anemia,CP_MHREL
+BEL07,BEL_07_645,2,COMMON_PR,Any visit,2023-09-14,CP,2,2023-09-14 09:48:00,Any visit,CP Related Medical History,Sickle cell anemia,CP_MHREL

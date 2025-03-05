@@ -1,6 +1,6 @@
 default:
   golem_name: clinsight
-  golem_version: 0.1.1
+  golem_version: 0.1.1.9021
   app_prod: no
   user_identification: test_user
   study_data: !expr clinsight::clinsightful_data
@@ -11,6 +11,8 @@ default:
     Medical Monitor: medical_monitor
     Data Manager: data_manager
   allow_to_review: [admin, medical_monitor]
+  allow_listing_download: TRUE
+  allow_query_inputs: TRUE
 dev:
   golem_wd: !expr golem::pkg_path()
 test:

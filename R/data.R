@@ -30,6 +30,17 @@
 #'   here is `review_required`, which can be used to specify whether review is
 #'   required for a form. Will default to TRUE for each form it is unset for a
 #'   form.
+#'  - `settings` contains custom `ClinSight` settings. Currently these are available:
+#'   1. Settings for adjusting and customizing study data when merging with
+#'   metadata using [merge_meta_with_data()]. If a custom function name is added
+#'   here, the function will run at the described moment of the merging process
+#'   (before or after merging or data pivoting):
+#'      - `pre_merge_fns`
+#'      - `pre_pivot_fns`
+#'      - `post_pivot_fns`
+#'      - `post_merge_fns`
+#'   2. Other (misc.) settings:
+#'      - `treatment_label` to set the label for the treatments in the interactive timeline. Defaults to "💊 Tₓ".
 #'
 #' @source Can be created with an Excel file. The Excel file format is chosen so
 #'   that the metadata can be changed easily per study. See
@@ -38,20 +49,6 @@
 "metadata"
 
 
-
-#' Custom color palette 
-#' 
-#' A named vector of colors to be used in the figures of the application.
-#'
-#' @format ## `col_palette`
-#' A named vector with the following components:
-#' - `within limits` : "#1a9641"
-#' - `out of limits, clinically insignificant`: "#a6d96a"
-#' - `out of limits, significance unknown`: "#fdae61"
-#' - `out of limits, clinically significant`: "#d7191c"
-#' - `limits unknown`: "grey50"
-#' 
-"col_palette"
 
 
 #' Clinical Trial test data

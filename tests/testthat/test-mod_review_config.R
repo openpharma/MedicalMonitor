@@ -89,7 +89,7 @@ describe(
               ns <- session$ns
               modvars <- reactiveValues()
               regions_filtered_initial <- get_unique_vars(r$filtered_data, "region")$region
-              expect_equal(regions_filtered_initial, c("BEL", "NLD", "DEU"))
+              expect_equal(regions_filtered_initial, c("BEL", "DEU", "NLD"))
               
               subjects_filtered_initial <-   order_string(
                 get_unique_vars(r$filtered_data, "subject_id")$subject_id
@@ -132,17 +132,17 @@ describe(
     it(
       "Scenario 4 - Apply review configuration. 
         Given a test data set containing regions 'NLD', 'DEU', and 'BEL', 
-        and sites 'Site 01' and 'Site 02' belonging to region 'DEU',
+        and sites 'DEU01' and 'DEU02' belonging to region 'DEU',
         and clicking on [settings],
         I expect to see the modal to select regions and sites to review,
         and given that I deselect all regions and click on [Save],
         I expect that I will get the message 'You must select at least one site/region to review.',
         and that the data within the app will not be updated with the empty selection,
         and given that I select region 'DEU',
-        I expect that only the sites 'Site 01' and 'Site 02' will be selected,
+        I expect that only the sites 'DEU01' and 'DEU02' will be selected,
         and given that I click on [Save],
         I expect that a confirmation will be shown with the text 'Review configuration applied successfully',
-        and that the data within the app only contains data of 'Site 01' and 'Site 02', 
+        and that the data within the app only contains data of 'DEU01' and 'DEU02', 
         and I expect that the selected configuration is shown correctly when 
         opening the configuration panel again.", 
       {
@@ -204,7 +204,7 @@ describe(
           unique()
         expect_equal(
           all_sites[order(all_sites)], 
-          c("Site 01", "Site 02")
+          c("DEU01", "DEU02")
         )
         
         app$wait_for_js("$('#shiny-modal').modal('hide');")
@@ -214,7 +214,7 @@ describe(
         input_vals <- app$get_values(input = TRUE)$input
         expect_equal(input_vals$`test-active_role`, "Medical Monitor")
         expect_equal(input_vals$`test-region_selection`, "DEU")
-        expect_equal(input_vals$`test-site_selection`, c("Site 01", "Site 02"))
+        expect_equal(input_vals$`test-site_selection`, c("DEU01", "DEU02"))
       }
     )
   }

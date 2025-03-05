@@ -7,8 +7,8 @@
 merge_meta_with_data(
   data,
   meta,
-  expected_columns = c("LBORNR_Lower", "LBORNR_Upper", "LBORRESU", "LBORRESUOTH",
-    "LBREASND", "unit", "lower_limit", "upper_limit", "LBCLSIG")
+  expected_columns = c("lower_limit", "upper_limit", "unit", "significance",
+    "reason_notdone")
 )
 }
 \arguments{

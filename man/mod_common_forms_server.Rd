@@ -10,7 +10,8 @@ mod_common_forms_server(
   form,
   form_items,
   id_item = c("subject_id", "event_name", "item_group", "form_repeat", "item_name"),
-  table_names = NULL
+  table_names = NULL,
+  timeline_treatment_label = "💊 Tₓ"
 )
 }
 \arguments{
@@ -40,6 +41,9 @@ that can uniquely identify one item/row.}
 \item{table_names}{An optional character vector. If provided, will be used
 within \code{\link[=datatable_custom]{datatable_custom()}}, to improve the column names in the final
 interactive tables.}
+
+\item{timeline_treatment_label}{Character vector with the label to use for
+the treatment items in the interactive timeline.}
 }
 \description{
 Shiny module. Used to display common form data in the dedicated tab.
@@ -61,5 +65,6 @@ common form pages.
 }
 \seealso{
 \code{\link[=mod_common_forms_ui]{mod_common_forms_ui()}}, \code{\link[=mod_timeline_ui]{mod_timeline_ui()}},
-\code{\link[=mod_timeline_server]{mod_timeline_server()}}
+\code{\link[=mod_timeline_server]{mod_timeline_server()}}, \code{\link[=mod_review_form_tbl_ui]{mod_review_form_tbl_ui()}},
+\code{\link[=mod_review_form_tbl_server]{mod_review_form_tbl_server()}}
 }

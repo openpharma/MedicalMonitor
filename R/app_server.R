@@ -30,6 +30,9 @@ app_server <- function(
     })
   check_appdata(app_data, meta)
   
+  session$userData$review_records <- reactiveValues()
+  session$userData$update_checkboxes <- reactiveValues()
+  
   res_auth <- authenticate_server(
     all_sites = app_vars$Sites$site_code, 
     credentials_db = credentials_db,
@@ -58,7 +61,7 @@ app_server <- function(
   )
   # think of using the pool package, but functions such as row_update are not yet supported.
   r <- reactiveValues(
-    review_data       = db_slice_rows(user_db, db_table = "all_review_data"),
+    review_data       = db_get_table(user_db, db_table = "all_review_data"),
     query_data        = collect_query_data(user_db),
     filtered_subjects = app_vars$subject_id,
     filtered_data     = app_data,
@@ -207,7 +210,9 @@ app_server <- function(
   lapply(common_forms, \(x){
     mod_common_forms_server(
       id = paste0("cf_", simplify_string(x)), r = r, form = x,
-      form_items = app_vars$items[[x]], table_names = app_vars$table_names
+      form_items = app_vars$items[[x]], 
+      table_names = app_vars$table_names, 
+      timeline_treatment_label = meta$settings$treatment_label
     ) 
   }) |>
     unlist(recursive = FALSE)

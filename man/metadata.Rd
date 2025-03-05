@@ -29,6 +29,23 @@ to FALSE in \code{\link[=mod_study_forms_server]{mod_study_forms_server()}}. The
 here is \code{review_required}, which can be used to specify whether review is
 required for a form. Will default to TRUE for each form it is unset for a
 form.
+\item \code{settings} contains custom \code{ClinSight} settings. Currently these are available:
+}
+\enumerate{
+\item Settings for adjusting and customizing study data when merging with
+metadata using \code{\link[=merge_meta_with_data]{merge_meta_with_data()}}. If a custom function name is added
+here, the function will run at the described moment of the merging process
+(before or after merging or data pivoting):
+\itemize{
+\item \code{pre_merge_fns}
+\item \code{pre_pivot_fns}
+\item \code{post_pivot_fns}
+\item \code{post_merge_fns}
+}
+\item Other (misc.) settings:
+\itemize{
+\item \code{treatment_label} to set the label for the treatments in the interactive timeline. Defaults to "💊 Tₓ".
+}
 }
 }
 }

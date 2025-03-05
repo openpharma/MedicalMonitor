@@ -83,7 +83,6 @@
       ]
     },
     "main_sidebar_1-synch_info-db_synch_info": "EDC Sync date: <br>2023-09-15 10:10:00 UTC<br><br>EDC latest data: 2023-09-14 15:17:00",
-    "navigate_participants_1-status": "<b>BEL_04_772<\/b><br><b>Sex:<\/b> Male<br><b>Age:<\/b> 78yrs.<br><b>Status:<\/b> Enrolled<br><b>ECOG:<\/b> 0<br><b>Dx:<\/b> Syndrome O",
     "navigate_participants_1-subject_info": {
       "html": "<div class=\"card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-primary showcase-left-center\" data-bslib-card-init data-require-bs-caller=\"card() value_box()\" data-require-bs-version=\"5 5\" style=\"max-height:100px;\">\n  <div class=\"card-body bslib-gap-spacing html-fill-item html-fill-container\" style=\"margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;\">\n    <div class=\"value-box-grid html-fill-item\" style=\"--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;\">\n      <div class=\"value-box-showcase html-fill-item html-fill-container\">\n        <i class=\"fas fa-user-slash fa-2x\" role=\"presentation\" aria-label=\"user-slash icon\"><\/i>\n      <\/div>\n      <div class=\"value-box-area html-fill-item html-fill-container\">\n        <p class=\"value-box-title\">BEL_08_45<\/p>\n        <p class=\"value-box-value\">Male, 64yrs.<\/p>\n      <\/div>\n    <\/div>\n  <\/div>\n  <script data-bslib-card-init>bslib.Card.initializeAllCards();<\/script>\n<\/div>",
       "deps": [
@@ -173,7 +172,8 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Subject<\/th>\n      <th>Status<\/th>\n      <th>Dx<\/th>\n      <th>Age<\/th>\n      <th>Sex<\/th>\n      <th>Event<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -181,8 +181,12 @@
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
           "dom": "f<\"header h5\">ti",
           "columnDefs": [
@@ -195,15 +199,15 @@
               "targets": 0
             },
             {
-              "name": "Subject",
+              "name": "subject_id",
               "targets": 1
             },
             {
-              "name": "Status",
+              "name": "status",
               "targets": 2
             },
             {
-              "name": "Dx",
+              "name": "WHO.classification",
               "targets": 3
             },
             {
@@ -215,7 +219,7 @@
               "targets": 5
             },
             {
-              "name": "Event",
+              "name": "event_name",
               "targets": 6
             }
           ],
@@ -232,6 +236,7 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ntable.on('dblclick', 'tbody tr', function(t) {\nvar current_index = table.row(this).index();\nvar current_rows = table.ajax.json().DT_rows_current;\ntable.shinyMethods.selectRows(current_rows[current_index]);\ndocument.getElementById(\n\"start_page_1-go_to_patient-go_to_form\"\n).click();\n})\n}",
         "selection": {
           "mode": "single",
           "selected": null,
@@ -242,7 +247,8 @@
       "evals": [
         "options.initComplete",
         "options.rowCallback",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -329,20 +335,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",

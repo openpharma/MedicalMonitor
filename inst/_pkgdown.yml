@@ -33,13 +33,7 @@ reference:
 - contents: 
   - create_table
   - create_table.default
-  - create_table.adverse_events
-  - create_table.bm_cytology
-  - create_table.conc_procedures
-  - create_table.continuous
-  - create_table.general
-  - create_table.medical_history
-  - create_table.medication
+  - starts_with("create_table")
 - title: Data frame functions
   desc: Create data for use in the application.
 - contents: 
@@ -72,7 +66,6 @@ reference:
 - contents: 
   - get_metadata
   - metadata
-  - col_palette
   - clinsightful_data
 - title: Figure functions
 - contents: 

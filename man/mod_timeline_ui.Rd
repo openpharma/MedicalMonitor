@@ -7,15 +7,16 @@
 mod_timeline_ui(id)
 }
 \arguments{
-\item{id}{Character string, used to connect the module UI with the module Server.}
+\item{id}{Character string, used to connect the module UI with the module
+Server.}
 }
 \description{
-A shiny module. Creates an interactive timeline.
-Used to provide a quick overview of adverse events, severe adverse events,
-and study activities such as Investigational Product administration.
-Helpful to judge whether for example an event is related to an Investigational
-Product.
+A shiny module. Creates an interactive timeline. Used to provide a quick
+overview of adverse events, severe adverse events, and study activities such
+as Investigational Product administration. Helpful to judge whether for
+example an event is related to an Investigational Product.
 }
 \seealso{
-\code{\link[=mod_timeline_ui]{mod_timeline_ui()}}, \code{\link[=mod_common_forms_ui]{mod_common_forms_ui()}}, \code{\link[=mod_common_forms_server]{mod_common_forms_server()}}
+\code{\link[=mod_timeline_ui]{mod_timeline_ui()}}, \code{\link[=mod_common_forms_ui]{mod_common_forms_ui()}},
+\code{\link[=mod_common_forms_server]{mod_common_forms_server()}}
 }

@@ -7,14 +7,16 @@ describe(
          "different metadata file to customize the application."), {
     it(
       paste0("Scenario 1 - Load raw data with custom metadata. ", 
-      "Given raw CSV data exported from the EDC system from patient [9600-002], ", 
+      "Given raw CSV data exported from the EDC system from subject [9600-002], ", 
       "and with metadata in which total visits is restricted to V0-V10, ",
       "and with only the study_forms 'Response' and 'Vitals adjusted' in the metadata",
       "and with, at both Screening and Visit 2 the [Systolic blood pressure] being 99, ", 
       "[Diastolic Blood Pressure] 77, [Pulse] 77, [Resp] 9, and [Temperature] 37.5, ", 
       "and (only at screening) [Weight] 70kg, ", 
-      "and that I browse to the 'Study data' tab",
-      "I expect that I see the Vital signs page of patient [9600-002]', ", 
+      "and that I browse to the 'Common events' tab",
+      "I expect that I see the timeline of subject [9600-002] with study visits in it",
+      "and when I browser to the 'Study data' tab",
+      "I expect that I see the Vital signs page of subject [9600-002]', ", 
       "and that the compact header timeline shows visits V0-V10 ",
       "and that I see a figure with the data displayed, ",
       "and that I see a table with the data displayed after clicking on the table view, ", 
@@ -30,6 +32,15 @@ describe(
           height = 955
         )
         withr::defer(app$stop())
+        
+        app$set_inputs(main_tabs = "Common events")
+        timeline_json <- app$get_value(output = "cf_adverse_events-timeline_fig-timeline")
+        expect_true(inherits(timeline_json, "json"))
+        expect_true(grepl('"subject_id":"9600-002"', timeline_json))
+        expect_true(grepl("Screening", timeline_json))
+        expect_true(grepl("Visit 1", timeline_json))
+        expect_true(grepl("Visit 2", timeline_json))
+        
         app$set_inputs(main_tabs = "Study data")
         app$wait_for_idle()
 

@@ -1,0 +1,24 @@
+sitecode,subjectid,eventseq,eventid,eventname,eventdate,formid,subjectformseq,editdatetime,eventlabel,itemname,itemvalue,itemid
+SiteCode,SubjectId,EventSeq,EventId,EventName,EventDate,FormId,SubjectFormSeq,EditDateTime,EventLabel,ItemName,ItemValue,ItemId
+DEU02,DEU_02_968,1,EXIT,Exit,2023-08-29,DS,1,2023-08-29 12:01:00,Exit,DiscontinuationDate,2023-08-08,DS_STDAT
+DEU02,DEU_02_968,1,EXIT,Exit,2023-08-29,DS,1,2023-08-29 12:01:00,Exit,DiscontinuationReason,Death,DS_DECOD
+NLD06,NLD_06_755,1,EXIT,Exit,2023-08-23,DS,1,2023-08-25 05:46:00,Exit,DiscontinuationDate,2023-08-14,DS_STDAT
+NLD06,NLD_06_755,1,EXIT,Exit,2023-08-23,DS,1,2023-08-25 05:46:00,Exit,DiscontinuationReason,Death,DS_DECOD
+NLD06,NLD_06_755,1,EXIT,Exit,2023-08-23,DS,1,2023-08-25 05:46:00,Exit,DisconDeathDate,2023-08-24,DS_DTHDAT
+NLD05,NLD_05_282,1,EXIT,Exit,2023-07-20,DS,1,2023-07-20 10:35:00,Exit,DiscontinuationDate,2023-06-21,DS_STDAT
+NLD05,NLD_05_282,1,EXIT,Exit,2023-07-20,DS,1,2023-07-20 10:35:00,Exit,DiscontinuationReason,Screen failure,DS_DECOD
+BEL07,BEL_07_497,1,EXIT,Exit,2023-09-07,DS,1,2023-09-07 10:09:00,Exit,DiscontinuationDate,2023-07-10,DS_STDAT
+BEL07,BEL_07_497,1,EXIT,Exit,2023-09-07,DS,1,2023-09-07 10:09:00,Exit,DiscontinuationReason,Withdrawal by subject,DS_DECOD
+NLD06,NLD_06_959,1,EXIT,Exit,2023-07-26,DS,1,2023-07-26 14:24:00,Exit,DiscontinuationDate,2023-09-07,DS_STDAT
+NLD06,NLD_06_959,1,EXIT,Exit,2023-07-26,DS,1,2023-07-26 14:24:00,Exit,DiscontinuationReason,Screen failure,DS_DECOD
+DEU02,DEU_02_482,1,EXIT,Exit,2023-08-21,DS,1,2023-08-21 08:04:00,Exit,DiscontinuationDate,2023-08-24,DS_STDAT
+DEU02,DEU_02_482,1,EXIT,Exit,2023-08-21,DS,1,2023-08-21 08:04:00,Exit,DiscontinuationReason,Screen failure,DS_DECOD
+DEU02,DEU_02_482,1,EXIT,Exit,2023-08-21,DS,1,2023-08-21 08:04:00,Exit,DisconDeathDate,2023-08-19,DS_DTHDAT
+DEU02,DEU_02_387,1,EXIT,Exit,2023-08-08,DS,1,2023-08-08 07:26:00,Exit,DiscontinuationDate,2023-07-24,DS_STDAT
+DEU02,DEU_02_387,1,EXIT,Exit,2023-08-08,DS,1,2023-08-08 07:26:00,Exit,DiscontinuationReason,Death,DS_DECOD
+DEU02,DEU_02_387,1,EXIT,Exit,2023-08-08,DS,1,2023-08-08 07:26:00,Exit,DisconDeathDate,2023-08-08,DS_DTHDAT
+NLD03,NLD_03_207,1,EXIT,Exit,2023-08-16,DS,1,2023-08-16 07:39:00,Exit,DiscontinuationDate,2023-08-19,DS_STDAT
+NLD03,NLD_03_207,1,EXIT,Exit,2023-08-16,DS,1,2023-08-16 07:39:00,Exit,DiscontinuationReason,Screen failure,DS_DECOD
+NLD03,NLD_03_207,1,EXIT,Exit,2023-08-16,DS,1,2023-08-16 07:39:00,Exit,DisconDeathDate,2023-08-14,DS_DTHDAT
+BEL08,BEL_08_45,1,EXIT,Exit,2023-09-11,DS,1,2023-09-11 12:20:00,Exit,DiscontinuationDate,2023-09-05,DS_STDAT
+BEL08,BEL_08_45,1,EXIT,Exit,2023-09-11,DS,1,2023-09-11 12:20:00,Exit,DiscontinuationReason,Death,DS_DECOD

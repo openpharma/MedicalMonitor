@@ -1,81 +1,104 @@
 {
   "output": {
-    "cf_adverse_events-SAE_table": {
+    "cf_adverse_events-review_form_SAE_tbl-table": {
       "x": {
         "style": "bootstrap5",
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
-        "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th>N<\/th>\n      <th>Name<\/th>\n      <th>AESI<\/th>\n      <th>Start date<\/th>\n      <th>End date<\/th>\n      <th>CTCAE severity<\/th>\n      <th>Treatment related<\/th>\n      <th>Treatment action<\/th>\n      <th>Other action<\/th>\n      <th>Category<\/th>\n      <th>Awareness date<\/th>\n      <th>Date of death<\/th>\n      <th>Death reason<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
+        "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th>Review Status<\/th>\n      <th>Subject<\/th>\n      <th>N<\/th>\n      <th>Name<\/th>\n      <th>AESI<\/th>\n      <th>Start date<\/th>\n      <th>End date<\/th>\n      <th>CTCAE severity<\/th>\n      <th>Treatment related<\/th>\n      <th>Treatment action<\/th>\n      <th>Other action<\/th>\n      <th>Category<\/th>\n      <th>Awareness date<\/th>\n      <th>Date of death<\/th>\n      <th>Death reason<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
           "scrollY": 400,
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
-          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Serious Adverse Events\")\n}",
-          "dom": "f<\"header h5\">ti",
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "columnDefs": [
             {
+              "targets": 0,
+              "orderable": false,
+              "render": "checkboxRender"
+            },
+            {
+              "targets": 1,
+              "visible": false
+            },
+            {
               "className": "dt-right",
-              "targets": 0
-            },
-            {
-              "name": "N",
-              "targets": 0
-            },
-            {
-              "name": "Name",
-              "targets": 1
-            },
-            {
-              "name": "AESI",
               "targets": 2
             },
             {
-              "name": "Start date",
+              "name": "o_reviewed",
+              "targets": 0
+            },
+            {
+              "name": "subject_id",
+              "targets": 1
+            },
+            {
+              "name": "form_repeat",
+              "targets": 2
+            },
+            {
+              "name": "Name",
               "targets": 3
             },
             {
-              "name": "End date",
+              "name": "AESI",
               "targets": 4
             },
             {
-              "name": "CTCAE severity",
+              "name": "Start date",
               "targets": 5
             },
             {
-              "name": "Treatment related",
+              "name": "End date",
               "targets": 6
             },
             {
-              "name": "Treatment action",
+              "name": "CTCAE severity",
               "targets": 7
             },
             {
-              "name": "Other action",
+              "name": "Treatment related",
               "targets": 8
             },
             {
-              "name": "Category",
+              "name": "Treatment action",
               "targets": 9
             },
             {
-              "name": "Awareness date",
+              "name": "Other action",
               "targets": 10
             },
             {
-              "name": "Date of death",
+              "name": "Category",
               "targets": 11
             },
             {
-              "name": "Death reason",
+              "name": "Awareness date",
               "targets": 12
+            },
+            {
+              "name": "Date of death",
+              "targets": 13
+            },
+            {
+              "name": "Death reason",
+              "targets": 14
             }
           ],
+          "rowCallback": "rowCallback",
+          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Serious Adverse Events\")\n}",
+          "dom": "f<\"header h5\">ti",
           "order": [
 
           ],
@@ -88,16 +111,20 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ncheckboxCallback(table);\n}",
         "selection": {
-          "mode": "single",
+          "mode": "none",
           "selected": null,
           "target": "row",
           "selectable": null
         }
       },
       "evals": [
+        "options.columnDefs.0.render",
+        "options.rowCallback",
         "options.initComplete",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -184,20 +211,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",
@@ -214,68 +242,100 @@
         }
       ]
     },
-    "cf_adverse_events-common_form_table": {
+    "cf_adverse_events-review_form_tbl-table": {
       "x": {
         "style": "bootstrap5",
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Buttons",
+          "Scroller",
+          "ColReorder"
         ],
-        "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th>N<\/th>\n      <th>Name<\/th>\n      <th>AESI<\/th>\n      <th>start date<\/th>\n      <th>end date<\/th>\n      <th>CTCAE severity<\/th>\n      <th>Treatment related<\/th>\n      <th>Treatment action<\/th>\n      <th>Other action<\/th>\n      <th>Serious Adverse Event<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
+        "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th>Review Status<\/th>\n      <th>Subject<\/th>\n      <th>N<\/th>\n      <th>Name<\/th>\n      <th>AESI<\/th>\n      <th>start date<\/th>\n      <th>end date<\/th>\n      <th>CTCAE severity<\/th>\n      <th>Treatment related<\/th>\n      <th>Treatment action<\/th>\n      <th>Other action<\/th>\n      <th>Serious Adverse Event<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
           "scrollY": 400,
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
-          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Adverse events\")\n}",
-          "dom": "f<\"header h5\">ti",
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "columnDefs": [
             {
+              "targets": 0,
+              "orderable": false,
+              "render": "checkboxRender"
+            },
+            {
+              "targets": 1,
+              "visible": false
+            },
+            {
               "className": "dt-right",
-              "targets": 0
-            },
-            {
-              "name": "N",
-              "targets": 0
-            },
-            {
-              "name": "Name",
-              "targets": 1
-            },
-            {
-              "name": "AESI",
               "targets": 2
             },
             {
-              "name": "start date",
+              "name": "o_reviewed",
+              "targets": 0
+            },
+            {
+              "name": "subject_id",
+              "targets": 1
+            },
+            {
+              "name": "form_repeat",
+              "targets": 2
+            },
+            {
+              "name": "Name",
               "targets": 3
             },
             {
-              "name": "end date",
+              "name": "AESI",
               "targets": 4
             },
             {
-              "name": "CTCAE severity",
+              "name": "start date",
               "targets": 5
             },
             {
-              "name": "Treatment related",
+              "name": "end date",
               "targets": 6
             },
             {
-              "name": "Treatment action",
+              "name": "CTCAE severity",
               "targets": 7
             },
             {
-              "name": "Other action",
+              "name": "Treatment related",
               "targets": 8
             },
             {
-              "name": "Serious Adverse Event",
+              "name": "Treatment action",
               "targets": 9
+            },
+            {
+              "name": "Other action",
+              "targets": 10
+            },
+            {
+              "name": "Serious Adverse Event",
+              "targets": 11
+            }
+          ],
+          "rowCallback": "rowCallback",
+          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Adverse events\")\n}",
+          "dom": "Bf<\"header h5\">ti",
+          "buttons": [
+            {
+              "extend": "excel",
+              "text": "<i class=\"fa-solid fa-download\"><\/i>",
+              "filename": "clinsight.adverse_events.BEL_04_772",
+              "title": "adverse_events.BEL_04_772 | extracted from ClinSight"
             }
           ],
           "order": [
@@ -290,16 +350,20 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ncheckboxCallback(table);\n}",
         "selection": {
-          "mode": "single",
+          "mode": "none",
           "selected": null,
           "target": "row",
           "selectable": null
         }
       },
       "evals": [
+        "options.columnDefs.0.render",
+        "options.rowCallback",
         "options.initComplete",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -369,6 +433,40 @@
           "all_files": true
         },
         {
+          "name": "jszip",
+          "version": "1.13.6",
+          "src": {
+            "href": "jszip-1.13.6"
+          },
+          "meta": null,
+          "script": "jszip.min.js",
+          "stylesheet": null,
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
+          "name": "dt-ext-buttons-bootstrap5",
+          "version": "1.13.6",
+          "src": {
+            "href": "dt-ext-buttons-bootstrap5-1.13.6"
+          },
+          "meta": null,
+          "script": [
+            "js/dataTables.buttons.min.js",
+            "js/buttons.html5.min.js",
+            "js/buttons.colVis.min.js",
+            "js/buttons.print.min.js",
+            "js/buttons.bootstrap5.min.js"
+          ],
+          "stylesheet": "css/buttons.bootstrap5.min.css",
+          "head": null,
+          "attachment": null,
+          "package": null,
+          "all_files": false
+        },
+        {
           "name": "dt-ext-scroller-bootstrap5",
           "version": "1.13.6",
           "src": {
@@ -386,20 +484,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",
@@ -424,8 +523,9 @@
             "content": "Screening",
             "start": "2023-06-05",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "53",
+            "title": "2023-06-05 | Screening",
+            "className": "bg-light",
+            "id": "8",
             "order": "4"
           },
           {
@@ -433,8 +533,9 @@
             "content": "Visit 1",
             "start": "2023-07-05",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "54",
+            "title": "2023-07-05 | Visit 1",
+            "className": "bg-light",
+            "id": "9",
             "order": "4"
           },
           {
@@ -442,8 +543,9 @@
             "content": "Visit 2",
             "start": "2023-07-19",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "55",
+            "title": "2023-07-19 | Visit 2",
+            "className": "bg-light",
+            "id": "10",
             "order": "4"
           },
           {
@@ -451,8 +553,9 @@
             "content": "Visit 3",
             "start": "2023-08-02",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "56",
+            "title": "2023-08-02 | Visit 3",
+            "className": "bg-light",
+            "id": "11",
             "order": "4"
           },
           {
@@ -460,8 +563,9 @@
             "content": "Visit 4",
             "start": "2023-08-16",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "57",
+            "title": "2023-08-16 | Visit 4",
+            "className": "bg-light",
+            "id": "12",
             "order": "4"
           },
           {
@@ -469,8 +573,9 @@
             "content": "Visit 5",
             "start": "2023-08-30",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "58",
+            "title": "2023-08-30 | Visit 5",
+            "className": "bg-light",
+            "id": "13",
             "order": "4"
           },
           {
@@ -478,8 +583,9 @@
             "content": "Visit 6",
             "start": "2023-09-13",
             "group": "Visit",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "59",
+            "title": "2023-09-13 | Visit 6",
+            "className": "bg-light",
+            "id": "14",
             "order": "4"
           },
           {
@@ -489,9 +595,9 @@
             "item_group": "Adverse events",
             "start": "2023-07-07",
             "group": "Adverse event",
-            "title": "Hypotension",
-            "style": "background-color: #d47500;line-height: 0.8; border-radius: 6px;",
-            "id": "85",
+            "title": "2023-07-07 | Hypotension",
+            "className": "bg-warning",
+            "id": "84",
             "order": "2",
             "needs_review": true
           },
@@ -502,8 +608,8 @@
             "item_group": "Adverse events",
             "start": "2023-07-05",
             "group": "Adverse event",
-            "title": "Atrial Fibrillation",
-            "style": "background-color: #d47500;line-height: 0.8; border-radius: 6px;",
+            "title": "2023-07-05 | Atrial Fibrillation",
+            "className": "bg-warning",
             "id": "93",
             "order": "2",
             "needs_review": true
@@ -515,8 +621,8 @@
             "item_group": "Adverse events",
             "start": "2023-07-05",
             "group": "Adverse event",
-            "title": "Tachycardia",
-            "style": "background-color: #d47500;line-height: 0.8; border-radius: 6px;",
+            "title": "2023-07-05 | Tachycardia",
+            "className": "bg-warning",
             "id": "104",
             "order": "2",
             "needs_review": true
@@ -528,8 +634,8 @@
             "item_group": "Adverse events",
             "start": "2023-07-05",
             "group": "Adverse event",
-            "title": "Urinary Tract Infection",
-            "style": "background-color: #d47500;line-height: 0.8; border-radius: 6px;",
+            "title": "2023-07-05 | Urinary Tract Infection",
+            "className": "bg-warning",
             "id": "110",
             "order": "2",
             "needs_review": true
@@ -541,43 +647,46 @@
             "item_group": "Adverse events",
             "start": "2023-08-16",
             "group": "Adverse event",
-            "title": "Atrial Fibrillation",
-            "style": "background-color: #d47500;line-height: 0.8; border-radius: 6px;",
+            "title": "2023-08-16 | Atrial Fibrillation",
+            "className": "bg-warning",
             "id": "124",
             "order": "2",
             "needs_review": true
           },
           {
             "subject_id": "BEL_04_772",
-            "content": "Treatment",
+            "content": "💊 Tₓ",
             "form_repeat": "1",
             "item_group": "General",
             "start": "2023-07-05",
             "group": "Events",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "198",
+            "title": "2023-07-05 | Treatment \nDose: 466.62",
+            "className": "bg-light",
+            "id": "176",
             "order": "3"
           },
           {
             "subject_id": "BEL_04_772",
-            "content": "Treatment",
+            "content": "💊 Tₓ",
             "form_repeat": "2",
             "item_group": "General",
             "start": "2023-08-02",
             "group": "Events",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "199",
+            "title": "2023-08-02 | Treatment \nDose: 466.62",
+            "className": "bg-light",
+            "id": "177",
             "order": "3"
           },
           {
             "subject_id": "BEL_04_772",
-            "content": "Treatment",
+            "content": "💊 Tₓ",
             "form_repeat": "3",
             "item_group": "General",
             "start": "2023-08-30",
             "group": "Events",
-            "style": "line-height: 0.8; border-radius: 6px;",
-            "id": "200",
+            "title": "2023-08-30 | Treatment \nDose: 466.62",
+            "className": "bg-light",
+            "id": "178",
             "order": "3"
           }
         ],
@@ -613,9 +722,14 @@
       "evals": [
 
       ],
-      "jsHooks": [
-
-      ],
+      "jsHooks": {
+        "render": [
+          {
+            "code": "timelineRedrawCustom",
+            "data": null
+          }
+        ]
+      },
       "deps": [
         {
           "name": "jquery",
@@ -735,6 +849,12 @@
       ]
     },
     "main_sidebar_1-navigate_forms_1-form_name": "<center><b>Adverse events<\/b><\/center>",
+    "main_sidebar_1-review_forms_1-progress_bar": {
+      "completed": 0,
+      "unmarking": 0,
+      "marking": 0,
+      "total": 45
+    },
     "main_sidebar_1-review_forms_1-save_review_error": {
       "message": "Requires review",
       "call": "NULL",
@@ -744,7 +864,6 @@
       ]
     },
     "main_sidebar_1-synch_info-db_synch_info": "EDC Sync date: <br>2023-09-15 10:10:00 UTC<br><br>EDC latest data: 2023-09-14 15:17:00",
-    "navigate_participants_1-status": "<b>BEL_04_772<\/b><br><b>Sex:<\/b> Male<br><b>Age:<\/b> 78yrs.<br><b>Status:<\/b> Enrolled<br><b>ECOG:<\/b> 0<br><b>Dx:<\/b> Syndrome O",
     "navigate_participants_1-subject_info": {
       "html": "<div class=\"card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-primary showcase-left-center\" data-bslib-card-init data-require-bs-caller=\"card() value_box()\" data-require-bs-version=\"5 5\" style=\"max-height:100px;\">\n  <div class=\"card-body bslib-gap-spacing html-fill-item html-fill-container\" style=\"margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;\">\n    <div class=\"value-box-grid html-fill-item\" style=\"--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;\">\n      <div class=\"value-box-showcase html-fill-item html-fill-container\">\n        <i class=\"fas fa-user-check fa-2x\" role=\"presentation\" aria-label=\"user-check icon\"><\/i>\n      <\/div>\n      <div class=\"value-box-area html-fill-item html-fill-container\">\n        <p class=\"value-box-title\">BEL_04_772<\/p>\n        <p class=\"value-box-value\">Male, 78yrs.<\/p>\n      <\/div>\n    <\/div>\n  <\/div>\n  <script data-bslib-card-init>bslib.Card.initializeAllCards();<\/script>\n<\/div>",
       "deps": [
@@ -834,7 +953,8 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Subject<\/th>\n      <th>Status<\/th>\n      <th>Dx<\/th>\n      <th>Age<\/th>\n      <th>Sex<\/th>\n      <th>Event<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -842,8 +962,12 @@
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
           "dom": "f<\"header h5\">ti",
           "columnDefs": [
@@ -856,15 +980,15 @@
               "targets": 0
             },
             {
-              "name": "Subject",
+              "name": "subject_id",
               "targets": 1
             },
             {
-              "name": "Status",
+              "name": "status",
               "targets": 2
             },
             {
-              "name": "Dx",
+              "name": "WHO.classification",
               "targets": 3
             },
             {
@@ -876,7 +1000,7 @@
               "targets": 5
             },
             {
-              "name": "Event",
+              "name": "event_name",
               "targets": 6
             }
           ],
@@ -893,6 +1017,7 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ntable.on('dblclick', 'tbody tr', function(t) {\nvar current_index = table.row(this).index();\nvar current_rows = table.ajax.json().DT_rows_current;\ntable.shinyMethods.selectRows(current_rows[current_index]);\ndocument.getElementById(\n\"start_page_1-go_to_patient-go_to_form\"\n).click();\n})\n}",
         "selection": {
           "mode": "single",
           "selected": null,
@@ -903,7 +1028,8 @@
       "evals": [
         "options.initComplete",
         "options.rowCallback",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -990,20 +1116,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",

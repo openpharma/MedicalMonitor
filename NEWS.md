@@ -1,3 +1,27 @@
+# clinsight (development version)
+
+## Changed 
+
+- Generalized `merge_meta_with_data()` to allow user-defined processing functions.
+- Added a feature where, in applicable tables, a user can navigate to a form by double-clicking a table row.
+- Fixed warnings in `apply_edc_specific_changes` due to the use of a vector within `dplyr::select`.
+- Gave users ability to re-organized the column order in any table.
+- Added form type as a class to be used in `create_table()` to display tables.
+- Add a logging table to the DB for reviews.
+- Simplify pulling data from DB for reviews.
+- Review data by records IDs instead of subject & form
+- Make query handling a configurable option
+- Changed the legend to display 'significance pending' instead of 'significance unknown'.
+- Added `Excel` download button to Queries table & patient listings that need review.
+- (For developers) From now on,the new Chrome headless browser mode will be used for `shinytest2` tests so that unit tests can be run with Chrome v132. 
+- The interactive timeline now has more consistent labels, will center an item on click, and has customizable treatment labels (by setting `settings$treatment_label` in the metadata).
+- (For developers) added raw data that can be used to completely recreate the internal dataset (`clinsightful_data`) with the merge functions in the package.
+
+## Bug fixes
+
+- The test-coverage GHA workflow is updated so that codecov uploads work again.
+- Display all rows for tables where `Scroller` is disabled.
+
 # clinsight 0.1.1
 
 ## Changed 

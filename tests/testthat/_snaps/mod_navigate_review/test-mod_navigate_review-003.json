@@ -8,7 +8,8 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th>Subject<\/th>\n      <th>ID<\/th>\n      <th>query<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -16,13 +17,18 @@
           "scrollX": true,
           "scroller": false,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
+          "pageLength": -1,
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
           "dom": "f<\"header h5\">ti",
           "columnDefs": [
             {
-              "name": "Subject",
+              "name": "subject_id",
               "targets": 0
             },
             {
@@ -39,6 +45,13 @@
           ],
           "autoWidth": false,
           "orderClasses": false,
+          "lengthMenu": [
+            -1,
+            10,
+            25,
+            50,
+            100
+          ],
           "ajax": {
             "type": "POST",
             "data": "function(d) {\nd.search.caseInsensitive = true;\nd.search.smart = true;\nd.escape = true;\nvar encodeAmp = function(x) { x.value = x.value.replace(/&/g, \"%26\"); }\nencodeAmp(d.search);\n$.each(d.columns, function(i, v) {encodeAmp(v.search);});\n}"
@@ -142,20 +155,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",
@@ -178,7 +192,8 @@
         "filter": "none",
         "vertical": false,
         "extensions": [
-          "Scroller"
+          "Scroller",
+          "ColReorder"
         ],
         "container": "<table class=\"table table-striped table-hover row-border order-column display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Subject<\/th>\n      <th>Form<\/th>\n      <th>summary_col<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>",
         "options": {
@@ -186,8 +201,12 @@
           "scrollX": true,
           "scroller": true,
           "deferRender": true,
-          "scrollResize": true,
           "scrollCollapse": true,
+          "colReorder": {
+            "enable": true,
+            "realtime": false,
+            "fixedColumnsLeft": 1
+          },
           "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
           "dom": "f<\"header h5\">ti",
           "columnDefs": [
@@ -200,7 +219,7 @@
               "targets": 0
             },
             {
-              "name": "Subject",
+              "name": "subject_id",
               "targets": 1
             },
             {
@@ -224,6 +243,7 @@
           "serverSide": true,
           "processing": true
         },
+        "callback": "function(table) {\ntable.on('dblclick', 'tbody tr', function(t) {\nvar current_index = table.row(this).index();\nvar current_rows = table.ajax.json().DT_rows_current;\ntable.shinyMethods.selectRows(current_rows[current_index]);\ndocument.getElementById(\n\"test-go_to_form-go_to_form\"\n).click();\n})\n}",
         "selection": {
           "mode": "single",
           "selected": null,
@@ -233,7 +253,8 @@
       },
       "evals": [
         "options.initComplete",
-        "options.ajax.data"
+        "options.ajax.data",
+        "callback"
       ],
       "jsHooks": [
 
@@ -320,20 +341,21 @@
           "all_files": false
         },
         {
-          "name": "dt-plugin-scrollresize",
+          "name": "dt-ext-colreorder-bootstrap5",
           "version": "1.13.6",
           "src": {
-            "href": "dt-plugin-scrollresize-1.13.6"
+            "href": "dt-ext-colreorder-bootstrap5-1.13.6"
           },
           "meta": null,
-          "script": "source.min.js",
-          "stylesheet": [
-
+          "script": [
+            "js/dataTables.colReorder.min.js",
+            "js/colReorder.bootstrap5.min.js"
           ],
+          "stylesheet": "css/colReorder.bootstrap5.min.css",
           "head": null,
           "attachment": null,
           "package": null,
-          "all_files": true
+          "all_files": false
         },
         {
           "name": "crosstalk",

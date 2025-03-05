@@ -707,6 +707,17 @@ custom_config_path <- function(
   Sys.getenv("CONFIG_PATH", app_sys("golem-config.yml")) 
 }
 
+dblclick_to_form <- function(bttn_ns) {
+  DT::JS(
+    "table.on('dblclick', 'tbody tr', function(t) {",
+    # This processing assumes `server = TRUE`
+    "var current_index = table.row(this).index();",
+    "var current_rows = table.ajax.json().DT_rows_current;",
+    "table.shinyMethods.selectRows(current_rows[current_index]);",
+    "document.getElementById(", deparse(NS(bttn_ns, "go_to_form")), ").click();",
+    "})"
+  )}
+
 #' Decode a base64 encoded string.
 #'
 #' Used to decode base64-encoded HTTP headers. Encoding these headers

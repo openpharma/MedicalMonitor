@@ -177,7 +177,6 @@ summarize_review_data <- function(
         .by = dplyr::all_of(common_vars)
         ) |>
       dplyr::distinct()
-     # db_slice_rows(slice_vars = date_time_vars, group_vars = common_vars)
   }
   data 
 } 

@@ -184,7 +184,7 @@ mod_query_add_server <- function(
       if(identical(new_query, query_in_db)){
         r$query_data <- dplyr::bind_rows(r$query_data, new_query)
       }
-      query_in_memory <- r$query_data[nrow(r$query_data), ]
+      query_in_memory <- r$query_data[nrow(r$query_data), -1]
       query_save_error(any(
         !identical(new_query, query_in_db), 
         !identical(query_in_db, query_in_memory)
