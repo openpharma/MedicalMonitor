@@ -755,3 +755,13 @@ decode_base64 <- function(
   }
   rawToChar(decoded)
 }
+
+split_review_data <- function(db_path, forms) {
+  all_review_data <- db_get_table(db_path = db_path, db_table = "all_review_data")
+
+  if (missing(forms)) {
+    split(all_review_data, all_review_data$item_group)
+  } else {
+    split(all_review_data, factor(all_review_data$item_group, forms))
+  }
+}

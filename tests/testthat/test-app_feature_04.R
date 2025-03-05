@@ -42,7 +42,7 @@ describe(
         expect_true(grepl("Visit 2", timeline_json))
         
         app$set_inputs(main_tabs = "Study data")
-        app$wait_for_idle()
+        app$wait_for_idle(1100)
 
         # Expect labels V0-V10 in compact header visit timeline (as defined in custom metadata file):
         fig_vals <- app$get_value(output = "header_widgets_1-visit_figure")
@@ -74,7 +74,7 @@ describe(
           dplyr::arrange(item_name)
         expect_snapshot(fig_data)
         # Get a snapshot of the raw data in the table:
-        table_data  <- app$get_value(export = "sf_vitals_adjusted-table_data")
+        table_data  <- app$get_value(export = "sf_vitals_adjusted-review_form_tbl-table_data")
         expect_snapshot(print(table_data, width = Inf))
       }
     )

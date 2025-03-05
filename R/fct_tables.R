@@ -127,19 +127,35 @@ create_table.continuous <- function(
   }
   data[[unit_column]] <- tidyr::replace_na(data[[unit_column]], "")
   df <- data |> 
+    add_missing_columns("not_reviewed_but_missing") |> 
     dplyr::mutate(
+      not_reviewed_but_missing = ifelse(
+        is.na(not_reviewed_but_missing), 
+        FALSE, 
+        not_reviewed_but_missing
+      ) |> 
+        as.logical(),
       "{unit_column}" := ifelse(
-        is.na(.data[[value_column]]), "", .data[[unit_column]]
-        ),
+        is.na(.data[[value_column]]) | not_reviewed_but_missing, 
+        "", 
+        .data[[unit_column]]
+      ),
       "{value_column}" := as.character(.data[[value_column]]),
       "{value_column}" := dplyr::case_when(
-        is.na(.data[[value_column]]) & !.data[[explanation_column]] == "" ~ 
+        (is.na(.data[[value_column]]) | not_reviewed_but_missing) &
+          !.data[[explanation_column]] == "" ~ 
           paste0("missing (", .data[[explanation_column]], ")"),
         is.na(.data[[value_column]]) & .data[[explanation_column]] == ""  ~ 
           "missing (reason unknown)",
-        TRUE ~ .data[[value_column]]
+        .default =  .data[[value_column]]
+      ),
+      "{value_column}" := ifelse(
+        not_reviewed_but_missing,
+        paste0("<b>", .data[[value_column]], "*</b>"),
+        .data[[value_column]]
       )
-    ) |> 
+    ) |>
+    dplyr::select(-not_reviewed_but_missing) |> 
     tidyr::unite(col = "VAL", dplyr::all_of(c(value_column, unit_column)),  sep = " ") 
   create_table.default(data = df, name_column = name_column, 
                         value_column = "VAL", keep_vars = keep_vars, 
@@ -259,7 +275,6 @@ create_table.adverse_events <- function(
                              keep_vars, expected_columns) |> 
     adjust_colnames("^AE ") 
   df[["Number"]] <- NULL
-  
   # create new row when an AE gets worse:
   df_worsening <- df[!is.na(df[[worsening_start_column]]), ] |> 
     dplyr::mutate(
@@ -286,8 +301,11 @@ create_table.adverse_events <- function(
         )
     ) |> 
     dplyr::bind_rows(df_worsening) |> 
-    dplyr::arrange(dplyr::desc(.data[["Serious Adverse Event"]]), 
-                   .data[["form_repeat"]], .data[["start date"]])
+    dplyr::arrange(
+      dplyr::desc(gsub("\\**<\\/*b>", "", .data[["Serious Adverse Event"]])), 
+      .data[["form_repeat"]], 
+      dplyr::desc(gsub("\\**<\\/*b>", "", .data[["start date"]]))
+    )
   df |> 
     dplyr::select(
       -dplyr::all_of(c(worsening_start_column, "CTCAE severity worsening"))
@@ -321,14 +339,15 @@ create_table.medication <- function(
   
   df |> 
     dplyr::mutate(
-      Name = paste0(tools::toTitleCase(tolower(.data[["Active Ingredient"]])), " (",
-                    tools::toTitleCase(tolower(.data[["Trade Name"]])),
-                    ")"),
+      Name = paste0(.data[["Active Ingredient"]], " (", .data[["Trade Name"]], ")"),
       Dose = paste0(.data[["Dose"]], " ", .data[["Unit"]], " ", 
                     .data[["Frequency"]], "; ", .data[["Route"]]),
       in_use = (is.na(.data[["End Date"]])) 
     ) |> 
-    dplyr::arrange(dplyr::desc(in_use), dplyr::desc(`Start Date`)) |> 
+    dplyr::arrange(
+      dplyr::desc(gsub("\\**<\\/*b>", "", .data[["in_use"]])), 
+      dplyr::desc(gsub("\\**<\\/*b>", "", .data[["Start Date"]]))
+      ) |> 
     dplyr::select(
       dplyr::any_of("o_reviewed"),
       dplyr::all_of(c(keep_vars, "Name")), 
@@ -356,8 +375,7 @@ create_table.medical_history <- function(
     adjust_colnames("^MH ") 
   df[["Number"]] <- NULL
     
-  df |> 
-    dplyr::mutate(Name = tools::toTitleCase(tolower(Name)))
+  df
 }
 
 #' Create Concomitant Procedures Table

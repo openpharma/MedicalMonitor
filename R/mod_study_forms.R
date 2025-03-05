@@ -1,6 +1,6 @@
 #' Study forms - Shiny module UI
 #' 
-#' @inherit mod_study_forms_server
+#' @inherit mod_common_forms_server
 #'
 #' @seealso [mod_study_forms_server()]
 #' 
@@ -88,55 +88,39 @@ mod_study_forms_ui <- function(id, form, form_items){
 #'
 #' @param id Character string, used to connect the module UI with the module
 #'   Server.
-#' @param r Common reactive values. Used to access the data frames
-#'   `review_data`, `filtered_data`, and the active `subject_id`. The latter is
-#'   used to show data in the tables of the active subject id, and to highlight
-#'   data in the figures. The data frame filtered data should contain a column
-#'   "item_type". If all values in "item_type" are "continuous", time-series
-#'   figures will be shown.
-#' @param form A character string with the name of the form to display.
-#' @param form_items A named character vector with the names of the expected
-#'   variables defined in the applicable `form`. Used in the UI to create a
-#'   filter with drop-down menu, to select the desired variables in a figure.
-#'   Used in the module Server to make sure that all expected columns are always
-#'   created, even if some variables are implicitly missing (which might occur
-#'   if there are not yet any values available for a specific variable). Also,
-#'   implicitly missing variables might give errors if part of the script relies
-#'   on the variables' presence. See also the parameter `expected_columns` in
-#'   [create_table.default()].
-#' @param table_names An optional character vector. If provided, will be used
-#'   within [datatable_custom()], to improve the column names in the final
-#'   interactive tables.
-#' @param id_item Character vector containing the column names of the columns
-#'   that can uniquely identify one item/row.
 #' @param item_info A data frame containing the names of the study forms (in the
 #'   column `item_group`), and the columns `item_scale` `use_unscaled_limits`,
 #'   which are used to customize the way the figures are shown in the page.
-#'
+#' @inheritParams mod_common_forms_server
+#' 
 #' @seealso [mod_study_forms_ui()], [mod_review_form_tbl_ui()],
 #'   [mod_review_form_tbl_server()]
 #' 
 mod_study_forms_server <- function(
     id, 
-    r, 
     form,
+    form_data,
+    form_review_data,
     form_items, 
+    active_subject,
     id_item = c("subject_id", "event_name", "item_group", 
                 "form_repeat", "item_name"),
     table_names = NULL,
     item_info
 ){
-  stopifnot(is.reactivevalues(r))
   stopifnot(is.character(form), length(form) == 1)
+  stopifnot(is.reactive(form_data), is.reactive(form_review_data))
   stopifnot(is.character(form_items))
+  stopifnot(is.reactive(active_subject))
   stopifnot(is.character(id_item))
+  stopifnot(is.null(table_names) || is.character(table_names))
   stopifnot(is.data.frame(item_info))
   
   names(form_items) <- names(form_items) %||% form_items
   moduleServer(id, function(input, output, session){
     ns <- session$ns
     
-    data_types <- isolate(unique(r$filtered_data[[form]]$item_type))
+    data_types <- isolate(unique(form_data()$item_type))
     all_continuous <- (!is.null(data_types) && all(data_types == "continuous") )
     if(!all_continuous){
       shinyWidgets::updateRadioGroupButtons(
@@ -149,52 +133,29 @@ mod_study_forms_server <- function(
     fig_data <- reactive({
       req(isTRUE(all_continuous))
       validate(need(
-        r$filtered_data[[form]],
+        form_data(),
         paste0("Warning: no data found in the database for the form '", form, "'.")
       ))
-      df <- r$filtered_data[[form]] 
-      
-      status_df <- r$review_data |> 
-        dplyr::filter(item_group == form) |> 
-        dplyr::select(dplyr::all_of(c(id_item, "edit_date_time", "status", "reviewed"))) |> 
+      status_df <- form_review_data()[c(id_item, "edit_date_time", "status", "reviewed")] |> 
         dplyr::mutate(edit_date_time = as.POSIXct(edit_date_time, tz = "UTC"))
-      df[simplify_string(df$item_name) %in% input$filter, ] |>
+      form_data()[simplify_string(form_data()$item_name) %in% input$filter, ] |>
         dplyr::left_join(status_df, by = c(id_item, "edit_date_time")) |> 
         dplyr::mutate(item_name = factor(item_name, levels = names(form_items)))
-    })
+    }) |> 
+      debounce(1000)
     
-    study_form_data <- reactive({
-      cat(form, "data computed \n")
-      validate(need(
-        r$filtered_data[[form]],
-        paste0("Warning: no data found in database for the form '", form, "'")
-      ))
-      dplyr::left_join(
-        r$filtered_data[[form]],
-        with(r$review_data, r$review_data[item_group == form, ]) |> 
-          dplyr::select(-dplyr::all_of(c("edit_date_time", "event_date"))), 
-        by = id_item
-      ) |> 
-        dplyr::mutate(
-          item_value = ifelse(
-            reviewed == "No", 
-            paste0("<b>", htmltools::htmlEscape(item_value), "*</b>"), 
-            htmltools::htmlEscape(item_value)
-          )
-        ) |> 
-        create_table(expected_columns = names(form_items)) |> 
-        dplyr::mutate(o_reviewed = Map(\(x, y, z) append(x, list(
-          row_id = y, 
-          disabled = z,
-          updated = isolate(session$userData$update_checkboxes[[form]]))
-        ), 
-        o_reviewed, 
-        dplyr::row_number(),
-        subject_id != r$subject_id))
-    })
-    
-    mod_review_form_tbl_server("review_form_tbl", r, study_form_data, form, reactive(input$show_all), table_names)
-    
+    mod_review_form_tbl_server(
+      "review_form_tbl", 
+      form_data = form_data, 
+      form_review_data = form_review_data, 
+      active_subject = active_subject,
+      form = form,
+      form_items = form_items,
+      show_all = reactive(input$show_all), 
+      table_names = table_names,
+      title = form
+    )
+
     scaling_data <- reactive({
       cols <- c("item_scale", "use_unscaled_limits")
       # Ensure no errors even if cols are missing, with FALSE as default:
@@ -217,7 +178,7 @@ mod_study_forms_server <- function(
         fig = "timeseries_fig",
         xval = "day",
         id = "subject_id",
-        id_to_highlight = r$subject_id, 
+        id_to_highlight = active_subject(), 
         point_size = "reviewed",
         height = ceiling(0.5*length(unique(fig_data()$item_name))*125+175),
         scale = scale_yval,
@@ -231,8 +192,7 @@ mod_study_forms_server <- function(
     
     if(form %in% c("Vital signs", "Vitals adjusted")){
       shiny::exportTestValues(
-        table_data = subset(study_form_data(), input$show_all | subject_id == r$subject_id),
-        fig_data = fig_data()
+        fig_data = tryCatch(fig_data(), error = function(e) e)
       )
     } 
   })

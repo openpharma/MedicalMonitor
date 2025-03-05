@@ -120,7 +120,8 @@ utils::globalVariables(
     "end",
     "className",
     "DrugAdminDate",
-    "DrugAdminDose"
+    "DrugAdminDose",
+    "not_reviewed_but_missing"
   )
 )
 

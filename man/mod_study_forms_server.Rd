@@ -6,9 +6,11 @@
 \usage{
 mod_study_forms_server(
   id,
-  r,
   form,
+  form_data,
+  form_review_data,
   form_items,
+  active_subject,
   id_item = c("subject_id", "event_name", "item_group", "form_repeat", "item_name"),
   table_names = NULL,
   item_info
@@ -18,14 +20,13 @@ mod_study_forms_server(
 \item{id}{Character string, used to connect the module UI with the module
 Server.}
 
-\item{r}{Common reactive values. Used to access the data frames
-\code{review_data}, \code{filtered_data}, and the active \code{subject_id}. The latter is
-used to show data in the tables of the active subject id, and to highlight
-data in the figures. The data frame filtered data should contain a column
-"item_type". If all values in "item_type" are "continuous", time-series
-figures will be shown.}
-
 \item{form}{A character string with the name of the form to display.}
+
+\item{form_data}{A reactive value containing the study data of the respective
+form.}
+
+\item{form_review_data}{A reactive value containing the review data of the
+respective form.}
 
 \item{form_items}{A named character vector with the names of the expected
 variables defined in the applicable \code{form}. Used in the UI to create a
@@ -36,6 +37,8 @@ if there are not yet any values available for a specific variable). Also,
 implicitly missing variables might give errors if part of the script relies
 on the variables' presence. See also the parameter \code{expected_columns} in
 \code{\link[=create_table.default]{create_table.default()}}.}
+
+\item{active_subject}{A reactive value containing the active subject ID.}
 
 \item{id_item}{Character vector containing the column names of the columns
 that can uniquely identify one item/row.}
