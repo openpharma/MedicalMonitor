@@ -2,7 +2,7 @@ library(shinytest2)
 
 describe("mod_main_sidebar. Feature 1 | Load application module in isolation.", {
     testargs <- list(
-      r = reactiveValues(create_query = 0),
+      r = reactiveValues(create_query = 0, review_data = reactiveValues()),
       navinfo = reactiveValues(),
       app_data = list("Form1" = data.frame("site_code" = "", "edit_date_time" = "2023-01-01")), # used by mod_review_config()
       app_tables = list(),
@@ -57,7 +57,8 @@ describe(
             status = "new",
             comment = "",
             id = dplyr::row_number()
-          )
+          ) |> 
+          {\(x) split(x, x$item_group)}()
         vars <- get_meta_vars(appdata, metadata)
         apptables <- lapply(
           setNames(names(appdata), names(appdata)), \(x){
@@ -77,7 +78,7 @@ describe(
             id = "test", 
             r = reactiveValues(
               create_query = 0, 
-              review_data = rev_data, 
+              review_data = do.call(reactiveValues, rev_data), 
               subject_id = "NLD_06_755",
               user_name = "Admin",
               user_role = "Medical Monitor"
@@ -115,6 +116,19 @@ describe(
           and active_tab set to 'Start' (not 'Common events' or 'Study data'),
           I expect that the review panel will be hidden.", 
       {
+        rev_data <- data.frame(
+          "id" = 1L,
+          "subject_id" = "NLD_06_755", 
+          "event_name" = "Any visit",
+          "item_group" = "Adverse events",
+          "form_repeat" = 1L,
+          "item_name" = "AE item",
+          "edit_date_time" = "2023-01-01",
+          "reviewed" = "",
+          "comment" = "",
+          "status" = ""
+        ) |> 
+          {\(x) split(x, x$item_group)}()
         test_ui <- function(request){
           bslib::page_navbar(sidebar = mod_main_sidebar_ui("test"))
         }
@@ -123,18 +137,7 @@ describe(
             id = "test", 
             r = reactiveValues(
               create_query = 0, 
-              review_data = data.frame(
-                "id" = 1L,
-                "subject_id" = "NLD_06_755", 
-                "event_name" = "Any visit",
-                "item_group" = "Adverse events",
-                "form_repeat" = 1L,
-                "item_name" = "AE item",
-                "edit_date_time" = "2023-01-01",
-                "reviewed" = "",
-                "comment" = "",
-                "status" = ""
-              ), 
+              review_data = do.call(reactiveValues, rev_data), 
               subject_id = "NLD_06_755",
               user_name = "Admin",
               user_role = "Medical Monitor"

@@ -84,33 +84,23 @@ fig_boxplots <- function(
 #' Function to create a simple timeline figure using `ggplot2`.
 #'
 #' @param data Data frame to use.
-#' @param events Data frame containing information about all events. Used
-#'   to create the right labels in the timeline figure.
 #'
 #' @return A ggplot2 object.
 #' @export
 #' 
 fig_timeline <- function(
-    data, 
-    events
+    data
     ){
   stopifnot(is.data.frame(data))
-  stopifnot(is.data.frame(events))
   
-  completed_events <- data |> 
-    dplyr::filter(!is.na(event_name), 
-                  event_label %in% events$event_label) |> 
-    dplyr::slice_head(n = 1, by = c(event_name, item_name)) |>  # 051022 LSA ensures only one item per event
-    dplyr::count(event_name, event_label) |> 
-    dplyr::mutate(
-      event_label = factor(event_label, levels = events$event_label)
-    )
-  all_events <- events |> 
-    dplyr::mutate(event_name = factor(event_name, levels = event_name), 
-                  event_label = factor(event_label, levels = event_label))
-  uneven_events   <- all_events[1:length(all_events$event_name) %% 2 == 0, ]
-  even_events     <- all_events[1:length(all_events$event_name) %% 2 != 0, ]
+  labels_in_data <- unique(na.omit(data$event_label))
+  all_labels <- levels(data$event_label)
+  all_events <- data.frame(event_label = factor(all_labels, levels = all_labels))
   
+  completed_events <- all_events[
+    all_events$event_label %in% labels_in_data, , drop = FALSE]
+  uneven_events   <- all_events[1:length(all_events$event_label) %% 2 == 0, , drop = FALSE]
+  even_events     <- all_events[1:length(all_events$event_label) %% 2 != 0, , drop = FALSE]
  fig <- ggplot2::ggplot(
     mapping = ggplot2::aes(x = event_label, y = factor(1))
     ) +

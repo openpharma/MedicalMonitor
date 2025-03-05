@@ -240,7 +240,6 @@ get_static_overview_data <- function(
   stopifnot(is.list(data))
   expected_general_columns <- expected_general_columns %||% character(0)
   stopifnot(is.character(expected_general_columns))
-  
   visits <- data |> 
     bind_rows_custom("item_value") |> 
     dplyr::filter(
@@ -248,8 +247,8 @@ get_static_overview_data <- function(
       !event_name %in% c("Any visit", "Exit"),
       !is.na(subject_id)
     ) |> 
+    dplyr::arrange(subject_id, day) |> 
     dplyr::distinct(subject_id, event_name) |> 
-    dplyr::arrange(subject_id, factor(event_name, levels = order_string(event_name))) |> 
     collapse_column_vals(group_by = "subject_id") |> 
     dplyr::distinct()
   

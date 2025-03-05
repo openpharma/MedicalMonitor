@@ -14,12 +14,17 @@ describe(
         expect_true(i %in% names(fmls))
       }
     })
+    
     it("Can load the module server, with functioning internal parameters.", {
       testargs <- list(
-        r = reactiveValues(),
         form = "Vital signs",
-        id_item = "",
+        form_data = reactiveVal(),
+        form_review_data = reactiveVal(),
         form_items = "",
+        active_subject = reactiveVal("DEU_02_482"),
+        id_item = c("subject_id", "event_name", "item_group", 
+                    "form_repeat", "item_name"),
+        table_names = NULL,
         item_info = data.frame()
       )
       testServer(mod_study_forms_server, args = testargs , {
@@ -52,19 +57,17 @@ describe(
     form_items <- with(metadata$study_forms, item_name[item_group == "Vital signs"])
     form_items <- setNames(simplify_string(form_items), form_items)
     testargs <- list(
-      r = reactiveValues(
-        filtered_data = appdata,
-        review_data = rev_data,
-        filtered_tables = list("Vital signs" = create_table(appdata[["Vital signs"]]) ),
-        subject_id = "NLD_05_561"
-      ),
       form = "Vital signs",
+      form_data = reactiveVal(appdata[["Vital signs"]]),
+      form_review_data = reactiveVal(rev_data),
+      active_subject = reactiveVal("NLD_05_561"),
       id_item = c("subject_id", "event_name", "item_group",
                   "form_repeat", "item_name"),
       form_items = form_items,
+      table_names = NULL,
       item_info = metadata$form_level_data[metadata$form_level_data$item_group == "Vital signs", ]
     )
-    it("Scenario 1 - Given subject id is set to NLD_05_561, and form filter set to 'pulse' and
+    it("Scenario 1 - Figure data. Given subject id is set to NLD_05_561, and form filter set to 'pulse' and
        'bmi', I expect that [fig_data] contains a data frame with only items 'BMI' and 'Pulse',
         and that a plotly [dynamic_figure] contains a plotly htmlwidget figure,
         and that the figure outputcontains a valid JSON object", {
@@ -79,10 +82,9 @@ describe(
         })
 
     it(
-      "Scenario 3 - 'show_all' set to FALSE. Given subject id NLD_05_561,
+      "Scenario 3 - Table data without 'show_all'. Given subject id NLD_05_561,
           and input value 'show_all' is set to 'FALSE',
-          I expect that a table with only review data of subject NLD_05_561 will be shown,
-          and that a valid JSON output table will be created",
+          I expect that a valid JSON output table will be created",
       {
         testServer(mod_study_forms_server, args = testargs, {
           ns <- session$ns
@@ -90,45 +92,19 @@ describe(
             filter = c("pulse", "BMI"),
             show_all = FALSE
           )
-
-          df_expected <- appdata[["Vital signs"]] |>
-            dplyr::filter(subject_id == "NLD_05_561") |>
-            create_table(expected_columns = names(form_items))
-          # Tue Dec 12 10:32:48 2023 LSA ------------------------------
-          # only difference between the the data frame is some html tags around
-          # some not yet reviewed data. However, because of these tags, we cannot
-          # compare expected with actual directly.
-          expect_equal(names(study_form_data()), c("o_reviewed", names(df_expected)))
-          enabled_rows <- lapply(study_form_data()[["o_reviewed"]], \(x) isFALSE(x$disabled)) |> unlist()
-          expect_equal(study_form_data()[enabled_rows, "event_name", drop = TRUE], df_expected$event_name)
-
-          expect_true(is.data.frame(study_form_data()))
-          expect_equal(sum(enabled_rows), 2)
           expect_true(inherits(output[["review_form_tbl-table"]], "json"))
         })
       })
     it(
       "Scenario 4 - Given subject id NLD_05_561,
           and the input value [show_all] is set to 'TRUE',
-          I expect that a table with review data of everyone will be shown,
-          and that a valid JSON output table will be created", {
+          I expect that a valid JSON output table will be created", {
             testServer(mod_study_forms_server, args = testargs, {
               ns <- session$ns
-              r$subject_id = "NLD_05_561"
               session$setInputs(
                 filter = c("pulse", "BMI"),
                 show_all = TRUE
               )
-              expect_true(is.data.frame(study_form_data()))
-              enabled_rows <- lapply(study_form_data()[["o_reviewed"]], \(x) isFALSE(x$disabled)) |> unlist()
-              expect_equal(nrow(study_form_data()), 68)
-
-              table_ids <- unique(study_form_data()$subject_id)
-              table_ids <- table_ids[order(table_ids)]
-              expected_ids <- unique(r$review_data$subject_id)
-              expected_ids <- expected_ids[order(expected_ids)]
-              expect_equal(table_ids, expected_ids)
-              
               expect_true(inherits(output[["review_form_tbl-table"]], "json"))
             })
           })
@@ -150,19 +126,15 @@ describe(
       )
     
     testargs <- list(
-      r = reactiveValues(
-        filtered_data = appdata,
-        review_data = rev_data, 
-        filtered_tables = list("Vital signs" = create_table(appdata[["Vital signs"]]) ),
-        subject_id = "show_all"
-      ),
       form = "Vital signs",
+      form_data = reactiveVal(appdata[["Vital signs"]]),
+      form_review_data = reactiveVal(rev_data),
+      active_subject = reactiveVal("NLD_05_561"),
       id_item = c("subject_id", "event_name", "item_group", 
                   "form_repeat", "item_name"),
       form_items = with(metadata$study_forms, item_name[item_group == "Vital signs"]),
       item_info = metadata$form_level_data[metadata$form_level_data$item_group == "Vital signs", ]
-    ) 
-    
+    )
     it(
       "Scenario 1 - Review status information. Given subject id is set to '885',
         and the form set to 'Vital signs',
@@ -210,16 +182,14 @@ describe(
             ),
           )
         }
+        
         test_server <- function(input, output, session){
           mod_study_forms_server(
             id = "test",
-            r = reactiveValues(
-              filtered_data = appdata,
-              review_data = rev_data, 
-              filtered_tables = list("Vital signs" = create_table(appdata[["Vital signs"]]) ),
-              subject_id = "NLD_06_755"
-            ), 
             form = "Vital signs",
+            form_data = reactiveVal(appdata[["Vital signs"]]),
+            form_review_data = reactiveVal(rev_data),
+            active_subject = reactiveVal("NLD_06_755"),
             id_item = c("subject_id", "event_name", "item_group", 
                         "form_repeat", "item_name"),
             form_items = form_items,
@@ -235,7 +205,7 @@ describe(
         )
         withr::defer(app$stop())
         app$set_inputs("test-filter" = "temperature")
-        app$wait_for_idle()
+        app$wait_for_idle(1100)
         app$expect_values(output = TRUE, export = TRUE)
         df <- app$get_value(export = "test-fig_data")
         expect_equal(as.character(unique(df$item_name)), "Temperature")

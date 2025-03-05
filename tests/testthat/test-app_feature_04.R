@@ -17,7 +17,7 @@ describe(
       "I expect that I see the timeline of subject [9600-002] with study visits in it",
       "and when I browser to the 'Study data' tab",
       "I expect that I see the Vital signs page of subject [9600-002]', ", 
-      "and that the compact header timeline shows visits V0-V10 ",
+      "and that the compact header timeline shows visits all visits available in the data",
       "and that I see a figure with the data displayed, ",
       "and that I see a table with the data displayed after clicking on the table view, ", 
       "and that the data for the figure and table in the app is the same as ", 
@@ -39,16 +39,16 @@ describe(
         expect_true(grepl('"subject_id":"9600-002"', timeline_json))
         expect_true(grepl("Screening", timeline_json))
         expect_true(grepl("Visit 1", timeline_json))
-        expect_true(grepl("Visit 2", timeline_json))
+        expect_true(grepl("Ext. visit 1", timeline_json))
         
         app$set_inputs(main_tabs = "Study data")
-        app$wait_for_idle()
+        app$wait_for_idle(1100)
 
-        # Expect labels V0-V10 in compact header visit timeline (as defined in custom metadata file):
+        # Expect labels SCR< V1, V2, and EoT in compact header visit timeline (as defined in custom metadata file):
         fig_vals <- app$get_value(output = "header_widgets_1-visit_figure")
         expect_equal(
           fig_vals$coordmap$panels[[1]]$domain$discrete_limits$x,
-          paste0("V", 0:10)
+          c("SCR", "V1", "EoT", "FU")
         )
         
         # Snapshot JSON table output and verify that vital signs are shown:
@@ -74,7 +74,7 @@ describe(
           dplyr::arrange(item_name)
         expect_snapshot(fig_data)
         # Get a snapshot of the raw data in the table:
-        table_data  <- app$get_value(export = "sf_vitals_adjusted-table_data")
+        table_data  <- app$get_value(export = "sf_vitals_adjusted-review_form_tbl-table_data")
         expect_snapshot(print(table_data, width = Inf))
       }
     )

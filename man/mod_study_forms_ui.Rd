@@ -23,20 +23,22 @@ on the variables' presence. See also the parameter \code{expected_columns} in
 \code{\link[=create_table.default]{create_table.default()}}.}
 }
 \description{
-A shiny module. Used to display figures and tables of a study-specific form
-and will be accessible in through the study form tab on the main page.
+Shiny module. Used to display common form data in the dedicated tab.
 }
 \details{
-The module displays tables and figures, and shows data of the currently
-active subject. In the figures, the data can easily be compared with data of
-other study participants. Data that is new or updated will have large points,
-so that the reviewer can focus on new data. By default, all items of a form
-will be shown, but the reviewer can select single or multiple variables to
-focus on in the figure. There is also an option to switch from graphical view
-to table view. In a table view, the same data will be shown in wide-table
-format, with new/updated data shown in bold. If the values contain units, the
-original units will be shown. The \verb{Study forms} module is used in the main
-\code{app_server} to create all applicable study form pages.
+The module displays tables of common form data in a wide format. Included
+common forms are currently: \verb{Adverse events}, \verb{Medical History},
+\code{Medication}, and \verb{Conc. Procedures}. The applicable forms can be flexibly
+changed in the metadata. The tables shown are overview tables in wide format,
+similar to the ones in \code{\link[=mod_study_forms_server]{mod_study_forms_server()}}. When the common form
+\verb{Adverse events} is selected, the module will show an additional table with
+Severe Adverse Events above the table with Adverse Events. In addition, it
+will show a timeline by calling module
+\code{\link[=mod_timeline_ui]{mod_timeline_ui()}}/\code{\link[=mod_timeline_server]{mod_timeline_server()}}. The timeline shows study events
+(such as drug administrations) and study visits together with Adverse Events,
+so that temporal relationships between these events can be quickly revealed.
+The \verb{common forms} module is used in the main server to create all applicable
+common form pages.
 }
 \seealso{
 \code{\link[=mod_study_forms_server]{mod_study_forms_server()}}

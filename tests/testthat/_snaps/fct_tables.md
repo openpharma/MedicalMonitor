@@ -90,31 +90,31 @@
       # A tibble: 90 x 18
          subject_id form_repeat Name    AESI  `start date` `end date` `CTCAE severity`
          <chr>            <int> <chr>   <chr> <chr>        <chr>      <chr>           
-       1 DEU_02_482           1 Pneumo~ None  2023-07-09   2023-07-18 Grade 3         
-       2 NLD_03_207           1 Sepsis  None  2023-08-02   2023-08-14 Grade 3         
+       1 BEL_07_193           1 Atelec~ None  2023-09-14   <NA>       Grade 3         
+       2 NLD_03_207           1 Sepsis  None  2023-08-14   2023-08-14 Grade 5         
        3 BEL_08_885           1 Seizure None  2023-08-11   <NA>       Grade 3         
-       4 NLD_03_207           1 Sepsis  None  2023-08-14   2023-08-14 Grade 5         
-       5 BEL_07_193           1 Atelec~ None  2023-09-14   <NA>       Grade 3         
-       6 BEL_09_361           2 Seizure None  2023-06-13   <NA>       Grade 3         
+       4 NLD_03_207           1 Sepsis  None  2023-08-02   2023-08-14 Grade 3         
+       5 DEU_02_482           1 Pneumo~ None  2023-07-09   2023-07-18 Grade 3         
+       6 DEU_02_482           2 Pneumo~ None  2023-08-19   2023-08-19 Grade 5         
        7 DEU_02_387           2 Sepsis  None  2023-08-04   2023-08-08 Grade 5         
-       8 DEU_02_482           2 Pneumo~ None  2023-08-19   2023-08-19 Grade 5         
+       8 BEL_09_361           2 Seizure None  2023-06-13   <NA>       Grade 3         
        9 BEL_08_885           3 Seizure None  2023-08-29   2023-09-01 Grade 3         
       10 NLD_06_755           6 Pneumo~ None  2023-08-01   <NA>       Grade 3         
       11 BEL_09_361           7 Sepsis  None  2023-08-03   <NA>       Grade 4         
-      12 NLD_06_755          22 Stroke  None  2023-08-22   2023-08-24 Grade 4         
-      13 NLD_06_755          22 Stroke  None  2023-08-24   2023-08-24 Grade 5         
-      14 BEL_09_361           1 Lower ~ None  2023-06-08   2023-06-08 Grade 2         
-      15 BEL_04_772           1 Hypote~ None  2023-07-07   <NA>       Grade 1         
-      16 DEU_02_387           1 Nausea  None  2023-07-07   2023-07-20 Grade 3         
-      17 NLD_06_755           1 Allerg~ None  2023-07-08   2023-07-18 Grade 3         
-      18 NLD_05_561           1 Joint ~ None  2023-08-06   2023-08-17 Grade 3         
-      19 DEU_02_866           1 Urinar~ None  2023-08-11   <NA>       Grade 1         
-      20 DEU_01_541           1 Anemia  None  2023-08-16   <NA>       <NA>            
-      21 NLD_06_72            1 Lower ~ None  2023-08-18   <NA>       Grade 1         
-      22 DEU_01_977           1 Urinar~ None  2023-08-21   <NA>       Grade 1         
-      23 BEL_08_736           1 Hypote~ None  2023-08-22   <NA>       Grade 4         
-      24 BEL_04_772           2 Atrial~ None  2023-07-05   <NA>       Grade 2         
-      25 NLD_06_755           2 Nausea  None  2023-07-08   2023-08-08 Grade 2         
+      12 NLD_06_755          22 Stroke  None  2023-08-24   2023-08-24 Grade 5         
+      13 NLD_06_755          22 Stroke  None  2023-08-22   2023-08-24 Grade 4         
+      14 BEL_08_736           1 Hypote~ None  2023-08-22   <NA>       Grade 4         
+      15 DEU_01_977           1 Urinar~ None  2023-08-21   <NA>       Grade 1         
+      16 NLD_06_72            1 Lower ~ None  2023-08-18   <NA>       Grade 1         
+      17 DEU_01_541           1 Anemia  None  2023-08-16   <NA>       <NA>            
+      18 DEU_02_866           1 Urinar~ None  2023-08-11   <NA>       Grade 1         
+      19 NLD_05_561           1 Joint ~ None  2023-08-06   2023-08-17 Grade 3         
+      20 NLD_06_755           1 Allerg~ None  2023-07-08   2023-07-18 Grade 3         
+      21 BEL_04_772           1 Hypote~ None  2023-07-07   <NA>       Grade 1         
+      22 DEU_02_387           1 Nausea  None  2023-07-07   2023-07-20 Grade 3         
+      23 BEL_09_361           1 Lower ~ None  2023-06-08   2023-06-08 Grade 2         
+      24 DEU_02_866           2 Anemia  None  2023-08-30   <NA>       Grade 3         
+      25 NLD_05_561           2 Urinar~ None  2023-08-25   <NA>       <NA>            
       # i 65 more rows
       # i 11 more variables: `Treatment related` <chr>, `Treatment action` <chr>,
       #   `Other action` <chr>, `Serious Adverse Event` <chr>,
@@ -168,11 +168,11 @@
          <chr>            <int> <chr>        <chr>        <chr>   <chr>      <chr>    
        1 BEL_04_133           1 Epilepsy     <NA>         Yes     <NA>       Medicati~
        2 BEL_04_772           1 Hypertension 2020-NK-NK   Yes     <NA>       Medicati~
-       3 BEL_04_772           2 Copd         1995-NK-NK   Yes     <NA>       Medicati~
+       3 BEL_04_772           2 COPD         1995-NK-NK   Yes     <NA>       Medicati~
        4 BEL_04_772           3 Osteoporosis 2005-NK-NK   Yes     <NA>       Medicati~
        5 BEL_04_772           4 Congestive ~ 2020-NK-NK   Yes     <NA>       Medicati~
        6 BEL_04_772           5 Osteoporosis 2014-NK-NK   No      2014-NK-NK Surgery  
-       7 BEL_04_772           6 Copd         2020-NK-NK   Yes     <NA>       Medicati~
+       7 BEL_04_772           6 COPD         2020-NK-NK   Yes     <NA>       Medicati~
        8 BEL_04_772           7 Hypertension 2015-NK-NK   Yes     <NA>       Medicati~
        9 BEL_04_772           8 Epilepsy     2023-01-NK   Yes     <NA>       Medicati~
       10 BEL_04_772           9 Arhtritis    2023-06-28   Yes     <NA>       No treat~
@@ -180,14 +180,14 @@
       12 BEL_07_193           2 Familial Me~ 2023-06-02   Yes     <NA>       No treat~
       13 BEL_07_193           3 Hypothyroid~ 2021-01-04   Yes     <NA>       Non-drug~
       14 BEL_07_193           4 Osteoporosis 2022-09-23   Yes     <NA>       Non-drug~
-      15 BEL_07_193           5 Diabetes Me~ 2022-09-NK   Yes     <NA>       Medicati~
+      15 BEL_07_193           5 Diabetes me~ 2022-09-NK   Yes     <NA>       Medicati~
       16 BEL_07_193           6 Migraine     2022-09-30   Yes     <NA>       Medicati~
-      17 BEL_07_193           7 Diabetes Me~ 2019-09-NK   Yes     <NA>       Medicati~
+      17 BEL_07_193           7 Diabetes me~ 2019-09-NK   Yes     <NA>       Medicati~
       18 BEL_07_193           8 Hypertension 2015-05-NK   Yes     <NA>       Medicati~
-      19 BEL_07_193           9 Copd         2019-09-NK   Yes     <NA>       Medicati~
+      19 BEL_07_193           9 COPD         2019-09-NK   Yes     <NA>       Medicati~
       20 BEL_07_193          10 Congestive ~ 2019-09-NK   Yes     <NA>       No treat~
-      21 BEL_07_193          11 Atrial Fibr~ 2023-08-25   Yes     <NA>       Medicati~
-      22 BEL_07_645           1 Sickle Cell~ 2019-NK-NK   No      2019-NK-NK Medicati~
+      21 BEL_07_193          11 Atrial fibr~ 2023-08-25   Yes     <NA>       Medicati~
+      22 BEL_07_645           1 Sickle cell~ 2019-NK-NK   No      2019-NK-NK Medicati~
       23 BEL_08_45            1 Malaria      <NA>         Yes     <NA>       Medicati~
       24 BEL_08_45            2 Arhtritis    <NA>         Yes     <NA>       Medicati~
       25 BEL_08_45            3 Hypothyroid~ 2023-06-NK   <NA>    <NA>       <NA>     

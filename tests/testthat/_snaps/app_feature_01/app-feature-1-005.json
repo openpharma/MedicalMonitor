@@ -597,7 +597,7 @@
             "group": "Adverse event",
             "title": "2023-07-07 | Hypotension",
             "className": "bg-warning",
-            "id": "84",
+            "id": "90",
             "order": "2",
             "needs_review": true
           },
@@ -610,7 +610,7 @@
             "group": "Adverse event",
             "title": "2023-07-05 | Atrial Fibrillation",
             "className": "bg-warning",
-            "id": "93",
+            "id": "102",
             "order": "2",
             "needs_review": true
           },
@@ -623,7 +623,7 @@
             "group": "Adverse event",
             "title": "2023-07-05 | Tachycardia",
             "className": "bg-warning",
-            "id": "104",
+            "id": "108",
             "order": "2",
             "needs_review": true
           },
@@ -636,7 +636,7 @@
             "group": "Adverse event",
             "title": "2023-07-05 | Urinary Tract Infection",
             "className": "bg-warning",
-            "id": "110",
+            "id": "116",
             "order": "2",
             "needs_review": true
           },
@@ -649,7 +649,7 @@
             "group": "Adverse event",
             "title": "2023-08-16 | Atrial Fibrillation",
             "className": "bg-warning",
-            "id": "124",
+            "id": "117",
             "order": "2",
             "needs_review": true
           },
@@ -8448,7 +8448,7 @@
             }
           ],
           "rowCallback": "rowCallback",
-          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"\")\n}",
+          "initComplete": "function() {\n$(this.api().table().container()).find('.header').html(\"Vital signs\")\n}",
           "dom": "Bf<\"header h5\">ti",
           "buttons": [
             {

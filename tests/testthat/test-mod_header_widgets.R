@@ -23,8 +23,7 @@ describe(
           )
         ), 
         rev_data = reactiveValues(), 
-        navinfo = reactiveValues(),
-        events = metadata$events
+        navinfo = reactiveValues()
       ) 
       testServer(mod_header_widgets_server, args = testargs, {
         ns <- session$ns
@@ -60,7 +59,6 @@ describe(
         and the output [ae_box] to contain a html element,
         and the ouput [visit_figure] to contain a plot object.", 
       {
-        
         AE_table <- data.frame(
           "subject_id" = "Subj01", 
           "form_repeat" = 1:3, 
@@ -70,7 +68,7 @@ describe(
         AE_figure_data <- data.frame(
           "subject_id" = "Subj01", 
           "event_name" = "Screening",
-          "event_label" = "V0", 
+          "event_label" = factor("V0"), 
           "item_name" = "Other"
         )
         
@@ -88,8 +86,7 @@ describe(
               )
             })
           ), 
-          navinfo = reactiveValues(),
-          events = metadata$events
+          navinfo = reactiveValues()
         ) 
         
         testServer(mod_header_widgets_server, args = testargs, {
@@ -128,7 +125,7 @@ describe(
         AE_figure_data <- data.frame(
           "subject_id" = "Subj01", 
           "event_name" = "Screening",
-          "event_label" = "V0", 
+          "event_label" = factor("V0"), 
           "item_name" = "Other"
         )
         testargs <- list(
@@ -145,8 +142,7 @@ describe(
               )
             })
           ), 
-          navinfo = reactiveValues(),
-          events = metadata$events
+          navinfo = reactiveValues()
         ) 
         
         testServer(mod_header_widgets_server, args = testargs, {
